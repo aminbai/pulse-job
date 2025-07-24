@@ -20,7 +20,7 @@ import {
   Instagram,
 } from "lucide-react";
 import { useState } from "react";
-import Header from "@/components/Header";
+import PublicHeader from "@/components/PublicHeader";
 
 const categories = [
   { name: "Web Development", jobs: 150, icon: Code },
