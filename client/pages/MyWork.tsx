@@ -23,7 +23,7 @@ const withdrawalMethods = [
     icon: Smartphone,
     amount: "0.000",
     color: "bg-orange-50 border-orange-300",
-    iconColor: "text-orange-600"
+    iconColor: "text-orange-600",
   },
   {
     id: "binance",
@@ -31,7 +31,7 @@ const withdrawalMethods = [
     icon: DollarSign,
     amount: "0.000",
     color: "bg-yellow-50 border-yellow-300",
-    iconColor: "text-yellow-600"
+    iconColor: "text-yellow-600",
   },
   {
     id: "payeer",
@@ -39,7 +39,7 @@ const withdrawalMethods = [
     icon: Wallet,
     amount: "0.000",
     color: "bg-blue-50 border-blue-300",
-    iconColor: "text-blue-600"
+    iconColor: "text-blue-600",
   },
   {
     id: "bkash",
@@ -47,8 +47,8 @@ const withdrawalMethods = [
     icon: Smartphone,
     amount: "0.000",
     color: "bg-pink-50 border-pink-300",
-    iconColor: "text-pink-600"
-  }
+    iconColor: "text-pink-600",
+  },
 ];
 
 const transactionHistory = [
@@ -64,10 +64,13 @@ export default function MyWork() {
       <header className="bg-brand-green text-white shadow-lg">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold hover:text-green-100 transition-colors">
+            <Link
+              to="/"
+              className="text-2xl font-bold hover:text-green-100 transition-colors"
+            >
               GigClickers
             </Link>
-            
+
             <nav className="hidden md:flex items-center space-x-6">
               <Link
                 to="/my-post"
@@ -158,7 +161,8 @@ export default function MyWork() {
               <div className="flex items-start">
                 <AlertCircle className="w-5 h-5 text-yellow-600 mt-0.5 mr-3 flex-shrink-0" />
                 <p className="text-sm text-gray-700">
-                  Withdrawal will be confirmed within 96 business hours. Minimum withdrawal is $8 and withdrawal fee 20%.
+                  Withdrawal will be confirmed within 96 business hours. Minimum
+                  withdrawal is $8 and withdrawal fee 20%.
                 </p>
               </div>
             </div>
@@ -176,9 +180,13 @@ export default function MyWork() {
                       >
                         <div className="flex items-center justify-center flex-col text-center">
                           <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-4">
-                            <IconComponent className={`w-8 h-8 ${method.iconColor}`} />
+                            <IconComponent
+                              className={`w-8 h-8 ${method.iconColor}`}
+                            />
                           </div>
-                          <h3 className="font-semibold text-gray-900 mb-2">{method.name}</h3>
+                          <h3 className="font-semibold text-gray-900 mb-2">
+                            {method.name}
+                          </h3>
                           <div className="flex items-center text-sm text-gray-600">
                             <span className="mr-1">Withdraw</span>
                             <span className="font-medium">{method.amount}</span>
@@ -193,16 +201,22 @@ export default function MyWork() {
               {/* Earning Balance */}
               <div className="lg:col-span-1">
                 <div className="bg-white rounded-lg border p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Earning Balance</h3>
-                  
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                    Earning Balance
+                  </h3>
+
                   <div className="space-y-3">
                     <div>
-                      <label className="block text-sm text-gray-600 mb-1">Name</label>
+                      <label className="block text-sm text-gray-600 mb-1">
+                        Name
+                      </label>
                       <p className="font-medium text-gray-900">মনোয়ার আহসান</p>
                     </div>
-                    
+
                     <div>
-                      <label className="block text-sm text-gray-600 mb-1">Balance</label>
+                      <label className="block text-sm text-gray-600 mb-1">
+                        Balance
+                      </label>
                       <p className="font-bold text-lg text-gray-900">$0.000</p>
                     </div>
                   </div>
@@ -216,8 +230,12 @@ export default function MyWork() {
         {activeTab === "history" && (
           <div className="bg-white rounded-lg shadow-sm">
             <div className="p-6 border-b border-gray-200">
-              <h2 className="text-xl font-semibold text-gray-900">Transaction History</h2>
-              <p className="text-sm text-gray-600 mt-1">{transactionHistory.length} Result</p>
+              <h2 className="text-xl font-semibold text-gray-900">
+                Transaction History
+              </h2>
+              <p className="text-sm text-gray-600 mt-1">
+                {transactionHistory.length} Result
+              </p>
             </div>
 
             {/* Desktop Table */}
@@ -242,23 +260,39 @@ export default function MyWork() {
                 <tbody className="divide-y divide-gray-200">
                   {transactionHistory.length === 0 && (
                     <tr>
-                      <td colSpan={4} className="px-6 py-12 text-center text-gray-500">
+                      <td
+                        colSpan={4}
+                        className="px-6 py-12 text-center text-gray-500"
+                      >
                         No transactions found
                       </td>
                     </tr>
                   )}
                   {transactionHistory.map((transaction: any) => (
-                    <tr key={transaction.id} className="hover:bg-gray-50 transition-colors">
+                    <tr
+                      key={transaction.id}
+                      className="hover:bg-gray-50 transition-colors"
+                    >
                       <td className="px-6 py-4">
                         <div className="flex items-center space-x-2">
-                          {transaction.status === "approved" && <CheckCircle className="w-5 h-5 text-green-600" />}
-                          {transaction.status === "rejected" && <XCircle className="w-5 h-5 text-red-600" />}
-                          {transaction.status === "pending" && <Clock className="w-5 h-5 text-yellow-600" />}
-                          <span className={`font-medium capitalize ${
-                            transaction.status === "approved" ? "text-green-600" :
-                            transaction.status === "rejected" ? "text-red-600" :
-                            "text-yellow-600"
-                          }`}>
+                          {transaction.status === "approved" && (
+                            <CheckCircle className="w-5 h-5 text-green-600" />
+                          )}
+                          {transaction.status === "rejected" && (
+                            <XCircle className="w-5 h-5 text-red-600" />
+                          )}
+                          {transaction.status === "pending" && (
+                            <Clock className="w-5 h-5 text-yellow-600" />
+                          )}
+                          <span
+                            className={`font-medium capitalize ${
+                              transaction.status === "approved"
+                                ? "text-green-600"
+                                : transaction.status === "rejected"
+                                  ? "text-red-600"
+                                  : "text-yellow-600"
+                            }`}
+                          >
                             {transaction.status}
                           </span>
                         </div>
@@ -286,17 +320,30 @@ export default function MyWork() {
                 </div>
               ) : (
                 transactionHistory.map((transaction: any) => (
-                  <div key={transaction.id} className="bg-gray-50 rounded-lg p-4">
+                  <div
+                    key={transaction.id}
+                    className="bg-gray-50 rounded-lg p-4"
+                  >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center space-x-2">
-                        {transaction.status === "approved" && <CheckCircle className="w-5 h-5 text-green-600" />}
-                        {transaction.status === "rejected" && <XCircle className="w-5 h-5 text-red-600" />}
-                        {transaction.status === "pending" && <Clock className="w-5 h-5 text-yellow-600" />}
-                        <span className={`font-medium capitalize ${
-                          transaction.status === "approved" ? "text-green-600" :
-                          transaction.status === "rejected" ? "text-red-600" :
-                          "text-yellow-600"
-                        }`}>
+                        {transaction.status === "approved" && (
+                          <CheckCircle className="w-5 h-5 text-green-600" />
+                        )}
+                        {transaction.status === "rejected" && (
+                          <XCircle className="w-5 h-5 text-red-600" />
+                        )}
+                        {transaction.status === "pending" && (
+                          <Clock className="w-5 h-5 text-yellow-600" />
+                        )}
+                        <span
+                          className={`font-medium capitalize ${
+                            transaction.status === "approved"
+                              ? "text-green-600"
+                              : transaction.status === "rejected"
+                                ? "text-red-600"
+                                : "text-yellow-600"
+                          }`}
+                        >
                           {transaction.status}
                         </span>
                       </div>
@@ -321,7 +368,9 @@ export default function MyWork() {
         <div className="container mx-auto px-4 py-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-brand-green">GigClickers</h3>
+              <h3 className="text-xl font-bold mb-4 text-brand-green">
+                GigClickers
+              </h3>
               <p className="text-sm mb-4">
                 Connecting talent with opportunity worldwide.
               </p>
@@ -329,34 +378,78 @@ export default function MyWork() {
                 &copy; 2025 gigclickers.com. All Rights Reserved.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">About GigClickers</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-gray-600 hover:text-brand-green transition-colors">About Us</Link></li>
-                <li><Link to="/privacy" className="text-gray-600 hover:text-brand-green transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="text-gray-600 hover:text-brand-green transition-colors">Terms & Conditions</Link></li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Agreement</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/microjob" className="text-gray-600 hover:text-brand-green transition-colors">Microjob Marketplace</Link></li>
-                <li><Link to="/deal" className="text-gray-600 hover:text-brand-green transition-colors">Deal Marketplace</Link></li>
+                <li>
+                  <Link
+                    to="/microjob"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Microjob Marketplace
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/deal"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Deal Marketplace
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Social Media</h4>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>
