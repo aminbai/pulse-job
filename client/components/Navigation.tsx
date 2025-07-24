@@ -19,6 +19,7 @@ const menuItems = [
   {
     title: "Dashboard & Account",
     items: [
+      { name: "Job Management Hub", path: "/unified-dashboard" },
       { name: "Old Dashboard", path: "/dashboard" },
       { name: "User Dashboard", path: "/user-dashboard" },
       { name: "Admin Dashboard", path: "/admin-dashboard" },
