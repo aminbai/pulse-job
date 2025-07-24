@@ -29,6 +29,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/jobs" element={<JobListings />} />
+          <Route path="/job-board" element={<JobBoard />} />
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route path="/my-account" element={<MyAccount />} />
           <Route path="/browse-jobs" element={<BrowseJobs />} />
