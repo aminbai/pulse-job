@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import Header from "@/components/Header";
+import PublicHeader from "@/components/PublicHeader";
 
 export default function AboutUs() {
   return (
@@ -37,7 +37,7 @@ export default function AboutUs() {
           {/* About Us Content */}
           <div className="prose max-w-none">
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-              <strong>GigClickers</strong> একটি বিশ্বস্ত অনলাইন মার্কেটপ্লেস যা
+              <strong>GigClickers</strong> একটি বিশ্বস্ত অনলাইন মার্কে���প্লেস যা
               নিয়োগকর্তা এবং দক্ষ কর্মীদের মধ্যে সংযোগ স্থাপন করে।
             </p>
 
@@ -51,7 +51,7 @@ export default function AboutUs() {
             <p className="text-gray-700 leading-relaxed mb-6">
               এই প্ল্যাটফর্ম সর্বদা মানুষকে নতুন কাজ খুঁজে পেতে সাহায্য করে। এটি
               আপনার ব্যবসার বিশ্বায়নেও একটি গুরুত্বপূর্ণ ভূমিকা পালন করে। কর্মী
-              এবং নিয়োগকর্তারা একসাথে এসে নতুন কাজ তৈরি করতে পারেন,
+              এবং ��িয়োগকর্তারা একসাথে এসে নতুন কাজ তৈরি করতে পারেন,
               কর্মী-নিয়োগকর্তা লেনদেন একটি গুরুত্বপূর্ণ ভূমিকা পালন করে।
             </p>
 
@@ -64,7 +64,7 @@ export default function AboutUs() {
 
             <p className="text-gray-700 leading-relaxed mb-6">
               প্ল্যাটফর্ম ক্রমাগত উপযুক্ত কার্যক্রম পরিচালনা করার জন্য একটি
-              নিরাপত্তা এবং লেনদেন ভিত্তিতে প্রচেষ্টা চালিয়ে যাবে যা সবার জন্য
+              নিরাপত্তা এবং লেনদে��� ভিত্তিতে প্রচেষ্টা চালিয়ে যাবে যা সবার জন্য
               অনন্য। <strong>GigClickers</strong> একটি পরিবার যা আপনাকে, আমাকে
               এবং সবাইকে অন্তর্ভুক্ত করে।
             </p>
