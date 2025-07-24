@@ -364,6 +364,13 @@ export default function Dashboard() {
                     Post New Job
                   </Link>
                   <Link
+                    to="/unified-dashboard"
+                    className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
+                  >
+                    <Briefcase className="w-5 h-5 mr-2" />
+                    Job Management Hub
+                  </Link>
+                  <Link
                     to="/find-jobs"
                     className="w-full border border-brand-green text-brand-green px-4 py-3 rounded-lg hover:bg-green-50 transition-colors flex items-center justify-center"
                   >
