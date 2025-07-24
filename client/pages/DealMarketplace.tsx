@@ -1,42 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Header from "@/components/Header";
 
 export default function DealMarketplace() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-brand-green text-white py-4 px-6">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <div className="text-2xl font-bold">GigClickers</div>
-            <nav className="hidden md:flex space-x-6">
-              <a href="/my-post" className="hover:text-green-200">
-                My Post
-              </a>
-              <a href="/my-work" className="hover:text-green-200">
-                My Work
-              </a>
-              <a href="/browse-deals" className="hover:text-green-200">
-                Browse Deal
-              </a>
-              <a href="/deal-history" className="hover:text-green-200">
-                Deal History
-              </a>
-              <a href="/deposit" className="hover:text-green-200">
-                Deposit
-              </a>
-            </nav>
-          </div>
-          <div className="flex items-center space-x-4">
-            <span className="text-sm">📧</span>
-            <span className="text-sm">🔔</span>
-            <span className="text-sm">👤</span>
-            <Button className="bg-green-600 hover:bg-green-700">
-              POST JOB
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Balance Bar */}
       <div className="bg-green-100 py-2 px-6">
@@ -120,7 +89,7 @@ export default function DealMarketplace() {
                 <p className="text-gray-700 leading-relaxed">
                   বিক্রেতা যদি কোনো অফার বা সেবা ডেলিভারি করে থাকেন কিন্তু
                   ক্রেতা অযৌক্তিকভাবে অনুরোধ প্রত্যাখ্যান করেছে, তাহলে ২৪ ঘন্টার
-                  মধ্যে লাইভ সাপোর্টে যোগাযোগ করুন। ২৪ ঘন্টা পর আপনার অভিযোগ
+                  মধ্যে লাইভ সাপোর্টে যোগাযোগ করুন। ২৪ ঘন্ট�� পর আপনার অভিযোগ
                   গ্রহণ করা হবে না এবং ক্রেতা deal payment এর রিফান্ড পেয়ে
                   যাবে।
                 </p>
