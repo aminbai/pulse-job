@@ -34,11 +34,51 @@ const App = () => (
           <Route path="/post-new-job" element={<PostJob />} />
           <Route path="/my-work" element={<MyWork />} />
           <Route path="/job/:id" element={<JobDetail />} />
-          <Route path="/login" element={<PlaceholderPage title="Login" description="Sign in to your GigClickers account to access your dashboard and manage your projects." />} />
-          <Route path="/signup" element={<PlaceholderPage title="Sign Up" description="Create your GigClickers account and start connecting with opportunities today." />} />
-          <Route path="/faq" element={<PlaceholderPage title="FAQ" description="Find answers to frequently asked questions about using GigClickers platform." />} />
-          <Route path="/share-earn" element={<PlaceholderPage title="Share & Earn" description="Learn about our referral program and start earning by inviting friends." />} />
-          <Route path="/articles" element={<PlaceholderPage title="Articles" description="Read our latest articles and insights about freelancing and remote work." />} />
+          <Route
+            path="/login"
+            element={
+              <PlaceholderPage
+                title="Login"
+                description="Sign in to your GigClickers account to access your dashboard and manage your projects."
+              />
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <PlaceholderPage
+                title="Sign Up"
+                description="Create your GigClickers account and start connecting with opportunities today."
+              />
+            }
+          />
+          <Route
+            path="/faq"
+            element={
+              <PlaceholderPage
+                title="FAQ"
+                description="Find answers to frequently asked questions about using GigClickers platform."
+              />
+            }
+          />
+          <Route
+            path="/share-earn"
+            element={
+              <PlaceholderPage
+                title="Share & Earn"
+                description="Learn about our referral program and start earning by inviting friends."
+              />
+            }
+          />
+          <Route
+            path="/articles"
+            element={
+              <PlaceholderPage
+                title="Articles"
+                description="Read our latest articles and insights about freelancing and remote work."
+              />
+            }
+          />
           <Route
             path="/about"
             element={
@@ -75,11 +115,51 @@ const App = () => (
               />
             }
           />
-          <Route path="/careers" element={<PlaceholderPage title="Careers" description="Join our team and help us build the future of freelancing." />} />
-          <Route path="/press" element={<PlaceholderPage title="Press" description="Press releases and media resources about GigClickers." />} />
-          <Route path="/blog" element={<PlaceholderPage title="Blog" description="Stay updated with the latest news and insights from GigClickers." />} />
-          <Route path="/cookies" element={<PlaceholderPage title="Cookie Policy" description="Learn about how we use cookies to improve your experience." />} />
-          <Route path="/dmca" element={<PlaceholderPage title="DMCA" description="Digital Millennium Copyright Act information and procedures." />} />
+          <Route
+            path="/careers"
+            element={
+              <PlaceholderPage
+                title="Careers"
+                description="Join our team and help us build the future of freelancing."
+              />
+            }
+          />
+          <Route
+            path="/press"
+            element={
+              <PlaceholderPage
+                title="Press"
+                description="Press releases and media resources about GigClickers."
+              />
+            }
+          />
+          <Route
+            path="/blog"
+            element={
+              <PlaceholderPage
+                title="Blog"
+                description="Stay updated with the latest news and insights from GigClickers."
+              />
+            }
+          />
+          <Route
+            path="/cookies"
+            element={
+              <PlaceholderPage
+                title="Cookie Policy"
+                description="Learn about how we use cookies to improve your experience."
+              />
+            }
+          />
+          <Route
+            path="/dmca"
+            element={
+              <PlaceholderPage
+                title="DMCA"
+                description="Digital Millennium Copyright Act information and procedures."
+              />
+            }
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

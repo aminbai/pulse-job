@@ -79,19 +79,23 @@ const workerFeatures = [
 const faqs = [
   {
     question: "How do I get started as a freelancer?",
-    answer: "Simply sign up, create your profile, showcase your skills, and start bidding on projects that match your expertise.",
+    answer:
+      "Simply sign up, create your profile, showcase your skills, and start bidding on projects that match your expertise.",
   },
   {
     question: "How does the payment system work?",
-    answer: "We use a secure escrow system. Funds are held safely until the project is completed to satisfaction.",
+    answer:
+      "We use a secure escrow system. Funds are held safely until the project is completed to satisfaction.",
   },
   {
     question: "What types of projects are available?",
-    answer: "We have projects in web development, design, writing, marketing, and many other categories.",
+    answer:
+      "We have projects in web development, design, writing, marketing, and many other categories.",
   },
   {
     question: "How do I ensure quality work?",
-    answer: "All freelancers are vetted, and we have a rating system plus satisfaction guarantee for all projects.",
+    answer:
+      "All freelancers are vetted, and we have a rating system plus satisfaction guarantee for all projects.",
   },
 ];
 
@@ -111,31 +115,43 @@ export default function Index() {
             <Link to="/" className="text-2xl font-bold text-text-dark">
               GigClickers
             </Link>
-            
+
             <nav className="hidden md:flex items-center space-x-8">
-              <Link to="/jobs" className="text-text-dark hover:text-brand-green transition-colors">
+              <Link
+                to="/jobs"
+                className="text-text-dark hover:text-brand-green transition-colors"
+              >
                 Browse Jobs
               </Link>
-              <Link to="/faq" className="text-text-dark hover:text-brand-green transition-colors">
+              <Link
+                to="/faq"
+                className="text-text-dark hover:text-brand-green transition-colors"
+              >
                 FAQ
               </Link>
-              <Link to="/share-earn" className="text-text-dark hover:text-brand-green transition-colors">
+              <Link
+                to="/share-earn"
+                className="text-text-dark hover:text-brand-green transition-colors"
+              >
                 Share & Earn
               </Link>
-              <Link to="/articles" className="text-text-dark hover:text-brand-green transition-colors">
+              <Link
+                to="/articles"
+                className="text-text-dark hover:text-brand-green transition-colors"
+              >
                 Article
               </Link>
             </nav>
 
             <div className="flex items-center space-x-4">
-              <Link 
-                to="/login" 
+              <Link
+                to="/login"
                 className="px-4 py-2 border border-brand-green text-brand-green rounded hover:bg-brand-green hover:text-white transition-colors"
               >
                 Login
               </Link>
-              <Link 
-                to="/signup" 
+              <Link
+                to="/signup"
                 className="px-4 py-2 bg-brand-green text-white rounded hover:bg-green-600 transition-colors"
               >
                 Sign Up
@@ -154,11 +170,12 @@ export default function Index() {
                 Location Of Small And Large Jobs
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Connect with talented freelancers and find the perfect projects. 
-                Whether you're looking to hire or seeking work, we make it easy to get things done.
+                Connect with talented freelancers and find the perfect projects.
+                Whether you're looking to hire or seeking work, we make it easy
+                to get things done.
               </p>
-              <Link 
-                to="/signup" 
+              <Link
+                to="/signup"
                 className="inline-block bg-brand-green text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors"
               >
                 Get Started
@@ -168,7 +185,9 @@ export default function Index() {
               <div className="w-80 h-80 bg-gradient-to-br from-brand-green to-green-600 rounded-full flex items-center justify-center">
                 <div className="text-white text-center">
                   <Briefcase className="w-20 h-20 mx-auto mb-4" />
-                  <p className="text-lg font-semibold">Find Your Perfect Match</p>
+                  <p className="text-lg font-semibold">
+                    Find Your Perfect Match
+                  </p>
                 </div>
               </div>
             </div>
@@ -193,9 +212,13 @@ export default function Index() {
                 >
                   <div className="flex items-center mb-4">
                     <IconComponent className="w-8 h-8 text-brand-green mr-3" />
-                    <h3 className="text-xl font-semibold text-text-dark">{category.name}</h3>
+                    <h3 className="text-xl font-semibold text-text-dark">
+                      {category.name}
+                    </h3>
                   </div>
-                  <p className="text-gray-600">{category.jobs} jobs available</p>
+                  <p className="text-gray-600">
+                    {category.jobs} jobs available
+                  </p>
                 </Link>
               );
             })}
@@ -217,7 +240,9 @@ export default function Index() {
                   <div className="bg-brand-green-light rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-8 h-8 text-brand-green" />
                   </div>
-                  <h3 className="text-xl font-semibold text-text-dark mb-2">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold text-text-dark mb-2">
+                    {feature.title}
+                  </h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </div>
               );
@@ -229,9 +254,7 @@ export default function Index() {
       {/* Workers Section */}
       <section className="py-20 bg-brand-green text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            For Workers
-          </h2>
+          <h2 className="text-4xl font-bold text-center mb-16">For Workers</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {workerFeatures.map((feature, index) => {
               const IconComponent = feature.icon;
@@ -240,7 +263,9 @@ export default function Index() {
                   <div className="bg-white bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {feature.title}
+                  </h3>
                   <p className="text-green-100">{feature.description}</p>
                 </div>
               );
@@ -268,23 +293,31 @@ export default function Index() {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-brand-green rounded-full mt-2 mr-3"></div>
-                  <span className="text-gray-600">Invite friends and earn commission on their first project</span>
+                  <span className="text-gray-600">
+                    Invite friends and earn commission on their first project
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-brand-green rounded-full mt-2 mr-3"></div>
-                  <span className="text-gray-600">Get bonus credits for successful referrals</span>
+                  <span className="text-gray-600">
+                    Get bonus credits for successful referrals
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-brand-green rounded-full mt-2 mr-3"></div>
-                  <span className="text-gray-600">Build your network and grow together</span>
+                  <span className="text-gray-600">
+                    Build your network and grow together
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-brand-green rounded-full mt-2 mr-3"></div>
-                  <span className="text-gray-600">Track your earnings in real-time</span>
+                  <span className="text-gray-600">
+                    Track your earnings in real-time
+                  </span>
                 </li>
               </ul>
-              <Link 
-                to="/signup" 
+              <Link
+                to="/signup"
                 className="inline-block bg-brand-green text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors"
               >
                 GET STARTED
@@ -307,7 +340,9 @@ export default function Index() {
                   onClick={() => toggleFaq(index)}
                   className="w-full bg-white rounded-lg p-6 flex items-center justify-between hover:shadow-md transition-shadow"
                 >
-                  <span className="text-left font-semibold text-text-dark">{faq.question}</span>
+                  <span className="text-left font-semibold text-text-dark">
+                    {faq.question}
+                  </span>
                   {openFaq === index ? (
                     <Minus className="w-5 h-5 text-brand-green" />
                   ) : (
@@ -338,40 +373,108 @@ export default function Index() {
                 &copy; 2024 GigClickers. All rights reserved.
               </p>
             </div>
-            
+
             <div>
               <h4 className="text-lg font-semibold mb-4">About</h4>
               <ul className="space-y-2">
-                <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/careers" className="text-gray-300 hover:text-white transition-colors">Careers</Link></li>
-                <li><Link to="/press" className="text-gray-300 hover:text-white transition-colors">Press</Link></li>
-                <li><Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link></li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/careers"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/press"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Press
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/blog"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Blog
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="text-lg font-semibold mb-4">Agreement</h4>
               <ul className="space-y-2">
-                <li><Link to="/terms" className="text-gray-300 hover:text-white transition-colors">Terms of Service</Link></li>
-                <li><Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/cookies" className="text-gray-300 hover:text-white transition-colors">Cookie Policy</Link></li>
-                <li><Link to="/dmca" className="text-gray-300 hover:text-white transition-colors">DMCA</Link></li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/cookies"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Cookie Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/dmca"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    DMCA
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="text-lg font-semibold mb-4">Connect</h4>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   <Facebook className="w-6 h-6" />
                 </a>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   <Twitter className="w-6 h-6" />
                 </a>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   <Linkedin className="w-6 h-6" />
                 </a>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   <Instagram className="w-6 h-6" />
                 </a>
               </div>
