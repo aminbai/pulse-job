@@ -24,6 +24,9 @@ import PostJob from "./pages/PostJob";
 import MyWork from "./pages/MyWork";
 import JobDetail from "./pages/JobDetail";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import AboutUs from "./pages/AboutUs";
+import Articles from "./pages/Articles";
+import DealMarketplace from "./pages/DealMarketplace";
 
 const queryClient = new QueryClient();
 
@@ -44,15 +47,8 @@ const App = () => (
           <Route path="/message-history" element={<MessageHistory />} />
           <Route path="/refer-earn" element={<ReferEarn />} />
           <Route path="/top-freelancer" element={<TopFreelancer />} />
-          <Route
-            path="/deal-history"
-            element={
-              <PlaceholderPage
-                title="Deal History"
-                description="View your deal transaction history and completed projects."
-              />
-            }
-          />
+          <Route path="/deal-history" element={<PlaceholderPage title="Deal History" description="View your deal transaction history and completed projects." />} />
+          <Route path="/deal-marketplace" element={<DealMarketplace />} />
           <Route
             path="/settings"
             element={
@@ -105,24 +101,8 @@ const App = () => (
               />
             }
           />
-          <Route
-            path="/articles"
-            element={
-              <PlaceholderPage
-                title="Articles"
-                description="Read our latest articles and insights about freelancing and remote work."
-              />
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <PlaceholderPage
-                title="About Us"
-                description="Learn more about GigClickers and our mission to connect freelancers with great opportunities."
-              />
-            }
-          />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route
             path="/contact"
             element={
