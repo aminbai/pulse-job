@@ -46,7 +46,15 @@ const App = () => (
           <Route path="/message-history" element={<MessageHistory />} />
           <Route path="/refer-earn" element={<ReferEarn />} />
           <Route path="/top-freelancer" element={<TopFreelancer />} />
-          <Route path="/deal-history" element={<PlaceholderPage title="Deal History" description="View your deal transaction history and completed projects." />} />
+          <Route
+            path="/deal-history"
+            element={
+              <PlaceholderPage
+                title="Deal History"
+                description="View your deal transaction history and completed projects."
+              />
+            }
+          />
           <Route path="/deal-marketplace" element={<DealMarketplace />} />
           <Route
             path="/settings"
