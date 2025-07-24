@@ -29,6 +29,7 @@ import BrowseDeals from "./pages/BrowseDeals";
 import MyDealOrder from "./pages/MyDealOrder";
 import PostNewDeal from "./pages/PostNewDeal";
 import FreelancerProfile from "./pages/FreelancerProfile";
+import MyPost from "./pages/MyPost";
 
 const queryClient = new QueryClient();
 
