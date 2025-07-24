@@ -340,7 +340,7 @@ export default function PostJob() {
 
   // Form data for step 3 (completed)
   const [jobTitle, setJobTitle] = useState<string>('গমেইল নতুন একাউন্ট ১০ টাকা');
-  const [jobDescription, setJobDescription] = useState<string>('১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন একটা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার পর স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গড়ে অনলাইন রিম্যাট করলে একটা জি মেইল দিয়ে বেশি একা��ন্ট খোলা যাবে না।');
+  const [jobDescription, setJobDescription] = useState<string>('১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন একটা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার পর স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গড়ে অনলাইন রিম্যাট করলে একটা জি মেইল দিয়ে বেশি একাউন্ট খোলা যাবে না।');
   const [needAutoChecker, setNeedAutoChecker] = useState<boolean>(true);
   const [proof1, setProof1] = useState<string>('ইউজারনে');
   const [proof2, setProof2] = useState<string>('প্যাসওয়ার্ড');
@@ -542,12 +542,12 @@ export default function PostJob() {
               <div className="space-y-4">
                 <div>
                   <p className="text-green-100 text-sm">Total Job Cost:</p>
-                  <p className="font-semibold">0.068</p>
+                  <p className="font-semibold">{costs.totalCost}</p>
                 </div>
 
                 <div>
                   <p className="text-green-100 text-sm">Service Fee:</p>
-                  <p className="font-semibold">0.006</p>
+                  <p className="font-semibold">{costs.serviceFee}</p>
                 </div>
 
                 <div>
@@ -590,12 +590,12 @@ export default function PostJob() {
 
                 <div>
                   <p className="text-green-100 text-sm">Workers needed:</p>
-                  <p className="font-semibold">-</p>
+                  <p className="font-semibold">{workerNeed}</p>
                 </div>
 
                 <div>
                   <p className="text-green-100 text-sm">Worker earn:</p>
-                  <p className="font-semibold">0.062</p>
+                  <p className="font-semibold">{workerEarn.toFixed(3)}</p>
                 </div>
               </div>
             </div>
