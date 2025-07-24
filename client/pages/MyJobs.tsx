@@ -9,6 +9,7 @@ import {
   Instagram,
   Search,
 } from "lucide-react";
+import DashboardHeader from "@/components/DashboardHeader";
 
 const myJobs = [
   {
