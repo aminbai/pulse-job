@@ -8,6 +8,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import FindJobs from "./pages/FindJobs";
+import MyAccount from "./pages/MyAccount";
+import BrowseJobs from "./pages/BrowseJobs";
+import PostJob from "./pages/PostJob";
+import MyWork from "./pages/MyWork";
+import JobDetail from "./pages/JobDetail";
+import PlaceholderPage from "./pages/PlaceholderPage";
 
 const queryClient = new QueryClient();
 
