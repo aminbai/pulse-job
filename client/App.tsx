@@ -207,12 +207,10 @@ const App = () => (
 
 const container = document.getElementById("root")!;
 
-// Prevent multiple root creation in development mode
-if (!container._reactRootContainer) {
-  const root = createRoot(container);
-  container._reactRootContainer = root;
-  root.render(<App />);
-} else {
-  // In development mode with hot reloading, just render to existing root
-  container._reactRootContainer.render(<App />);
+// Create root only once to prevent the warning
+let root = (globalThis as any).__appRoot;
+if (!root) {
+  root = createRoot(container);
+  (globalThis as any).__appRoot = root;
 }
+root.render(<App />);
