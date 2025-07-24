@@ -155,7 +155,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <PublicHeader />
 
       <div className="flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-6">
@@ -346,7 +346,7 @@ export default function Login() {
           {/* Sign Up Link */}
           <div className="text-center">
             <p className="text-gray-600">
-              অ্যাকাউন্��� নেই?{" "}
+              অ্যাকাউন্ট নেই?{" "}
               <Link
                 to="/signup"
                 className="text-brand-green hover:text-green-600 font-medium"
