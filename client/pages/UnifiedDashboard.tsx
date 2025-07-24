@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Star,
   Clock,
@@ -42,7 +37,7 @@ const myJobs = [
     notRated: 2,
     cost: "$0.062",
     statusIcon: "⏳",
-  }
+  },
 ];
 
 // Sample data for Browse Jobs
@@ -74,7 +69,11 @@ const categories = [
   {
     id: "gmail-account",
     name: "Gmail Account",
-    subcategories: ["New Gmail Account", "Old Gmail Account", "Gmail + YouTube Account"],
+    subcategories: [
+      "New Gmail Account",
+      "Old Gmail Account",
+      "Gmail + YouTube Account",
+    ],
   },
   {
     id: "social-media",
@@ -84,7 +83,11 @@ const categories = [
   {
     id: "data-entry",
     name: "Data Entry",
-    subcategories: ["Excel Data Entry", "Database Management", "Data Processing"],
+    subcategories: [
+      "Excel Data Entry",
+      "Database Management",
+      "Data Processing",
+    ],
   },
 ];
 
@@ -119,13 +122,14 @@ export default function UnifiedDashboard() {
   const [activeTab, setActiveTab] = useState("my-jobs");
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("most-recent");
-  
+
   // Post Job states
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedZone, setSelectedZone] = useState("international");
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("gmail-account");
-  const [selectedSubcategory, setSelectedSubcategory] = useState("New Gmail Account");
+  const [selectedSubcategory, setSelectedSubcategory] =
+    useState("New Gmail Account");
   const [jobTitle, setJobTitle] = useState("");
   const [jobDescription, setJobDescription] = useState("");
   const [workerNeed, setWorkerNeed] = useState(1);
@@ -136,12 +140,14 @@ export default function UnifiedDashboard() {
     setSelectedCountries((prev) =>
       prev.includes(countryName)
         ? prev.filter((c) => c !== countryName)
-        : [...prev, countryName]
+        : [...prev, countryName],
     );
   };
 
   const handleSelectAll = () => {
-    const filteredCountries = countries.filter((c) => c.region === selectedZone);
+    const filteredCountries = countries.filter(
+      (c) => c.region === selectedZone,
+    );
     const allCountryNames = filteredCountries.map((c) => c.name);
 
     if (selectedCountries.length === allCountryNames.length) {
@@ -168,7 +174,9 @@ export default function UnifiedDashboard() {
       <div className="flex justify-between items-center">
         <div>
           <h2 className="text-2xl font-semibold text-gray-900">My Jobs</h2>
-          <p className="text-gray-600">Submitted works must be rated within six days</p>
+          <p className="text-gray-600">
+            Submitted works must be rated within six days
+          </p>
           <p className="text-sm text-gray-500 mt-1">{myJobs.length} Result</p>
         </div>
       </div>
@@ -205,11 +213,21 @@ export default function UnifiedDashboard() {
         <table className="w-full">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Status</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Job Name</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Progress</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Not Rated</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Cost</th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                Status
+              </th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                Job Name
+              </th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                Progress
+              </th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                Not Rated
+              </th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                Cost
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -218,20 +236,26 @@ export default function UnifiedDashboard() {
                 <td className="px-6 py-4">
                   <div className="flex items-center">
                     <span className="text-2xl mr-2">{job.statusIcon}</span>
-                    <span className="text-sm text-gray-600 capitalize">{job.status}</span>
+                    <span className="text-sm text-gray-600 capitalize">
+                      {job.status}
+                    </span>
                   </div>
                 </td>
                 <td className="px-6 py-4">
-                  <Link 
+                  <Link
                     to={`/job/${job.id}`}
                     className="text-brand-green hover:text-green-600 font-medium transition-colors"
                   >
                     {job.title}
                   </Link>
                 </td>
-                <td className="px-6 py-4 text-gray-900 font-medium">{job.progress}</td>
+                <td className="px-6 py-4 text-gray-900 font-medium">
+                  {job.progress}
+                </td>
                 <td className="px-6 py-4 text-gray-900">{job.notRated}</td>
-                <td className="px-6 py-4 text-gray-900 font-medium">{job.cost}</td>
+                <td className="px-6 py-4 text-gray-900 font-medium">
+                  {job.cost}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -242,8 +266,10 @@ export default function UnifiedDashboard() {
 
   const renderPostJobStep1 = () => (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold text-gray-900">Choose the job targeting region</h3>
-      
+      <h3 className="text-xl font-semibold text-gray-900">
+        Choose the job targeting region
+      </h3>
+
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {targetingZones.map((zone) => {
           const IconComponent = zone.icon;
@@ -274,7 +300,7 @@ export default function UnifiedDashboard() {
             {selectedCountries.length > 0 ? "Deselect All" : "Select All"}
           </button>
         </div>
-        
+
         <div className="grid grid-cols-3 md:grid-cols-6 gap-2 max-h-60 overflow-y-auto">
           {countries
             .filter((c) => c.region === selectedZone)
@@ -298,8 +324,10 @@ export default function UnifiedDashboard() {
 
   const renderPostJobStep2 = () => (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold text-gray-900">Choose the job category</h3>
-      
+      <h3 className="text-xl font-semibold text-gray-900">
+        Choose the job category
+      </h3>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {categories.map((category) => (
           <button
@@ -314,10 +342,14 @@ export default function UnifiedDashboard() {
                 : "border-gray-300 hover:border-gray-400"
             }`}
           >
-            <h4 className="font-semibold text-gray-900 mb-2">{category.name}</h4>
+            <h4 className="font-semibold text-gray-900 mb-2">
+              {category.name}
+            </h4>
             <div className="space-y-1">
               {category.subcategories.slice(0, 3).map((sub) => (
-                <p key={sub} className="text-sm text-gray-600">{sub}</p>
+                <p key={sub} className="text-sm text-gray-600">
+                  {sub}
+                </p>
               ))}
             </div>
           </button>
@@ -351,11 +383,15 @@ export default function UnifiedDashboard() {
 
   const renderPostJobStep3 = () => (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold text-gray-900">Write an accurate and specific job title</h3>
-      
+      <h3 className="text-xl font-semibold text-gray-900">
+        Write an accurate and specific job title
+      </h3>
+
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Job Title</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Job Title
+          </label>
           <input
             type="text"
             value={jobTitle}
@@ -397,7 +433,9 @@ export default function UnifiedDashboard() {
           </label>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Proof 1</label>
+              <label className="block text-xs text-gray-600 mb-1">
+                Proof 1
+              </label>
               <input
                 type="text"
                 placeholder="e.g., Username"
@@ -405,7 +443,9 @@ export default function UnifiedDashboard() {
               />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">Proof 2</label>
+              <label className="block text-xs text-gray-600 mb-1">
+                Proof 2
+              </label>
               <input
                 type="text"
                 placeholder="e.g., Password"
@@ -421,10 +461,12 @@ export default function UnifiedDashboard() {
   const renderPostJobStep4 = () => (
     <div className="space-y-6">
       <h3 className="text-xl font-semibold text-gray-900">Job Pricing</h3>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Worker Need</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Worker Need
+          </label>
           <input
             type="number"
             min="1"
@@ -435,7 +477,9 @@ export default function UnifiedDashboard() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Worker Earn</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Worker Earn
+          </label>
           <input
             type="number"
             min="0"
@@ -447,7 +491,9 @@ export default function UnifiedDashboard() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Work Duration (Days)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Work Duration (Days)
+          </label>
           <input
             type="number"
             min="1"
@@ -471,10 +517,30 @@ export default function UnifiedDashboard() {
 
   const renderPostJob = () => {
     const steps = [
-      { id: 1, name: "Region", active: currentStep === 1, completed: currentStep > 1 },
-      { id: 2, name: "Category", active: currentStep === 2, completed: currentStep > 2 },
-      { id: 3, name: "Proof", active: currentStep === 3, completed: currentStep > 3 },
-      { id: 4, name: "Pricing", active: currentStep === 4, completed: currentStep > 4 },
+      {
+        id: 1,
+        name: "Region",
+        active: currentStep === 1,
+        completed: currentStep > 1,
+      },
+      {
+        id: 2,
+        name: "Category",
+        active: currentStep === 2,
+        completed: currentStep > 2,
+      },
+      {
+        id: 3,
+        name: "Proof",
+        active: currentStep === 3,
+        completed: currentStep > 3,
+      },
+      {
+        id: 4,
+        name: "Pricing",
+        active: currentStep === 4,
+        completed: currentStep > 4,
+      },
     ];
 
     return (
@@ -484,10 +550,20 @@ export default function UnifiedDashboard() {
           <div className="bg-brand-green text-white rounded-lg p-4">
             <h3 className="text-lg font-bold mb-2">SUMMARY</h3>
             <div className="space-y-1 text-sm">
-              <div>Total Cost: <span className="font-semibold">{costs.totalCost}</span></div>
-              <div>Service Fee: <span className="font-semibold">{costs.serviceFee}</span></div>
-              <div>Zone: <span className="font-semibold">{selectedZone}</span></div>
-              <div>Workers: <span className="font-semibold">{workerNeed}</span></div>
+              <div>
+                Total Cost:{" "}
+                <span className="font-semibold">{costs.totalCost}</span>
+              </div>
+              <div>
+                Service Fee:{" "}
+                <span className="font-semibold">{costs.serviceFee}</span>
+              </div>
+              <div>
+                Zone: <span className="font-semibold">{selectedZone}</span>
+              </div>
+              <div>
+                Workers: <span className="font-semibold">{workerNeed}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -508,15 +584,21 @@ export default function UnifiedDashboard() {
                 >
                   {step.completed ? "✓" : step.id}
                 </div>
-                <span className={`ml-2 font-medium ${
-                  step.completed || step.active ? "text-brand-green" : "text-gray-600"
-                }`}>
+                <span
+                  className={`ml-2 font-medium ${
+                    step.completed || step.active
+                      ? "text-brand-green"
+                      : "text-gray-600"
+                  }`}
+                >
                   {step.name}
                 </span>
                 {index < steps.length - 1 && (
-                  <div className={`w-8 h-0.5 mx-4 ${
-                    step.completed ? "bg-brand-green" : "bg-gray-300"
-                  }`}></div>
+                  <div
+                    className={`w-8 h-0.5 mx-4 ${
+                      step.completed ? "bg-brand-green" : "bg-gray-300"
+                    }`}
+                  ></div>
                 )}
               </div>
             ))}
@@ -542,7 +624,7 @@ export default function UnifiedDashboard() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Previous
           </Button>
-          
+
           <Button
             onClick={() => setCurrentStep(Math.min(4, currentStep + 1))}
             disabled={currentStep === 4}
@@ -579,12 +661,22 @@ export default function UnifiedDashboard() {
             <CardContent className="p-6">
               <div className="flex justify-between items-start">
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{job.title}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {job.title}
+                  </h3>
                   <p className="text-gray-600 mb-3">{job.description}</p>
                   <div className="flex items-center space-x-4 text-sm text-gray-500">
-                    <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded">{job.category}</span>
-                    <span className="flex items-center"><DollarSign className="w-4 h-4 mr-1" />{job.budget}</span>
-                    <span className="flex items-center"><Clock className="w-4 h-4 mr-1" />{job.duration}</span>
+                    <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                      {job.category}
+                    </span>
+                    <span className="flex items-center">
+                      <DollarSign className="w-4 h-4 mr-1" />
+                      {job.budget}
+                    </span>
+                    <span className="flex items-center">
+                      <Clock className="w-4 h-4 mr-1" />
+                      {job.duration}
+                    </span>
                     <span>by {job.client}</span>
                   </div>
                 </div>
@@ -605,16 +697,19 @@ export default function UnifiedDashboard() {
   const renderDealMarketplace = () => (
     <div className="space-y-6">
       <h2 className="text-2xl font-semibold text-gray-900">Deal Marketplace</h2>
-      
+
       <div className="grid gap-6">
         <Card>
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Post Deal (Seller)</CardTitle>
+            <CardTitle className="text-xl text-gray-800">
+              Post Deal (Seller)
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-gray-700 mb-4">
-              একজন বিক্রেতা Deal Post থেকে যেকোনো অনলাইন সেবা, পণ্য বা অফার বিজ্ঞাপন দিতে পারেন। 
-              এবং বিক্রেতার কাছ থেকে এই বিজ্ঞাপন দেওয়ার জন্য কোনো চার্জ নেওয়া হবে না।
+              একজন বিক্রেতা Deal Post থেকে যেকোনো অনলাইন সেবা, পণ্য বা অফার
+              বিজ্ঞাপন দিতে পারেন। এবং বিক্রেতার কাছ থেকে এই বিজ্ঞাপন দেওয়ার
+              জন্য কোনো চার্জ নেওয়া হবে না।
             </p>
             <Button className="bg-brand-green hover:bg-green-600">
               <Plus className="w-4 h-4 mr-2" />
@@ -625,12 +720,15 @@ export default function UnifiedDashboard() {
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-xl text-gray-800">Order Service (Buyer)</CardTitle>
+            <CardTitle className="text-xl text-gray-800">
+              Order Service (Buyer)
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-gray-700 mb-4">
-              GigClickers এ যেকোনো অফার বা সেবা কেনার জন্য ক্রেতার কাছ থেকে কোনো চার্জ কাটা হয় না 
-              এবং আপনি purchase এর সময় যে চার্জ দেখেন সেটা হলো local gateway VAT।
+              GigClickers এ যেকোনো অফার বা সেবা কেনার জন্য ক্রেতার কাছ থেকে কোনো
+              চার্জ কাটা হয় না এবং আপনি purchase এর সময় যে চার্জ দেখেন সেটা
+              হলো local gateway VAT।
             </p>
             <Button variant="outline">
               <Eye className="w-4 h-4 mr-2" />
@@ -645,8 +743,9 @@ export default function UnifiedDashboard() {
           </CardHeader>
           <CardContent>
             <p className="text-red-700">
-              GigClickers team যেকোনো ক্রেতা বা বিক্রেতার বিরুদ্ধে ব্যবস্থা নেওয়ার ক্ষমতা রাখে 
-              যদি কোনো ক্রেতা বা বিক্রেতা কোনো প্রকার জালিয়াতি বা মার্কেটপ্লেসের নীতির বিরুদ্ধে কোনো কাজ করে।
+              GigClickers team যেকোনো ক্রেতা বা বিক্রেতার বিরুদ্ধে ব্যবস্থা
+              নেওয়ার ক্ষমতা রাখে যদি কোনো ক্রেতা বা বিক্রেতা কোনো প্রকার
+              জালিয়াতি বা মার্কেটপ্লেসের নীতির বিরুদ্ধে কোনো কাজ করে।
             </p>
           </CardContent>
         </Card>
@@ -657,7 +756,7 @@ export default function UnifiedDashboard() {
   const renderMyWork = () => (
     <div className="space-y-6">
       <h2 className="text-2xl font-semibold text-gray-900">My Work</h2>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>
           <CardHeader>
@@ -708,7 +807,9 @@ export default function UnifiedDashboard() {
             <div className="flex items-center space-x-3">
               <CheckCircle className="w-5 h-5 text-green-600" />
               <div>
-                <p className="font-medium">Gmail Account Creation - Completed</p>
+                <p className="font-medium">
+                  Gmail Account Creation - Completed
+                </p>
                 <p className="text-sm text-gray-600">2 hours ago</p>
               </div>
             </div>
@@ -768,38 +869,88 @@ export default function UnifiedDashboard() {
         <div className="container mx-auto px-4 py-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-brand-green">GigClickers</h3>
-              <p className="text-sm mb-4">Connecting talent with opportunity worldwide.</p>
-              <p className="text-xs text-gray-600">&copy; 2025 gigclickers.com. All Rights Reserved.</p>
+              <h3 className="text-xl font-bold mb-4 text-brand-green">
+                GigClickers
+              </h3>
+              <p className="text-sm mb-4">
+                Connecting talent with opportunity worldwide.
+              </p>
+              <p className="text-xs text-gray-600">
+                &copy; 2025 gigclickers.com. All Rights Reserved.
+              </p>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">About GigClickers</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-gray-600 hover:text-brand-green transition-colors">About Us</Link></li>
-                <li><Link to="/privacy" className="text-gray-600 hover:text-brand-green transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="text-gray-600 hover:text-brand-green transition-colors">Terms & Conditions</Link></li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Agreement</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/microjob" className="text-gray-600 hover:text-brand-green transition-colors">Microjob Marketplace</Link></li>
-                <li><Link to="/deal" className="text-gray-600 hover:text-brand-green transition-colors">Deal Marketplace</Link></li>
+                <li>
+                  <Link
+                    to="/microjob"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Microjob Marketplace
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/deal"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Deal Marketplace
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Social Media</h4>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>

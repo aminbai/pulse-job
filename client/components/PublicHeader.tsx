@@ -11,7 +11,7 @@ const publicMenuItems = [
     ],
   },
   {
-    title: "For Clients", 
+    title: "For Clients",
     items: [
       { name: "Post a Job", path: "/post-job" },
       { name: "Why Choose Us", path: "/why-choose-us" },
@@ -66,7 +66,7 @@ export default function PublicHeader() {
                 )}
               </div>
             ))}
-            
+
             <Link
               to="/about"
               className="text-text-dark hover:text-brand-green transition-colors"
@@ -118,7 +118,9 @@ export default function PublicHeader() {
             <div className="pt-4 space-y-4">
               {publicMenuItems.map((menu, index) => (
                 <div key={index}>
-                  <div className="font-medium text-text-dark mb-2">{menu.title}</div>
+                  <div className="font-medium text-text-dark mb-2">
+                    {menu.title}
+                  </div>
                   <div className="ml-4 space-y-2">
                     {menu.items.map((item, itemIndex) => (
                       <Link
@@ -133,7 +135,7 @@ export default function PublicHeader() {
                   </div>
                 </div>
               ))}
-              
+
               <Link
                 to="/about"
                 className="block text-text-dark hover:text-brand-green transition-colors py-2"
@@ -148,7 +150,7 @@ export default function PublicHeader() {
               >
                 Contact
               </Link>
-              
+
               <div className="pt-4 space-y-2">
                 <Link
                   to="/login"

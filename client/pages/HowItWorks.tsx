@@ -10,7 +10,7 @@ const steps = [
     icon: Users,
   },
   {
-    step: "2", 
+    step: "2",
     title: "Browse Jobs",
     description: "Find projects that match your skills and interests",
     icon: Shield,
@@ -33,14 +33,15 @@ export default function HowItWorks() {
   return (
     <div className="min-h-screen bg-white">
       <PublicHeader />
-      
+
       <main className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-text-dark mb-4">
             How GigClickers Works
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Getting started is simple. Follow these easy steps to begin your freelancing journey.
+            Getting started is simple. Follow these easy steps to begin your
+            freelancing journey.
           </p>
         </div>
 

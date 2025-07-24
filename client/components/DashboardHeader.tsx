@@ -50,7 +50,10 @@ interface DashboardHeaderProps {
   userName?: string;
 }
 
-export default function DashboardHeader({ userType = "user", userName = "User" }: DashboardHeaderProps) {
+export default function DashboardHeader({
+  userType = "user",
+  userName = "User",
+}: DashboardHeaderProps) {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -69,7 +72,10 @@ export default function DashboardHeader({ userType = "user", userName = "User" }
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold hover:text-green-100 transition-colors">
+          <Link
+            to="/"
+            className="text-2xl font-bold hover:text-green-100 transition-colors"
+          >
             GigClickers
           </Link>
 

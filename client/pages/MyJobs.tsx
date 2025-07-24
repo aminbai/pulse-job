@@ -20,7 +20,7 @@ const myJobs = [
     notRated: 2,
     cost: "$0.062",
     statusIcon: "⏳",
-  }
+  },
 ];
 
 export default function MyJobs() {
@@ -37,7 +37,9 @@ export default function MyJobs() {
         {/* Page Header */}
         <div className="mb-6">
           <h1 className="text-2xl font-semibold text-gray-900 mb-2">My Jobs</h1>
-          <p className="text-gray-600">Submitted works must be rated within six days</p>
+          <p className="text-gray-600">
+            Submitted works must be rated within six days
+          </p>
           <p className="text-sm text-gray-500 mt-1">1 Result</p>
         </div>
 
@@ -95,15 +97,20 @@ export default function MyJobs() {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {myJobs.map((job) => (
-                  <tr key={job.id} className="hover:bg-gray-50 transition-colors">
+                  <tr
+                    key={job.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
                     <td className="px-6 py-4">
                       <div className="flex items-center">
                         <span className="text-2xl mr-2">{job.statusIcon}</span>
-                        <span className="text-sm text-gray-600 capitalize">{job.status}</span>
+                        <span className="text-sm text-gray-600 capitalize">
+                          {job.status}
+                        </span>
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <Link 
+                      <Link
                         to={`/job/${job.id}`}
                         className="text-brand-green hover:text-green-600 font-medium transition-colors"
                       >
@@ -113,9 +120,7 @@ export default function MyJobs() {
                     <td className="px-6 py-4 text-gray-900 font-medium">
                       {job.progress}
                     </td>
-                    <td className="px-6 py-4 text-gray-900">
-                      {job.notRated}
-                    </td>
+                    <td className="px-6 py-4 text-gray-900">{job.notRated}</td>
                     <td className="px-6 py-4 text-gray-900 font-medium">
                       {job.cost}
                     </td>
@@ -131,9 +136,11 @@ export default function MyJobs() {
               <div key={job.id} className="bg-gray-50 rounded-lg p-4">
                 <div className="flex items-center mb-2">
                   <span className="text-2xl mr-2">{job.statusIcon}</span>
-                  <span className="text-sm text-gray-600 capitalize">{job.status}</span>
+                  <span className="text-sm text-gray-600 capitalize">
+                    {job.status}
+                  </span>
                 </div>
-                <Link 
+                <Link
                   to={`/job/${job.id}`}
                   className="text-brand-green hover:text-green-600 font-medium transition-colors block mb-2"
                 >
@@ -163,7 +170,9 @@ export default function MyJobs() {
               <div className="text-gray-400 mb-4">
                 <Clock className="w-12 h-12 mx-auto" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">No jobs yet</h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">
+                No jobs yet
+              </h3>
               <p className="text-gray-600 mb-4">
                 Your submitted jobs will appear here.
               </p>
@@ -183,7 +192,9 @@ export default function MyJobs() {
         <div className="container mx-auto px-4 py-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-brand-green">GigClickers</h3>
+              <h3 className="text-xl font-bold mb-4 text-brand-green">
+                GigClickers
+              </h3>
               <p className="text-sm mb-4">
                 Connecting talent with opportunity worldwide.
               </p>
@@ -191,34 +202,78 @@ export default function MyJobs() {
                 &copy; 2025 gigclickers.com. All Rights Reserved.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">About GigClickers</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-gray-600 hover:text-brand-green transition-colors">About Us</Link></li>
-                <li><Link to="/privacy" className="text-gray-600 hover:text-brand-green transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="text-gray-600 hover:text-brand-green transition-colors">Terms & Conditions</Link></li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Agreement</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/microjob" className="text-gray-600 hover:text-brand-green transition-colors">Microjob Marketplace</Link></li>
-                <li><Link to="/deal" className="text-gray-600 hover:text-brand-green transition-colors">Deal Marketplace</Link></li>
+                <li>
+                  <Link
+                    to="/microjob"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Microjob Marketplace
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/deal"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Deal Marketplace
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Social Media</h4>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>

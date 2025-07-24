@@ -6,7 +6,8 @@ const features = [
   {
     icon: Shield,
     title: "Secure & Safe",
-    description: "Your payments and data are protected with enterprise-grade security.",
+    description:
+      "Your payments and data are protected with enterprise-grade security.",
   },
   {
     icon: Award,
@@ -39,14 +40,15 @@ export default function WhyChooseUs() {
   return (
     <div className="min-h-screen bg-white">
       <PublicHeader />
-      
+
       <main className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-text-dark mb-4">
             Why Choose GigClickers?
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We provide the best platform for connecting clients with talented freelancers worldwide.
+            We provide the best platform for connecting clients with talented
+            freelancers worldwide.
           </p>
         </div>
 
@@ -54,7 +56,10 @@ export default function WhyChooseUs() {
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <div key={index} className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+              <div
+                key={index}
+                className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
+              >
                 <div className="w-16 h-16 bg-brand-green-light rounded-full flex items-center justify-center mx-auto mb-4">
                   <IconComponent className="w-8 h-8 text-brand-green" />
                 </div>
@@ -72,7 +77,8 @@ export default function WhyChooseUs() {
             Ready to Get Started?
           </h2>
           <p className="text-gray-600 mb-6">
-            Join thousands of satisfied clients who trust GigClickers for their projects.
+            Join thousands of satisfied clients who trust GigClickers for their
+            projects.
           </p>
           <Link
             to="/post-job"
