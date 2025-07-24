@@ -27,6 +27,9 @@ import PlaceholderPage from "./pages/PlaceholderPage";
 import AboutUs from "./pages/AboutUs";
 import Articles from "./pages/Articles";
 import DealMarketplace from "./pages/DealMarketplace";
+import BrowseDeals from "./pages/BrowseDeals";
+import MyDealOrder from "./pages/MyDealOrder";
+import PostNewDeal from "./pages/PostNewDeal";
 
 const queryClient = new QueryClient();
 
@@ -61,6 +64,9 @@ const App = () => (
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route path="/my-account" element={<MyAccount />} />
           <Route path="/browse-jobs" element={<BrowseJobs />} />
+          <Route path="/browse-deals" element={<BrowseDeals />} />
+          <Route path="/my-deal-order" element={<MyDealOrder />} />
+          <Route path="/post-new-deal" element={<PostNewDeal />} />
           <Route path="/post-job" element={<PostJob />} />
           <Route path="/post-new-job" element={<PostJob />} />
           <Route path="/my-work" element={<MyWork />} />
