@@ -110,7 +110,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <Header />
+      <PublicHeader />
 
       {/* Hero Section */}
       <section className="bg-brand-green-light py-20">
