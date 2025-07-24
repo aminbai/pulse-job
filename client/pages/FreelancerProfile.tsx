@@ -171,7 +171,7 @@ export default function FreelancerProfile() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {freelancer.reviews.map((review) => (
+                  {freelancer.reviewsList.map((review) => (
                     <div key={review.id} className="border-b border-gray-200 pb-4 last:border-b-0">
                       <div className="flex items-center gap-2 mb-2">
                         <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-sm">
