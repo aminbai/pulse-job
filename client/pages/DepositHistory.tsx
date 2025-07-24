@@ -24,7 +24,7 @@ const transactionHistory = [
     amount: "$300.000",
     method: "Bkash Agent Cashout",
     date: "23 Jul 25",
-  }
+  },
 ];
 
 const getStatusIcon = (status: string) => {
@@ -62,10 +62,13 @@ export default function DepositHistory() {
       <header className="bg-brand-green text-white shadow-lg">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold hover:text-green-100 transition-colors">
+            <Link
+              to="/"
+              className="text-2xl font-bold hover:text-green-100 transition-colors"
+            >
               GigClickers
             </Link>
-            
+
             <nav className="hidden md:flex items-center space-x-6">
               <Link
                 to="/find-jobs"
@@ -141,8 +144,12 @@ export default function DepositHistory() {
         {/* Deposit History */}
         <div className="bg-white rounded-lg shadow-sm">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Deposit History</h2>
-            <p className="text-sm text-gray-600 mt-1">{transactionHistory.length} Result</p>
+            <h2 className="text-xl font-semibold text-gray-900">
+              Deposit History
+            </h2>
+            <p className="text-sm text-gray-600 mt-1">
+              {transactionHistory.length} Result
+            </p>
           </div>
 
           {/* Desktop Table */}
@@ -166,11 +173,16 @@ export default function DepositHistory() {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {transactionHistory.map((transaction) => (
-                  <tr key={transaction.id} className="hover:bg-gray-50 transition-colors">
+                  <tr
+                    key={transaction.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
                     <td className="px-6 py-4">
                       <div className="flex items-center space-x-2">
                         {getStatusIcon(transaction.status)}
-                        <span className={`font-medium capitalize ${getStatusColor(transaction.status)}`}>
+                        <span
+                          className={`font-medium capitalize ${getStatusColor(transaction.status)}`}
+                        >
                           {transaction.status}
                         </span>
                       </div>
@@ -197,7 +209,9 @@ export default function DepositHistory() {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center space-x-2">
                     {getStatusIcon(transaction.status)}
-                    <span className={`font-medium capitalize ${getStatusColor(transaction.status)}`}>
+                    <span
+                      className={`font-medium capitalize ${getStatusColor(transaction.status)}`}
+                    >
                       {transaction.status}
                     </span>
                   </div>
@@ -219,9 +233,12 @@ export default function DepositHistory() {
               <div className="text-gray-400 mb-4">
                 <Clock className="w-12 h-12 mx-auto" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">No transactions yet</h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">
+                No transactions yet
+              </h3>
               <p className="text-gray-600 mb-4">
-                Your deposit history will appear here once you make your first transaction.
+                Your deposit history will appear here once you make your first
+                transaction.
               </p>
               <Link
                 to="/deposit"
@@ -239,7 +256,9 @@ export default function DepositHistory() {
         <div className="container mx-auto px-4 py-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-brand-green">GigClickers</h3>
+              <h3 className="text-xl font-bold mb-4 text-brand-green">
+                GigClickers
+              </h3>
               <p className="text-sm mb-4">
                 Connecting talent with opportunity worldwide.
               </p>
@@ -247,34 +266,78 @@ export default function DepositHistory() {
                 &copy; 2025 gigclickers.com. All Rights Reserved.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">About GigClickers</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-gray-600 hover:text-brand-green transition-colors">About Us</Link></li>
-                <li><Link to="/privacy" className="text-gray-600 hover:text-brand-green transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="text-gray-600 hover:text-brand-green transition-colors">Terms & Conditions</Link></li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Agreement</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/microjob" className="text-gray-600 hover:text-brand-green transition-colors">Microjob Marketplace</Link></li>
-                <li><Link to="/deal" className="text-gray-600 hover:text-brand-green transition-colors">Deal Marketplace</Link></li>
+                <li>
+                  <Link
+                    to="/microjob"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Microjob Marketplace
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/deal"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Deal Marketplace
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Social Media</h4>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>

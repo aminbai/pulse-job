@@ -221,10 +221,13 @@ export default function JobBoard() {
         {/* Top Navigation */}
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold hover:text-green-100 transition-colors">
+            <Link
+              to="/"
+              className="text-2xl font-bold hover:text-green-100 transition-colors"
+            >
               GigClickers
             </Link>
-            
+
             <nav className="hidden md:flex items-center space-x-6">
               <Link
                 to="/find-jobs"
@@ -257,8 +260,18 @@ export default function JobBoard() {
 
             {/* Mobile menu button */}
             <button className="md:hidden">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
@@ -396,8 +409,12 @@ export default function JobBoard() {
 
                       {/* Category */}
                       <td className="px-6 py-4">
-                        <div className="text-sm text-gray-900">{job.category}</div>
-                        <div className="text-xs text-gray-500">{job.subcategory}</div>
+                        <div className="text-sm text-gray-900">
+                          {job.category}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {job.subcategory}
+                        </div>
                       </td>
 
                       {/* Rewards */}
@@ -457,7 +474,10 @@ export default function JobBoard() {
             {jobListings.map((job) => {
               const IconComponent = getCategoryIcon(job.category);
               return (
-                <div key={job.id} className="border-b border-gray-100 p-4 hover:bg-gray-50 transition-colors">
+                <div
+                  key={job.id}
+                  className="border-b border-gray-100 p-4 hover:bg-gray-50 transition-colors"
+                >
                   <div className="flex items-start space-x-3">
                     <IconComponent className="w-6 h-6 text-brand-green mt-1 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
@@ -467,9 +487,11 @@ export default function JobBoard() {
                       >
                         {job.title}
                       </Link>
-                      
+
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-sm text-gray-600">{job.category}</span>
+                        <span className="text-sm text-gray-600">
+                          {job.category}
+                        </span>
                         {job.urgent && (
                           <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">
                             Urgent
@@ -517,14 +539,17 @@ export default function JobBoard() {
         {/* Pagination */}
         <div className="mt-8 flex items-center justify-between">
           <div className="text-sm text-gray-700">
-            Showing <span className="font-medium">1</span> to <span className="font-medium">10</span> of{" "}
+            Showing <span className="font-medium">1</span> to{" "}
+            <span className="font-medium">10</span> of{" "}
             <span className="font-medium">147</span> results
           </div>
           <div className="flex items-center space-x-2">
             <button className="px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
               Previous
             </button>
-            <button className="px-3 py-2 text-sm bg-brand-green text-white rounded-lg">1</button>
+            <button className="px-3 py-2 text-sm bg-brand-green text-white rounded-lg">
+              1
+            </button>
             <button className="px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
               2
             </button>
@@ -551,40 +576,108 @@ export default function JobBoard() {
                 &copy; 2024 GigClickers. All rights reserved.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">About</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-green-100 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/careers" className="text-green-100 hover:text-white transition-colors">Careers</Link></li>
-                <li><Link to="/press" className="text-green-100 hover:text-white transition-colors">Press</Link></li>
-                <li><Link to="/blog" className="text-green-100 hover:text-white transition-colors">Blog</Link></li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/careers"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/press"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Press
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/blog"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Blog
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Legal</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/terms" className="text-green-100 hover:text-white transition-colors">Terms of Service</Link></li>
-                <li><Link to="/privacy" className="text-green-100 hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/cookies" className="text-green-100 hover:text-white transition-colors">Cookie Policy</Link></li>
-                <li><Link to="/dmca" className="text-green-100 hover:text-white transition-colors">DMCA</Link></li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/cookies"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Cookie Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/dmca"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    DMCA
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Connect</h4>
               <div className="flex space-x-4">
-                <a href="#" className="text-green-100 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-green-100 hover:text-white transition-colors"
+                >
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-green-100 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-green-100 hover:text-white transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-green-100 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-green-100 hover:text-white transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-green-100 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-green-100 hover:text-white transition-colors"
+                >
                   <Instagram className="w-5 h-5" />
                 </a>
               </div>

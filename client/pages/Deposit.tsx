@@ -19,7 +19,7 @@ const paymentMethods = [
     icon: CreditCard,
     description: "Bank transfer or manual payment",
     color: "bg-gray-100 border-gray-300",
-    iconColor: "text-gray-600"
+    iconColor: "text-gray-600",
   },
   {
     id: "payeer",
@@ -27,7 +27,7 @@ const paymentMethods = [
     icon: Wallet,
     description: "Digital wallet payment",
     color: "bg-blue-50 border-blue-300",
-    iconColor: "text-blue-600"
+    iconColor: "text-blue-600",
   },
   {
     id: "nagad",
@@ -35,7 +35,7 @@ const paymentMethods = [
     icon: Smartphone,
     description: "Mobile payment via Nagad",
     color: "bg-orange-50 border-orange-300",
-    iconColor: "text-orange-600"
+    iconColor: "text-orange-600",
   },
   {
     id: "bkash",
@@ -43,7 +43,7 @@ const paymentMethods = [
     icon: Smartphone,
     description: "Mobile payment via bKash",
     color: "bg-pink-50 border-pink-300",
-    iconColor: "text-pink-600"
+    iconColor: "text-pink-600",
   },
   {
     id: "binance",
@@ -51,7 +51,7 @@ const paymentMethods = [
     icon: DollarSign,
     description: "Cryptocurrency payment",
     color: "bg-yellow-50 border-yellow-300",
-    iconColor: "text-yellow-600"
+    iconColor: "text-yellow-600",
   },
   {
     id: "eastern-bank",
@@ -59,8 +59,8 @@ const paymentMethods = [
     icon: Building2,
     description: "Bank payment gateway",
     color: "bg-green-50 border-green-300",
-    iconColor: "text-green-600"
-  }
+    iconColor: "text-green-600",
+  },
 ];
 
 export default function Deposit() {
@@ -72,10 +72,13 @@ export default function Deposit() {
       <header className="bg-brand-green text-white shadow-lg">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold hover:text-green-100 transition-colors">
+            <Link
+              to="/"
+              className="text-2xl font-bold hover:text-green-100 transition-colors"
+            >
               GigClickers
             </Link>
-            
+
             <nav className="hidden md:flex items-center space-x-6">
               <Link
                 to="/find-jobs"
@@ -150,8 +153,10 @@ export default function Deposit() {
 
         {/* Manual Deposit Section */}
         <div className="mb-8">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Manual Deposit</h2>
-          
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            Manual Deposit
+          </h2>
+
           <div className="bg-white rounded-lg border-2 border-gray-200 p-6 hover:border-gray-300 transition-colors cursor-pointer">
             <div className="flex items-center justify-center flex-col">
               <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
@@ -175,7 +180,9 @@ export default function Deposit() {
                   <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-4">
                     <IconComponent className={`w-8 h-8 ${method.iconColor}`} />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{method.name}</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    {method.name}
+                  </h3>
                   <p className="text-sm text-gray-600">{method.description}</p>
                 </div>
               </div>
@@ -189,7 +196,9 @@ export default function Deposit() {
         <div className="container mx-auto px-4 py-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-brand-green">GigClickers</h3>
+              <h3 className="text-xl font-bold mb-4 text-brand-green">
+                GigClickers
+              </h3>
               <p className="text-sm mb-4">
                 Connecting talent with opportunity worldwide.
               </p>
@@ -197,34 +206,78 @@ export default function Deposit() {
                 &copy; 2025 gigclickers.com. All Rights Reserved.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">About GigClickers</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-gray-600 hover:text-brand-green transition-colors">About Us</Link></li>
-                <li><Link to="/privacy" className="text-gray-600 hover:text-brand-green transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="text-gray-600 hover:text-brand-green transition-colors">Terms & Conditions</Link></li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Agreement</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/microjob" className="text-gray-600 hover:text-brand-green transition-colors">Microjob Marketplace</Link></li>
-                <li><Link to="/deal" className="text-gray-600 hover:text-brand-green transition-colors">Deal Marketplace</Link></li>
+                <li>
+                  <Link
+                    to="/microjob"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Microjob Marketplace
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/deal"
+                    className="text-gray-600 hover:text-brand-green transition-colors"
+                  >
+                    Deal Marketplace
+                  </Link>
+                </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-3">Social Media</h4>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-brand-green transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-brand-green transition-colors"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>
