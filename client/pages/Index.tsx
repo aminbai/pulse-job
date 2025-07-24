@@ -186,16 +186,17 @@ export default function Index() {
             {categories.map((category, index) => {
               const IconComponent = category.icon;
               return (
-                <div 
+                <Link
                   key={index}
-                  className="bg-white border border-brand-green-light rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+                  to="/jobs"
+                  className="bg-white border border-brand-green-light rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer block"
                 >
                   <div className="flex items-center mb-4">
                     <IconComponent className="w-8 h-8 text-brand-green mr-3" />
                     <h3 className="text-xl font-semibold text-text-dark">{category.name}</h3>
                   </div>
                   <p className="text-gray-600">{category.jobs} jobs available</p>
-                </div>
+                </Link>
               );
             })}
           </div>
