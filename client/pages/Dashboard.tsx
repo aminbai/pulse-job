@@ -122,63 +122,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-brand-green text-white shadow-lg">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <Link
-              to="/"
-              className="text-2xl font-bold hover:text-green-100 transition-colors"
-            >
-              GigClickers
-            </Link>
-
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link
-                to="/find-jobs"
-                className="hover:text-green-100 transition-colors"
-              >
-                Find Jobs
-              </Link>
-              <Link
-                to="/dashboard"
-                className="hover:text-green-100 transition-colors bg-green-600 px-3 py-1 rounded font-medium"
-              >
-                Dashboard
-              </Link>
-              <Link
-                to="/job-board"
-                className="hover:text-green-100 transition-colors"
-              >
-                Job Board
-              </Link>
-              <Link
-                to="/my-work"
-                className="hover:text-green-100 transition-colors"
-              >
-                My Work
-              </Link>
-              <Link
-                to="/post-job"
-                className="bg-white text-brand-green px-4 py-2 rounded font-medium hover:bg-green-50 transition-colors"
-              >
-                POST JOB
-              </Link>
-            </nav>
-
-            <div className="flex items-center space-x-4">
-              <button className="relative">
-                <Bell className="w-6 h-6" />
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
-                  3
-                </span>
-              </button>
-              <Link to="/settings">
-                <Settings className="w-6 h-6 hover:text-green-100 transition-colors" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+      <DashboardHeader userName="John" />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
