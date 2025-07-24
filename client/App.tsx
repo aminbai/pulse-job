@@ -54,6 +54,7 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/user-dashboard" element={<UserDashboard />} />
             <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            <Route path="/unified-dashboard" element={<UnifiedDashboard />} />
             <Route path="/deposit" element={<Deposit />} />
             <Route path="/deposit-history" element={<DepositHistory />} />
             <Route path="/my-jobs" element={<MyJobs />} />
