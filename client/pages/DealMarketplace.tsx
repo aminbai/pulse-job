@@ -5,24 +5,7 @@ import DashboardHeader from "@/components/DashboardHeader";
 export default function DealMarketplace() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-
-      {/* Balance Bar */}
-      <div className="bg-green-100 py-2 px-6">
-        <div className="max-w-6xl mx-auto flex justify-between text-sm">
-          <span>
-            Pending:{" "}
-            <span className="text-green-600 font-semibold">$0.000</span>
-          </span>
-          <span>
-            Earned: <span className="text-green-600 font-semibold">$0.000</span>
-          </span>
-          <span>
-            Deposit:{" "}
-            <span className="text-green-600 font-semibold">-$1.909</span>
-          </span>
-        </div>
-      </div>
+      <DashboardHeader />
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-6 py-8">
@@ -123,7 +106,7 @@ export default function DealMarketplace() {
             <CardContent>
               <div className="space-y-4">
                 <p className="text-gray-700 leading-relaxed">
-                  একটি সেবা অর্ডার confirm করার সময় বিক্রেতার সাথে কথা বলতে
+                  একটি সেবা অর্ডার confirm করার সময় বিক্রেতার স��থে কথা বলতে
                   ভুলবেন না। অর্ডার confirm হওয়ার পর, বিক্রেতা অর্ডার duration
                   এর মধ্যে আপনার কাছে সেবা বা অফার ডেলিভারি করবে। এই ডেলিভারি
                   receive করার সময় আপনি সবকিছু বুঝেছেন কিনা দেখে নিন। যদি আপনি
@@ -143,7 +126,7 @@ export default function DealMarketplace() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 leading-relaxed">
-                আপনি যখন receive delivery confirm করবেন তখন deal টি সাথে সাথেই
+                আপনি যখন receive delivery confirm করবেন তখন deal টি সাথে সাথে��
                 সম্পন্ন হয়ে যাবে এবং আপনি যদি receive delivery থেকে no option
                 টি চাপেন তাহলে deal টি gigclickers support এর কাছে review এর
                 জন্য চলে যাবে। Support team টি ২৪ ঘন্টার মধ্যে review করে দেবে
@@ -182,7 +165,7 @@ export default function DealMarketplace() {
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li>• সর্বদা প্ল্যাটফর্মের মধ্যে যোগাযোগ করুন</li>
                   <li>• ব্যক্তিগত তথ্য শেয়ার করা থেকে বিরত থাকুন</li>
-                  <li>• অর্ডার সম্পূর্ণ হওয়ার আগে পেমেন্ট রিলিজ করবেন না</li>
+                  <li>• অর্ডার সম্পূর্ণ হওয়ার আগে পেমেন্ট রিলিজ কর��েন না</li>
                   <li>• সন্দেহজনক কার্যকলাপ রিপোর্ট করুন</li>
                 </ul>
               </CardContent>
