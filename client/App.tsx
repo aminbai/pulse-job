@@ -87,24 +87,10 @@ const App = () => (
           <Route path="/my-post" element={<MyPost />} />
           <Route path="/job/:id" element={<JobDetail />} />
           <Route path="/freelancer/:username" element={<FreelancerProfile />} />
-          <Route
-            path="/login"
-            element={
-              <PlaceholderPage
-                title="Login"
-                description="Sign in to your GigClickers account to access your dashboard and manage your projects."
-              />
-            }
-          />
-          <Route
-            path="/signup"
-            element={
-              <PlaceholderPage
-                title="Sign Up"
-                description="Create your GigClickers account and start connecting with opportunities today."
-              />
-            }
-          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route
             path="/faq"
             element={
