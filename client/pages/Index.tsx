@@ -130,6 +130,12 @@ export default function Index() {
                 Job Board
               </Link>
               <Link
+                to="/dashboard"
+                className="text-text-dark hover:text-brand-green transition-colors"
+              >
+                Dashboard
+              </Link>
+              <Link
                 to="/faq"
                 className="text-text-dark hover:text-brand-green transition-colors"
               >
