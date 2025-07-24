@@ -127,15 +127,7 @@ const App = () => (
             />
             <Route path="/articles" element={<Articles />} />
             <Route path="/about" element={<AboutUs />} />
-            <Route
-              path="/contact"
-              element={
-                <PlaceholderPage
-                  title="Contact Us"
-                  description="Get in touch with our support team for any questions or assistance."
-                />
-              }
-            />
+            <Route path="/contact" element={<Contact />} />
             <Route
               path="/privacy"
               element={
