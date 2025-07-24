@@ -20,6 +20,7 @@ import {
   Instagram,
 } from "lucide-react";
 import { useState } from "react";
+import Navigation from "@/components/Navigation";
 
 const categories = [
   { name: "Web Development", jobs: 150, icon: Code },
