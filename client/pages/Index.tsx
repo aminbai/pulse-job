@@ -113,6 +113,9 @@ export default function Index() {
             </Link>
             
             <nav className="hidden md:flex items-center space-x-8">
+              <Link to="/jobs" className="text-text-dark hover:text-brand-green transition-colors">
+                Browse Jobs
+              </Link>
               <Link to="/faq" className="text-text-dark hover:text-brand-green transition-colors">
                 FAQ
               </Link>
