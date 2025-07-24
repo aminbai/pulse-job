@@ -28,6 +28,7 @@ import DealMarketplace from "./pages/DealMarketplace";
 import BrowseDeals from "./pages/BrowseDeals";
 import MyDealOrder from "./pages/MyDealOrder";
 import PostNewDeal from "./pages/PostNewDeal";
+import FreelancerProfile from "./pages/FreelancerProfile";
 
 const queryClient = new QueryClient();
 
