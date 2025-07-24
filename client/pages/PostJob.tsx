@@ -429,11 +429,11 @@ export default function PostJob() {
     "গমেইল নতুন একাউন্ট ১০ টাকা",
   );
   const [jobDescription, setJobDescription] = useState<string>(
-    "১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন একটা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার প��� স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আ���িকার গড়ে অনলাইন রিম্যাট করলে একটা জি মেইল দিয়ে বেশি একাউন্ট খোলা যাবে না।",
+    "১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন একটা একাউন্ট এসব তথ্য ফেল���েন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার প��� স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গড়ে অনলাইন রিম্যাট করলে একটা জি মেইল দিয়ে বেশি একাউন্ট খোলা যাবে না।",
   );
   const [needAutoChecker, setNeedAutoChecker] = useState<boolean>(true);
   const [proof1, setProof1] = useState<string>("ইউজারনে");
-  const [proof2, setProof2] = useState<string>("প্যাসওয়ার্ড");
+  const [proof2, setProof2] = useState<string>("প���যাসওয়ার্ড");
   const [proof3Type, setProof3Type] = useState<string>("Text Proof");
   const [proof4Type, setProof4Type] = useState<string>("Text Proof");
   const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
@@ -533,52 +533,7 @@ export default function PostJob() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-brand-green text-white shadow-lg">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <Link
-              to="/"
-              className="text-2xl font-bold hover:text-green-100 transition-colors"
-            >
-              GigClickers
-            </Link>
-
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link
-                to="/find-jobs"
-                className="hover:text-green-100 transition-colors"
-              >
-                Find Jobs
-              </Link>
-              <Link
-                to="/dashboard"
-                className="hover:text-green-100 transition-colors"
-              >
-                Dashboard
-              </Link>
-              <Link
-                to="/job-board"
-                className="hover:text-green-100 transition-colors"
-              >
-                Job Board
-              </Link>
-              <Link
-                to="/my-work"
-                className="hover:text-green-100 transition-colors"
-              >
-                My Work
-              </Link>
-              <Link
-                to="/post-job"
-                className="bg-white text-brand-green px-4 py-2 rounded font-medium hover:bg-green-50 transition-colors"
-              >
-                POST JOB
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <PublicHeader />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
