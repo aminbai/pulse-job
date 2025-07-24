@@ -45,7 +45,7 @@ export default function FreelancerProfile() {
         description: "Clean and intuitive mobile app interface"
       }
     ],
-    reviews: [
+    reviewsList: [
       {
         id: 1,
         client: "Sarah Johnson",
