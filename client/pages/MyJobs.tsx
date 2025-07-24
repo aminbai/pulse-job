@@ -30,65 +30,7 @@ export default function MyJobs() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-brand-green text-white shadow-lg">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold hover:text-green-100 transition-colors">
-              GigClickers
-            </Link>
-            
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link
-                to="/my-post"
-                className="hover:text-green-100 transition-colors"
-              >
-                My Post ▼
-              </Link>
-              <Link
-                to="/my-work"
-                className="hover:text-green-100 transition-colors"
-              >
-                My Work ▼
-              </Link>
-              <Link
-                to="/browse-deal"
-                className="hover:text-green-100 transition-colors"
-              >
-                Browse Deal ▼
-              </Link>
-              <Link
-                to="/deal-history"
-                className="hover:text-green-100 transition-colors"
-              >
-                Deal History ▼
-              </Link>
-              <Link
-                to="/deposit"
-                className="hover:text-green-100 transition-colors"
-              >
-                Deposit
-              </Link>
-              <Link
-                to="/post-job"
-                className="bg-white text-brand-green px-4 py-2 rounded font-medium hover:bg-green-50 transition-colors"
-              >
-                POST JOB
-              </Link>
-            </nav>
-          </div>
-        </div>
-
-        {/* Stats Bar */}
-        <div className="bg-green-600 py-2">
-          <div className="container mx-auto px-4">
-            <div className="flex justify-between text-sm">
-              <span>Pending: $0.000</span>
-              <span>Earned: $0.000</span>
-              <span>Deposit: $1.909</span>
-            </div>
-          </div>
-        </div>
-      </header>
+      <DashboardHeader />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
