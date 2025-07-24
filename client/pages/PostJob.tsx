@@ -370,10 +370,10 @@ export default function PostJob() {
     : [];
 
   const steps = [
-    { id: 1, name: 'Region', active: currentStep === 1 },
-    { id: 2, name: 'Category', active: currentStep === 2 },
-    { id: 3, name: 'Proof', active: currentStep === 3 },
-    { id: 4, name: 'Pricing', active: currentStep === 4 },
+    { id: 1, name: 'Region', active: currentStep === 1, completed: currentStep > 1 },
+    { id: 2, name: 'Category', active: currentStep === 2, completed: currentStep > 2 },
+    { id: 3, name: 'Proof', active: currentStep === 3, completed: currentStep > 3 },
+    { id: 4, name: 'Pricing', active: currentStep === 4, completed: currentStep > 4 },
   ];
 
   return (
