@@ -384,6 +384,13 @@ export default function PostJob() {
     setSelectedSubcategory(subcategory);
   };
 
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setThumbnailFile(file);
+    }
+  };
+
   const filteredCountries = selectedZone 
     ? countries.filter(c => c.region === selectedZone)
     : [];
