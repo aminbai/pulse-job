@@ -60,6 +60,7 @@ const App = () => (
             <Route path="/unified-dashboard" element={<UnifiedDashboard />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/why-choose-us" element={<WhyChooseUs />} />
+            <Route path="/saved-jobs" element={<SavedJobs />} />
             <Route path="/deposit" element={<Deposit />} />
             <Route path="/deposit-history" element={<DepositHistory />} />
             <Route path="/my-jobs" element={<MyJobs />} />
