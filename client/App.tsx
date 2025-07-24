@@ -37,6 +37,7 @@ const App = () => (
           <Route path="/deposit" element={<Deposit />} />
           <Route path="/deposit-history" element={<DepositHistory />} />
           <Route path="/deal-history" element={<PlaceholderPage title="Deal History" description="View your deal transaction history and completed projects." />} />
+          <Route path="/settings" element={<PlaceholderPage title="Settings" description="Manage your account settings, preferences, and profile information." />} />
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route path="/my-account" element={<MyAccount />} />
           <Route path="/browse-jobs" element={<BrowseJobs />} />
