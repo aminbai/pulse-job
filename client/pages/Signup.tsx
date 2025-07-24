@@ -88,7 +88,7 @@ export default function Signup() {
     switch (step) {
       case 1:
         if (!formData.userType) {
-          newErrors.userType = "ব্যবহারকারীর ধরন নির্বাচন করুন";
+          newErrors.userType = "ব্যবহারকারীর ধরন ন��র্বাচন করুন";
         }
         break;
 
@@ -120,7 +120,7 @@ export default function Signup() {
           newErrors.city = "শহরের নাম প্রয়োজন";
         }
         if (!formData.password) {
-          newErrors.password = "পাসওয়ার্ড প্রয়োজন";
+          newErrors.password = "��াসওয়ার্ড প্রয়োজন";
         } else if (formData.password.length < 8) {
           newErrors.password = "পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে";
         } else if (passwordStrength < 50) {
@@ -266,7 +266,7 @@ export default function Signup() {
                 বায়ার/ক্লায়েন্ট
               </Label>
               <p className="text-sm text-gray-600">
-                কাজ দিতে চান এবং ফ্রিল্যান্সার নিয়োগ করতে চান
+                কাজ দিতে চান এবং ��্রিল্যান্সার নিয়োগ করতে চান
               </p>
             </div>
           </div>
@@ -597,7 +597,7 @@ export default function Signup() {
       <Alert>
         <Info className="h-4 w-4" />
         <AlertDescription>
-          অ্যাকাউন্ট তৈরির পর আপনার ইমেইলে একটি যাচাইকরণ লিংক পাঠানো হবে।
+          অ্যাকাউন্ট তৈরির পর আপনার ইমেইলে একটি য��চাইকরণ লিংক পাঠানো হবে।
           অ্যাকাউন্ট সক্রিয় করতে সেই লিংকে ক্লিক করুন।
         </AlertDescription>
       </Alert>
@@ -621,7 +621,7 @@ export default function Signup() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <PublicHeader />
 
       <div className="flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-6">
@@ -638,7 +638,7 @@ export default function Signup() {
               অ্যাকাউন্ট তৈরি করুন
             </h1>
             <p className="text-gray-600 mt-2">
-              GigClickers এ যোগ দিন এবং আপ���ার যাত্রা শুরু করুন
+              GigClickers এ যোগ দিন এবং আপনার যাত্রা শুরু করুন
             </p>
           </div>
 
