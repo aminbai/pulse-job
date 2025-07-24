@@ -646,7 +646,7 @@ export default function UnifiedDashboard() {
           <CardContent>
             <p className="text-red-700">
               GigClickers team যেকোনো ক্রেতা বা বিক্রেতার বিরুদ্ধে ব্যবস্থা নেওয়ার ক্ষমতা রাখে 
-              যদি কোনো ক্রেতা বা বিক্রেতা কোনো প্রকার জালিয়াতি বা মার্কেটপ্লেসের নীতির বিরুদ্ধ��� কোনো কাজ করে।
+              যদি কোনো ক্রেতা বা বিক্রেতা কোনো প্রকার জালিয়াতি বা মার্কেটপ্লেসের নীতির বিরুদ্ধে কোনো কাজ করে।
             </p>
           </CardContent>
         </Card>
@@ -728,36 +728,7 @@ export default function UnifiedDashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-brand-green text-white shadow-lg">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold hover:text-green-100 transition-colors">
-              GigClickers
-            </Link>
-            
-            <div className="flex items-center space-x-4">
-              <button className="relative">
-                <Bell className="w-6 h-6" />
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">3</span>
-              </button>
-              <Link to="/settings">
-                <Settings className="w-6 h-6 hover:text-green-100 transition-colors" />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Stats Bar */}
-        <div className="bg-green-600 py-2">
-          <div className="container mx-auto px-4">
-            <div className="flex justify-between text-sm">
-              <span>Pending: $0.000</span>
-              <span>Earned: $0.000</span>
-              <span>Deposit: $1.909</span>
-            </div>
-          </div>
-        </div>
-      </header>
+      <DashboardHeader userName="John Doe" />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
