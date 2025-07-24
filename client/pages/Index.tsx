@@ -117,50 +117,7 @@ export default function Index() {
               GigClickers
             </Link>
 
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link
-                to="/jobs"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Browse Jobs
-              </Link>
-              <Link
-                to="/job-board"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Job Board
-              </Link>
-              <Link
-                to="/dashboard"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Dashboard
-              </Link>
-              <Link
-                to="/deposit"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Deposit
-              </Link>
-              <Link
-                to="/faq"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                FAQ
-              </Link>
-              <Link
-                to="/share-earn"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Share & Earn
-              </Link>
-              <Link
-                to="/articles"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Article
-              </Link>
-            </nav>
+            <Navigation />
 
             <div className="flex items-center space-x-4">
               <Link
