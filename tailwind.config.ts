@@ -57,6 +57,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Job listing app specific colors
+        'brand-green': '#4CAF50',
+        'text-dark': '#333333',
+        'table-stripe': '#f2f2f2',
       },
       borderRadius: {
         lg: "var(--radius)",
