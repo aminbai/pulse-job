@@ -32,6 +32,7 @@ import FreelancerProfile from "./pages/FreelancerProfile";
 import MyPost from "./pages/MyPost";
 import UserDashboard from "./pages/UserDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import UnifiedDashboard from "./pages/UnifiedDashboard";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
