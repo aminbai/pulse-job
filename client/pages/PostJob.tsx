@@ -339,8 +339,8 @@ export default function PostJob() {
   const [currentStep, setCurrentStep] = useState(4);
 
   // Form data for step 3 (completed)
-  const [jobTitle, setJobTitle] = useState<string>('গমেইল নতুন একাউন্ট ১০ ট��কা');
-  const [jobDescription, setJobDescription] = useState<string>('১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন একটা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার পর স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গড়ে অনলাইন রিম্যাট করলে একটা জ��� মেইল দিয়ে বেশি একাউন্ট খোলা যাবে না।');
+  const [jobTitle, setJobTitle] = useState<string>('গমেইল নতুন একাউন্ট ১০ টাকা');
+  const [jobDescription, setJobDescription] = useState<string>('১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন একটা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার পর স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গড়ে অনলাইন রিম্যাট করলে একটা জি মেইল দিয়ে বেশি একা��ন্ট খোলা যাবে না।');
   const [needAutoChecker, setNeedAutoChecker] = useState<boolean>(true);
   const [proof1, setProof1] = useState<string>('ইউজারনে');
   const [proof2, setProof2] = useState<string>('প্যাসওয়ার্ড');
@@ -472,164 +472,64 @@ export default function PostJob() {
 
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Left Column - Form */}
-          <div className="lg:col-span-3 space-y-6">
-            {/* Job Title and Description */}
+          <div className="lg:col-span-3">
+            {/* Job Pricing */}
             <div className="bg-white rounded-lg shadow-sm border p-6">
-              <h2 className="text-lg font-medium text-gray-900 mb-4">Write an accurate and specific job title</h2>
+              <h2 className="text-xl font-semibold text-gray-900 mb-8">Job Pricing</h2>
 
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">Job Title</label>
-                <input
-                  type="text"
-                  value={jobTitle}
-                  onChange={(e) => setJobTitle(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent"
-                  placeholder="Enter job title"
-                />
-              </div>
-
-              <div className="mb-6">
-                <div className="flex items-center mb-2">
-                  <label className="block text-sm font-medium text-gray-700">What specific tasks need to be completed</label>
-                  <span className="ml-2 bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">!</span>
-                </div>
-
-                <div className="mb-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Job Description</label>
-                  <textarea
-                    value={jobDescription}
-                    onChange={(e) => setJobDescription(e.target.value)}
-                    rows={8}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent"
-                    placeholder="Describe the tasks and requirements in detail"
-                  />
-                </div>
-
-                <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg">
-                  <div>
-                    <h3 className="font-medium text-gray-900">Need Auto Job Checker?</h3>
-                    <p className="text-sm text-gray-600">Automatically verify job completion</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="text-sm text-gray-600">Off</span>
-                    <button
-                      onClick={() => setNeedAutoChecker(!needAutoChecker)}
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        needAutoChecker ? 'bg-brand-green' : 'bg-gray-200'
-                      }`}
-                    >
-                      <span
-                        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                          needAutoChecker ? 'translate-x-6' : 'translate-x-1'
-                        }`}
-                      />
-                    </button>
-                    <span className="text-sm text-gray-600">On</span>
-                  </div>
-                  <button className="bg-brand-green text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors">
-                    See How It Work
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Required Proof Section */}
-            <div className="bg-white rounded-lg shadow-sm border p-6">
-              <div className="flex items-center mb-6">
-                <h2 className="text-lg font-medium text-gray-900">Required proof the job was completed</h2>
-                <span className="ml-2 bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">!</span>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* Proof 1 */}
+              <div className="space-y-6">
+                {/* Worker Need */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Proof 1</label>
-                  <textarea
-                    value={proof1}
-                    onChange={(e) => setProof1(e.target.value)}
-                    rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent"
-                    placeholder="Describe what proof is required"
-                  />
-                  <p className="text-xs text-gray-500 mt-1">Text Proof</p>
-                </div>
-
-                {/* Proof 2 */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Proof 2</label>
-                  <textarea
-                    value={proof2}
-                    onChange={(e) => setProof2(e.target.value)}
-                    rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent"
-                    placeholder="Describe what proof is required"
-                  />
-                  <p className="text-xs text-gray-500 mt-1">Text Proof</p>
-                </div>
-
-                {/* Proof 3 */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Proof 3</label>
-                  <select
-                    value={proof3Type}
-                    onChange={(e) => setProof3Type(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent"
-                  >
-                    {proofTypes.map((type) => (
-                      <option key={type} value={type}>
-                        {type}
-                      </option>
-                    ))}
-                  </select>
-                  <p className="text-xs text-gray-500 mt-1">Select Proof 3 Type</p>
-                </div>
-
-                {/* Proof 4 */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Proof 4</label>
-                  <select
-                    value={proof4Type}
-                    onChange={(e) => setProof4Type(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent"
-                  >
-                    {proofTypes.map((type) => (
-                      <option key={type} value={type}>
-                        {type}
-                      </option>
-                    ))}
-                  </select>
-                  <p className="text-xs text-gray-500 mt-1">Select Proof 4 Type</p>
-                </div>
-              </div>
-
-              {/* Thumbnail Image Upload */}
-              <div className="mt-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">Thumbnail Image (Optional)</label>
-                <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Worker Need</label>
                   <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileUpload}
-                    className="hidden"
-                    id="thumbnail-upload"
+                    type="number"
+                    min="1"
+                    value={workerNeed}
+                    onChange={(e) => setWorkerNeed(parseInt(e.target.value) || 1)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent text-lg"
+                    placeholder="Enter number of workers needed"
                   />
-                  <label
-                    htmlFor="thumbnail-upload"
-                    className="cursor-pointer"
-                  >
-                    <div className="space-y-2">
-                      <div className="text-gray-400">
-                        <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                        </svg>
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        <span className="font-medium text-brand-green">Choose File</span>
-                        <span className="ml-2">{thumbnailFile ? thumbnailFile.name : 'No file chosen'}</span>
-                      </div>
-                    </div>
-                  </label>
                 </div>
+
+                {/* Worker Earn */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Worker Earn</label>
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.001"
+                    value={workerEarn}
+                    onChange={(e) => setWorkerEarn(parseFloat(e.target.value) || 0)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent text-lg"
+                    placeholder="Enter amount each worker will earn"
+                  />
+                </div>
+
+                {/* Work Duration */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Work Duration</label>
+                  <input
+                    type="number"
+                    min="1"
+                    value={workDuration}
+                    onChange={(e) => setWorkDuration(parseInt(e.target.value) || 1)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent text-lg"
+                    placeholder="Enter number of days to complete work"
+                  />
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <div className="mt-12 flex justify-center">
+                <button
+                  className="bg-brand-green text-white px-16 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors"
+                  onClick={() => {
+                    // Handle form submission
+                    alert('Job posted successfully!');
+                  }}
+                >
+                  SUBMIT POST
+                </button>
               </div>
             </div>
           </div>
