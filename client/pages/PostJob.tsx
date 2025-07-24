@@ -480,40 +480,54 @@ export default function PostJob() {
           <div className="lg:col-span-1">
             <div className="bg-brand-green text-white rounded-lg p-6 sticky top-6">
               <h3 className="text-xl font-bold mb-6">SUMMARY</h3>
-              
+
               <div className="space-y-4">
                 <div>
                   <p className="text-green-100 text-sm">Total Job Cost:</p>
-                  <p className="font-semibold">-</p>
+                  <p className="font-semibold">0.068</p>
                 </div>
-                
+
                 <div>
                   <p className="text-green-100 text-sm">Service Fee:</p>
-                  <p className="font-semibold">-</p>
+                  <p className="font-semibold">0.006</p>
                 </div>
-                
+
                 <div>
                   <p className="text-green-100 text-sm">Zone:</p>
                   <p className="font-semibold">
                     {selectedZone ? targetingZones.find(z => z.id === selectedZone)?.label : '-'}
                   </p>
                 </div>
-                
+
                 <div>
                   <p className="text-green-100 text-sm">Country:</p>
-                  <p className="font-semibold">
-                    {selectedCountries.length > 0 ? `${selectedCountries.length} selected` : '-'}
-                  </p>
+                  <div className="font-semibold max-h-32 overflow-y-auto text-xs">
+                    {selectedCountries.length > 0 ? (
+                      <div>
+                        {selectedCountries.slice(0, 10).join(', ')}
+                        {selectedCountries.length > 10 && (
+                          <span className="block mt-1">... and {selectedCountries.length - 10} more</span>
+                        )}
+                      </div>
+                    ) : '-'}
+                  </div>
                 </div>
 
                 <div>
                   <p className="text-green-100 text-sm">Category:</p>
-                  <p className="font-semibold">-</p>
+                  <p className="font-semibold">
+                    {selectedCategory
+                      ? categories.find(cat => cat.id === selectedCategory)?.name
+                      : '-'
+                    }
+                  </p>
                 </div>
 
                 <div>
                   <p className="text-green-100 text-sm">Subcategory:</p>
-                  <p className="font-semibold">-</p>
+                  <p className="font-semibold">
+                    {selectedSubcategory || '-'}
+                  </p>
                 </div>
 
                 <div>
@@ -522,8 +536,8 @@ export default function PostJob() {
                 </div>
 
                 <div>
-                  <p className="text-green-100 text-sm">Worker seen:</p>
-                  <p className="font-semibold">-</p>
+                  <p className="text-green-100 text-sm">Worker earn:</p>
+                  <p className="font-semibold">0.062</p>
                 </div>
               </div>
             </div>
