@@ -34,6 +34,8 @@ const App = () => (
           <Route path="/jobs" element={<JobListings />} />
           <Route path="/job-board" element={<JobBoard />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/deposit" element={<Deposit />} />
+          <Route path="/deposit-history" element={<DepositHistory />} />
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route path="/my-account" element={<MyAccount />} />
           <Route path="/browse-jobs" element={<BrowseJobs />} />
