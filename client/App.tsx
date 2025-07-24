@@ -11,6 +11,8 @@ import NotFound from "./pages/NotFound";
 import JobListings from "./pages/JobListings";
 import JobBoard from "./pages/JobBoard";
 import Dashboard from "./pages/Dashboard";
+import Deposit from "./pages/Deposit";
+import DepositHistory from "./pages/DepositHistory";
 import FindJobs from "./pages/FindJobs";
 import MyAccount from "./pages/MyAccount";
 import BrowseJobs from "./pages/BrowseJobs";
