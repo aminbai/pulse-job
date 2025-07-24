@@ -8,8 +8,6 @@ import {
   Users,
   FileText,
   Calendar,
-  Settings,
-  Bell,
   Eye,
   MessageSquare,
   CheckCircle,
@@ -22,6 +20,7 @@ import {
   ArrowRight,
   Search,
 } from "lucide-react";
+import DashboardHeader from "@/components/DashboardHeader";
 
 const dashboardStats = [
   {
