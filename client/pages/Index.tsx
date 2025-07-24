@@ -126,7 +126,7 @@ export default function Index() {
                 to get things done.
               </p>
               <Link
-                to="/signup"
+                to="/browse-jobs"
                 className="inline-block bg-brand-green text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors"
               >
                 Get Started
@@ -158,7 +158,7 @@ export default function Index() {
               return (
                 <Link
                   key={index}
-                  to="/jobs"
+                  to="/browse-jobs"
                   className="bg-white border border-brand-green-light rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer block"
                 >
                   <div className="flex items-center mb-4">
@@ -268,7 +268,7 @@ export default function Index() {
                 </li>
               </ul>
               <Link
-                to="/signup"
+                to="/refer-earn"
                 className="inline-block bg-brand-green text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors"
               >
                 GET STARTED
