@@ -31,9 +31,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/jobs" element={<JobListings />} />
           <Route path="/job-board" element={<JobBoard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route path="/my-account" element={<MyAccount />} />
           <Route path="/browse-jobs" element={<BrowseJobs />} />
+          <Route path="/post-job" element={<PostJob />} />
           <Route path="/post-new-job" element={<PostJob />} />
           <Route path="/my-work" element={<MyWork />} />
           <Route path="/job/:id" element={<JobDetail />} />
