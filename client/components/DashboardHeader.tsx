@@ -13,6 +13,7 @@ const dashboardMenuItems = [
       { name: "Job Board", path: "/job-board" },
       { name: "My Jobs", path: "/my-jobs" },
       { name: "My Work", path: "/my-work" },
+      { name: "Saved Jobs", path: "/saved-jobs" },
       { name: "Post Job", path: "/post-job" },
     ],
   },
