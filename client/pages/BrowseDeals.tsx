@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Star } from "lucide-react";
+import Header from "@/components/Header";
 
 export default function BrowseDeals() {
   const deals = [
@@ -30,39 +31,7 @@ export default function BrowseDeals() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-brand-green text-white py-4 px-6">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <div className="text-2xl font-bold">GigClickers</div>
-            <nav className="hidden md:flex space-x-6">
-              <a href="/my-post" className="hover:text-green-200">
-                My Post
-              </a>
-              <a href="/my-work" className="hover:text-green-200">
-                My Work
-              </a>
-              <a href="/browse-deals" className="hover:text-green-200">
-                Browse Deal
-              </a>
-              <a href="/deal-history" className="hover:text-green-200">
-                Deal History
-              </a>
-              <a href="/deposit" className="hover:text-green-200">
-                Deposit
-              </a>
-            </nav>
-          </div>
-          <div className="flex items-center space-x-4">
-            <span className="text-sm">📧</span>
-            <span className="text-sm">🔔</span>
-            <span className="text-sm">👤</span>
-            <Button className="bg-green-600 hover:bg-green-700">
-              POST JOB
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Balance Bar */}
       <div className="bg-green-100 py-2 px-6">
