@@ -5,7 +5,10 @@ interface PlaceholderPageProps {
   description?: string;
 }
 
-export default function PlaceholderPage({ title, description }: PlaceholderPageProps) {
+export default function PlaceholderPage({
+  title,
+  description,
+}: PlaceholderPageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Simple Header for placeholder pages */}
@@ -22,10 +25,11 @@ export default function PlaceholderPage({ title, description }: PlaceholderPageP
         <div className="text-center max-w-2xl mx-auto">
           <h1 className="text-4xl font-bold text-text-dark mb-6">{title}</h1>
           <p className="text-gray-600 mb-8">
-            {description || "This page is coming soon. Continue prompting to fill in this page content if you'd like it implemented."}
+            {description ||
+              "This page is coming soon. Continue prompting to fill in this page content if you'd like it implemented."}
           </p>
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="inline-block bg-brand-green text-white px-6 py-3 rounded hover:bg-green-600 transition-colors"
           >
             Back to Job Listings

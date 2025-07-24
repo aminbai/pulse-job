@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { 
-  Briefcase, 
-  DollarSign, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
+import {
+  Briefcase,
+  DollarSign,
+  Facebook,
+  Twitter,
+  Linkedin,
   Instagram,
   Clock,
-  Search
+  Search,
 } from "lucide-react";
 
 const jobListings = [
@@ -18,7 +18,7 @@ const jobListings = [
     reward: "$2,500",
     estimatedTime: "2-3 weeks",
     postedDate: "2 hours ago",
-    icon: "💻"
+    icon: "💻",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const jobListings = [
     reward: "$1,800",
     estimatedTime: "1-2 weeks",
     postedDate: "4 hours ago",
-    icon: "🎨"
+    icon: "🎨",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const jobListings = [
     reward: "$3,200",
     estimatedTime: "3-4 weeks",
     postedDate: "6 hours ago",
-    icon: "📱"
+    icon: "📱",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const jobListings = [
     reward: "$800",
     estimatedTime: "1 week",
     postedDate: "1 day ago",
-    icon: "✍️"
+    icon: "✍️",
   },
   {
     id: 5,
@@ -54,7 +54,7 @@ const jobListings = [
     reward: "$2,100",
     estimatedTime: "2 weeks",
     postedDate: "1 day ago",
-    icon: "📊"
+    icon: "📊",
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ const jobListings = [
     reward: "$450",
     estimatedTime: "3-5 days",
     postedDate: "2 days ago",
-    icon: "🖼️"
+    icon: "🖼️",
   },
   {
     id: 7,
@@ -72,7 +72,7 @@ const jobListings = [
     reward: "$4,500",
     estimatedTime: "4-6 weeks",
     postedDate: "3 days ago",
-    icon: "🛒"
+    icon: "🛒",
   },
   {
     id: 8,
@@ -81,8 +81,8 @@ const jobListings = [
     reward: "$1,200",
     estimatedTime: "1 week",
     postedDate: "4 days ago",
-    icon: "🎬"
-  }
+    icon: "🎬",
+  },
 ];
 
 export default function Index() {
@@ -93,22 +93,50 @@ export default function Index() {
         {/* Top Navigation */}
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold">
-              Giglancers
-            </div>
+            <div className="text-2xl font-bold">Giglancers</div>
             <nav className="hidden md:flex items-center space-x-6">
-              <Link to="/find-jobs" className="hover:text-green-100 transition-colors">Find Jobs</Link>
-              <Link to="/my-account" className="hover:text-green-100 transition-colors">My Account</Link>
-              <Link to="/browse-jobs" className="hover:text-green-100 transition-colors">Browse Jobs</Link>
-              <Link to="/post-new-job" className="hover:text-green-100 transition-colors">Post a New Job</Link>
+              <Link
+                to="/find-jobs"
+                className="hover:text-green-100 transition-colors"
+              >
+                Find Jobs
+              </Link>
+              <Link
+                to="/my-account"
+                className="hover:text-green-100 transition-colors"
+              >
+                My Account
+              </Link>
+              <Link
+                to="/browse-jobs"
+                className="hover:text-green-100 transition-colors"
+              >
+                Browse Jobs
+              </Link>
+              <Link
+                to="/post-new-job"
+                className="hover:text-green-100 transition-colors"
+              >
+                Post a New Job
+              </Link>
               <button className="bg-transparent border-2 border-white px-4 py-2 rounded hover:bg-white hover:text-brand-green transition-colors">
                 Post a Job
               </button>
             </nav>
             {/* Mobile menu button */}
             <button className="md:hidden">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
@@ -119,8 +147,18 @@ export default function Index() {
           <div className="container mx-auto px-4 py-2">
             <div className="flex items-center justify-between">
               <nav className="flex items-center space-x-6">
-                <Link to="/" className="text-white hover:text-green-100 transition-colors font-medium">Home</Link>
-                <Link to="/my-work" className="text-white hover:text-green-100 transition-colors">My work</Link>
+                <Link
+                  to="/"
+                  className="text-white hover:text-green-100 transition-colors font-medium"
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/my-work"
+                  className="text-white hover:text-green-100 transition-colors"
+                >
+                  My work
+                </Link>
               </nav>
               <button className="bg-green-500 hover:bg-green-400 px-4 py-1 rounded text-sm font-medium transition-colors">
                 Find jobs
@@ -138,26 +176,36 @@ export default function Index() {
             <table className="w-full">
               <thead className="bg-gray-50 border-b">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-text-dark">Job title</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-text-dark">Category</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-text-dark">Rewards</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-text-dark">Search/Est. time</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold text-text-dark">Most Recent</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-text-dark">
+                    Job title
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-text-dark">
+                    Category
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-text-dark">
+                    Rewards
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-text-dark">
+                    Search/Est. time
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-bold text-text-dark">
+                    Most Recent
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {jobListings.map((job, index) => (
-                  <tr 
-                    key={job.id} 
+                  <tr
+                    key={job.id}
                     className={`border-b hover:bg-gray-50 transition-colors ${
-                      index % 2 === 1 ? 'bg-table-stripe' : 'bg-white'
+                      index % 2 === 1 ? "bg-table-stripe" : "bg-white"
                     }`}
                   >
                     <td className="px-6 py-4">
                       <div className="flex items-center space-x-3">
                         <span className="text-2xl">{job.icon}</span>
-                        <Link 
-                          to={`/job/${job.id}`} 
+                        <Link
+                          to={`/job/${job.id}`}
                           className="text-brand-green hover:text-green-600 font-medium transition-colors"
                         >
                           {job.title}
@@ -168,7 +216,7 @@ export default function Index() {
                     <td className="px-6 py-4">
                       <div className="flex items-center text-green-600 font-semibold">
                         <DollarSign className="w-4 h-4 mr-1" />
-                        {job.reward.replace('$', '')}
+                        {job.reward.replace("$", "")}
                       </div>
                     </td>
                     <td className="px-6 py-4">
@@ -177,7 +225,9 @@ export default function Index() {
                         {job.estimatedTime}
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-gray-600">{job.postedDate}</td>
+                    <td className="px-6 py-4 text-gray-600">
+                      {job.postedDate}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -187,7 +237,10 @@ export default function Index() {
           {/* Mobile Card Layout */}
           <div className="md:hidden">
             {jobListings.map((job) => (
-              <div key={job.id} className="border-b p-4 hover:bg-gray-50 transition-colors">
+              <div
+                key={job.id}
+                className="border-b p-4 hover:bg-gray-50 transition-colors"
+              >
                 <div className="flex items-start space-x-3 mb-2">
                   <span className="text-2xl">{job.icon}</span>
                   <div className="flex-1">
@@ -201,14 +254,16 @@ export default function Index() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-green-600 font-semibold">
                         <DollarSign className="w-4 h-4 mr-1" />
-                        {job.reward.replace('$', '')}
+                        {job.reward.replace("$", "")}
                       </div>
                       <div className="flex items-center text-gray-600 text-sm">
                         <Clock className="w-4 h-4 mr-1" />
                         {job.estimatedTime}
                       </div>
                     </div>
-                    <p className="text-xs text-gray-500 mt-2">{job.postedDate}</p>
+                    <p className="text-xs text-gray-500 mt-2">
+                      {job.postedDate}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -236,10 +291,30 @@ export default function Index() {
 
             {/* Footer Links */}
             <nav className="flex flex-wrap justify-center space-x-6">
-              <Link to="/about" className="hover:text-green-100 transition-colors">About Us</Link>
-              <Link to="/contact" className="hover:text-green-100 transition-colors">Contact Us</Link>
-              <Link to="/privacy" className="hover:text-green-100 transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-green-100 transition-colors">Terms of Service</Link>
+              <Link
+                to="/about"
+                className="hover:text-green-100 transition-colors"
+              >
+                About Us
+              </Link>
+              <Link
+                to="/contact"
+                className="hover:text-green-100 transition-colors"
+              >
+                Contact Us
+              </Link>
+              <Link
+                to="/privacy"
+                className="hover:text-green-100 transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms"
+                className="hover:text-green-100 transition-colors"
+              >
+                Terms of Service
+              </Link>
             </nav>
 
             {/* Social Media Icons */}
