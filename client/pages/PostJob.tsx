@@ -587,9 +587,9 @@ export default function PostJob() {
 
           {/* Apply Button */}
           <div className="flex justify-center">
-            <button 
+            <button
               className="bg-brand-green text-white px-12 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={!selectedZone || selectedCountries.length === 0}
+              disabled={!selectedCategory || !selectedSubcategory}
             >
               APPLY FOR NEXT
             </button>
