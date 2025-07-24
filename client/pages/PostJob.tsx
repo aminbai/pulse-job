@@ -165,6 +165,163 @@ const countries = [
   { name: 'Morocco', region: 'international' },
 ];
 
+// Categories data
+const categories = [
+  {
+    id: 'ads-seo',
+    name: 'Ads Click, SEO, Visit, Search, Engage',
+    subcategories: ['Sign Up', 'Search Optimization', 'Social Media Engagement']
+  },
+  {
+    id: 'computer-programs',
+    name: 'Computer Programs',
+    subcategories: ['Software Development', 'Website Creation', 'Mobile Apps']
+  },
+  {
+    id: 'mobile-application',
+    name: 'Mobile Application',
+    subcategories: ['Android Apps', 'iOS Apps', 'Cross-Platform']
+  },
+  {
+    id: 'forums',
+    name: 'Forums',
+    subcategories: ['Forum Posting', 'Community Management', 'Discussion Moderation']
+  },
+  {
+    id: 'comment-blogs',
+    name: 'Comment on other blogs',
+    subcategories: ['Blog Comments', 'Guest Posting', 'Content Engagement']
+  },
+  {
+    id: 'survey',
+    name: 'Survey',
+    subcategories: ['Online Surveys', 'Market Research', 'Data Collection']
+  },
+  {
+    id: 'identity-verification',
+    name: 'Identity Verification',
+    subcategories: ['Document Verification', 'KYC Services', 'Background Checks']
+  },
+  {
+    id: 'facebook',
+    name: 'Facebook',
+    subcategories: ['Facebook Pages', 'Facebook Groups', 'Facebook Ads']
+  },
+  {
+    id: 'twitter',
+    name: 'Twitter',
+    subcategories: ['Twitter Management', 'Tweet Engagement', 'Twitter Analytics']
+  },
+  {
+    id: 'instagram',
+    name: 'Instagram',
+    subcategories: ['Instagram Growth', 'Content Creation', 'Story Management']
+  },
+  {
+    id: 'youtube-rumble',
+    name: 'Youtube/Rumble',
+    subcategories: ['Video Creation', 'Channel Management', 'Video Editing']
+  },
+  {
+    id: 'discord',
+    name: 'Discord',
+    subcategories: ['Server Management', 'Bot Development', 'Community Building']
+  },
+  {
+    id: 'reddit',
+    name: 'Reddit',
+    subcategories: ['Reddit Posting', 'Subreddit Management', 'Comment Engagement']
+  },
+  {
+    id: 'telegram',
+    name: 'Telegram',
+    subcategories: ['Channel Management', 'Bot Creation', 'Group Administration']
+  },
+  {
+    id: 'medium',
+    name: 'Medium',
+    subcategories: ['Article Writing', 'Content Strategy', 'Publication Management']
+  },
+  {
+    id: 'whatsapp',
+    name: 'WhatsApp',
+    subcategories: ['Business WhatsApp', 'Message Automation', 'Customer Support']
+  },
+  {
+    id: 'tiktok',
+    name: 'TikTok',
+    subcategories: ['Content Creation', 'TikTok Growth', 'Video Editing']
+  },
+  {
+    id: 'linkedin',
+    name: 'LinkedIn',
+    subcategories: ['Professional Networking', 'Content Strategy', 'Lead Generation']
+  },
+  {
+    id: 'gmail-account',
+    name: 'Gmail Account',
+    subcategories: [
+      'New Gmail Account',
+      'Old Gmail Account',
+      'Gmail Account + Youtube Account Create',
+      'Gmail Account + Instagram Account Create',
+      'Gmail Account + Twitter Account Create',
+      'Gmail Account + TikTok Account Create',
+      'Gmail Account + Facebook Account Create'
+    ]
+  },
+  {
+    id: 'review',
+    name: 'Review',
+    subcategories: ['Product Reviews', 'Service Reviews', 'App Reviews']
+  },
+  {
+    id: 'data-entry',
+    name: 'Data Entry',
+    subcategories: ['Excel Data Entry', 'Database Management', 'Data Processing']
+  },
+  {
+    id: 'promotion',
+    name: 'Promotion',
+    subcategories: ['Social Media Promotion', 'Brand Promotion', 'Product Launch']
+  },
+  {
+    id: 'airdrop-offer',
+    name: 'Airdrop/Offer Join',
+    subcategories: ['Crypto Airdrops', 'Offer Participation', 'Reward Programs']
+  },
+  {
+    id: 'otp-verification',
+    name: 'OTP Verification',
+    subcategories: ['SMS Verification', 'Phone Verification', 'Two-Factor Authentication']
+  },
+  {
+    id: 'answers',
+    name: 'Answers',
+    subcategories: ['Q&A Platforms', 'Technical Support', 'Customer Service']
+  },
+  {
+    id: 'other',
+    name: 'Other',
+    subcategories: ['Custom Tasks', 'Miscellaneous', 'Special Projects']
+  },
+  {
+    id: 'toffee',
+    name: 'Toffee',
+    subcategories: ['App Testing', 'Content Creation', 'User Engagement']
+  },
+  {
+    id: 'snapchat',
+    name: 'Snapchat',
+    subcategories: ['Snapchat Management', 'Story Creation', 'Snap Ads']
+  },
+  {
+    id: 'quora',
+    name: 'Quora',
+    subcategories: ['Question Answering', 'Space Management', 'Content Writing']
+  }
+];
+
 export default function PostJob() {
   const [selectedZone, setSelectedZone] = useState<string>('international');
   const [selectedCountries, setSelectedCountries] = useState<string[]>(['United States', 'Canada', 'Mexico', 'Brazil', 'Argentina', 'Chile', 'Colombia', 'Peru', 'United Kingdom', 'Germany', 'France', 'Italy', 'Spain', 'Russia', 'China', 'Japan', 'India', 'Australia', 'South Africa', 'Nigeria', 'Egypt', 'Morocco']);
