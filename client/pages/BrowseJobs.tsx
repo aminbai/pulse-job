@@ -28,7 +28,8 @@ const sampleJobs = [
   {
     id: 1,
     title: "Gmail Account Creation",
-    description: "Need 50 new Gmail accounts with phone verification. Must be created from different IP addresses.",
+    description:
+      "Need 50 new Gmail accounts with phone verification. Must be created from different IP addresses.",
     category: "Digital Marketing",
     subcategory: "Account Creation",
     client: "TechCorp Solutions",
@@ -50,7 +51,8 @@ const sampleJobs = [
   {
     id: 2,
     title: "Facebook Page Management",
-    description: "Looking for experienced social media manager to handle Facebook page for local restaurant. Daily posting and customer engagement required.",
+    description:
+      "Looking for experienced social media manager to handle Facebook page for local restaurant. Daily posting and customer engagement required.",
     category: "Digital Marketing",
     subcategory: "Social Media",
     client: "Restaurant Owner",
@@ -72,7 +74,8 @@ const sampleJobs = [
   {
     id: 3,
     title: "WordPress Website Development",
-    description: "Create a responsive WordPress website for small business. Include contact forms, gallery, and booking system.",
+    description:
+      "Create a responsive WordPress website for small business. Include contact forms, gallery, and booking system.",
     category: "Web Development",
     subcategory: "WordPress",
     client: "Digital Agency",
@@ -94,7 +97,8 @@ const sampleJobs = [
   {
     id: 4,
     title: "Data Entry from PDF to Excel",
-    description: "Convert 100 pages of PDF documents into Excel spreadsheet. Accuracy is very important.",
+    description:
+      "Convert 100 pages of PDF documents into Excel spreadsheet. Accuracy is very important.",
     category: "Data Entry",
     subcategory: "Excel",
     client: "Small Business",
@@ -116,7 +120,8 @@ const sampleJobs = [
   {
     id: 5,
     title: "Mobile App UI/UX Design",
-    description: "Design modern and user-friendly interface for iOS and Android mobile application. Figma files required.",
+    description:
+      "Design modern and user-friendly interface for iOS and Android mobile application. Figma files required.",
     category: "Design",
     subcategory: "UI/UX",
     client: "Startup Company",
@@ -138,7 +143,8 @@ const sampleJobs = [
   {
     id: 6,
     title: "YouTube Video Editing",
-    description: "Edit promotional videos for YouTube channel. Add animations, transitions, and background music.",
+    description:
+      "Edit promotional videos for YouTube channel. Add animations, transitions, and background music.",
     category: "Video & Animation",
     subcategory: "Video Editing",
     client: "Content Creator",
@@ -162,7 +168,7 @@ const sampleJobs = [
 const categories = [
   "All Categories",
   "Web Development",
-  "Digital Marketing", 
+  "Digital Marketing",
   "Design",
   "Data Entry",
   "Video & Animation",
@@ -173,7 +179,7 @@ const categories = [
 const experienceLevels = [
   "All Levels",
   "Entry Level",
-  "Intermediate", 
+  "Intermediate",
   "Expert",
 ];
 
@@ -181,7 +187,7 @@ const budgetRanges = [
   "All Budgets",
   "$0 - $50",
   "$50 - $200",
-  "$200 - $500", 
+  "$200 - $500",
   "$500 - $1000",
   "$1000+",
 ];
@@ -217,21 +223,32 @@ export default function BrowseJobs() {
 
   // Filter and sort jobs
   const filteredJobs = useMemo(() => {
-    let filtered = sampleJobs.filter(job => {
+    let filtered = sampleJobs.filter((job) => {
       // Search filter
-      if (searchTerm && !job.title.toLowerCase().includes(searchTerm.toLowerCase()) && 
-          !job.description.toLowerCase().includes(searchTerm.toLowerCase()) &&
-          !job.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()))) {
+      if (
+        searchTerm &&
+        !job.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        !job.description.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        !job.skills.some((skill) =>
+          skill.toLowerCase().includes(searchTerm.toLowerCase()),
+        )
+      ) {
         return false;
       }
 
       // Category filter
-      if (selectedCategory !== "All Categories" && job.category !== selectedCategory) {
+      if (
+        selectedCategory !== "All Categories" &&
+        job.category !== selectedCategory
+      ) {
         return false;
       }
 
       // Experience filter
-      if (selectedExperience !== "All Levels" && job.experienceLevel !== selectedExperience) {
+      if (
+        selectedExperience !== "All Levels" &&
+        job.experienceLevel !== selectedExperience
+      ) {
         return false;
       }
 
@@ -239,7 +256,7 @@ export default function BrowseJobs() {
       if (selectedBudget !== "All Budgets") {
         const budgetMin = job.budget.min;
         const budgetMax = job.budget.max;
-        
+
         switch (selectedBudget) {
           case "$0 - $50":
             return budgetMax <= 50;
@@ -257,7 +274,10 @@ export default function BrowseJobs() {
       }
 
       // Country filter
-      if (selectedCountry !== "All Countries" && job.country !== selectedCountry) {
+      if (
+        selectedCountry !== "All Countries" &&
+        job.country !== selectedCountry
+      ) {
         return false;
       }
 
@@ -284,18 +304,28 @@ export default function BrowseJobs() {
     }
 
     return filtered;
-  }, [searchTerm, selectedCategory, selectedExperience, selectedBudget, selectedCountry, sortBy]);
+  }, [
+    searchTerm,
+    selectedCategory,
+    selectedExperience,
+    selectedBudget,
+    selectedCountry,
+    sortBy,
+  ]);
 
   // Pagination
   const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
   const startIndex = (currentPage - 1) * jobsPerPage;
-  const paginatedJobs = filteredJobs.slice(startIndex, startIndex + jobsPerPage);
+  const paginatedJobs = filteredJobs.slice(
+    startIndex,
+    startIndex + jobsPerPage,
+  );
 
   const handleSaveJob = (jobId: number) => {
-    setSavedJobs(prev => 
-      prev.includes(jobId) 
-        ? prev.filter(id => id !== jobId)
-        : [...prev, jobId]
+    setSavedJobs((prev) =>
+      prev.includes(jobId)
+        ? prev.filter((id) => id !== jobId)
+        : [...prev, jobId],
     );
   };
 
@@ -321,7 +351,7 @@ export default function BrowseJobs() {
             <p className="text-xl text-green-100 mb-8">
               Find the perfect job that matches your skills and interests
             </p>
-            
+
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto">
               <div className="relative">
@@ -342,7 +372,9 @@ export default function BrowseJobs() {
       <main className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Filters */}
-          <aside className={`lg:w-80 ${showFilters ? 'block' : 'hidden lg:block'}`}>
+          <aside
+            className={`lg:w-80 ${showFilters ? "block" : "hidden lg:block"}`}
+          >
             <div className="bg-white rounded-lg shadow-sm p-6 sticky top-4">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold text-gray-900">Filters</h2>
@@ -377,8 +409,10 @@ export default function BrowseJobs() {
                     onChange={(e) => setSelectedCategory(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green"
                   >
-                    {categories.map(category => (
-                      <option key={category} value={category}>{category}</option>
+                    {categories.map((category) => (
+                      <option key={category} value={category}>
+                        {category}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -393,8 +427,10 @@ export default function BrowseJobs() {
                     onChange={(e) => setSelectedExperience(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green"
                   >
-                    {experienceLevels.map(level => (
-                      <option key={level} value={level}>{level}</option>
+                    {experienceLevels.map((level) => (
+                      <option key={level} value={level}>
+                        {level}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -409,8 +445,10 @@ export default function BrowseJobs() {
                     onChange={(e) => setSelectedBudget(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green"
                   >
-                    {budgetRanges.map(range => (
-                      <option key={range} value={range}>{range}</option>
+                    {budgetRanges.map((range) => (
+                      <option key={range} value={range}>
+                        {range}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -425,8 +463,10 @@ export default function BrowseJobs() {
                     onChange={(e) => setSelectedCountry(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green"
                   >
-                    {countries.map(country => (
-                      <option key={country} value={country}>{country}</option>
+                    {countries.map((country) => (
+                      <option key={country} value={country}>
+                        {country}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -438,16 +478,31 @@ export default function BrowseJobs() {
                   </label>
                   <div className="space-y-2">
                     <label className="flex items-center">
-                      <input type="checkbox" className="rounded border-gray-300 text-brand-green focus:ring-brand-green" />
-                      <span className="ml-2 text-sm text-gray-700">Featured Jobs</span>
+                      <input
+                        type="checkbox"
+                        className="rounded border-gray-300 text-brand-green focus:ring-brand-green"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">
+                        Featured Jobs
+                      </span>
                     </label>
                     <label className="flex items-center">
-                      <input type="checkbox" className="rounded border-gray-300 text-brand-green focus:ring-brand-green" />
-                      <span className="ml-2 text-sm text-gray-700">Urgent Jobs</span>
+                      <input
+                        type="checkbox"
+                        className="rounded border-gray-300 text-brand-green focus:ring-brand-green"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">
+                        Urgent Jobs
+                      </span>
                     </label>
                     <label className="flex items-center">
-                      <input type="checkbox" className="rounded border-gray-300 text-brand-green focus:ring-brand-green" />
-                      <span className="ml-2 text-sm text-gray-700">Verified Clients</span>
+                      <input
+                        type="checkbox"
+                        className="rounded border-gray-300 text-brand-green focus:ring-brand-green"
+                      />
+                      <span className="ml-2 text-sm text-gray-700">
+                        Verified Clients
+                      </span>
                     </label>
                   </div>
                 </div>
@@ -462,7 +517,10 @@ export default function BrowseJobs() {
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div className="flex items-center space-x-4">
                   <p className="text-gray-600">
-                    <span className="font-semibold text-gray-900">{filteredJobs.length}</span> jobs found
+                    <span className="font-semibold text-gray-900">
+                      {filteredJobs.length}
+                    </span>{" "}
+                    jobs found
                   </p>
                   <Button
                     variant="outline"
@@ -474,7 +532,7 @@ export default function BrowseJobs() {
                     Filters
                   </Button>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <span className="text-sm text-gray-600">Sort by:</span>
                   <select
@@ -482,8 +540,10 @@ export default function BrowseJobs() {
                     onChange={(e) => setSortBy(e.target.value)}
                     className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green"
                   >
-                    {sortOptions.map(option => (
-                      <option key={option} value={option}>{option}</option>
+                    {sortOptions.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -495,15 +555,22 @@ export default function BrowseJobs() {
               {paginatedJobs.length === 0 ? (
                 <div className="bg-white rounded-lg shadow-sm p-12 text-center">
                   <Briefcase className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">No jobs found</h3>
-                  <p className="text-gray-600 mb-4">Try adjusting your filters or search terms</p>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    No jobs found
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Try adjusting your filters or search terms
+                  </p>
                   <Button onClick={clearFilters} variant="outline">
                     Clear Filters
                   </Button>
                 </div>
               ) : (
-                paginatedJobs.map(job => (
-                  <Card key={job.id} className="hover:shadow-md transition-shadow">
+                paginatedJobs.map((job) => (
+                  <Card
+                    key={job.id}
+                    className="hover:shadow-md transition-shadow"
+                  >
                     <CardContent className="p-6">
                       <div className="flex justify-between items-start mb-4">
                         <div className="flex-1">
@@ -511,7 +578,10 @@ export default function BrowseJobs() {
                             <div className="flex-1">
                               <div className="flex items-center space-x-2 mb-2">
                                 <h3 className="text-xl font-semibold text-gray-900">
-                                  <Link to={`/job/${job.id}`} className="hover:text-brand-green transition-colors">
+                                  <Link
+                                    to={`/job/${job.id}`}
+                                    className="hover:text-brand-green transition-colors"
+                                  >
                                     {job.title}
                                   </Link>
                                 </h3>
@@ -526,13 +596,15 @@ export default function BrowseJobs() {
                                   </span>
                                 )}
                               </div>
-                              
-                              <p className="text-gray-600 mb-3 line-clamp-2">{job.description}</p>
-                              
+
+                              <p className="text-gray-600 mb-3 line-clamp-2">
+                                {job.description}
+                              </p>
+
                               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
                                 <span className="flex items-center">
-                                  <DollarSign className="w-4 h-4 mr-1" />
-                                  ${job.budget.min} - ${job.budget.max}
+                                  <DollarSign className="w-4 h-4 mr-1" />$
+                                  {job.budget.min} - ${job.budget.max}
                                 </span>
                                 <span className="flex items-center">
                                   <Clock className="w-4 h-4 mr-1" />
@@ -554,7 +626,7 @@ export default function BrowseJobs() {
 
                               {/* Skills */}
                               <div className="flex flex-wrap gap-2 mb-4">
-                                {job.skills.map(skill => (
+                                {job.skills.map((skill) => (
                                   <span
                                     key={skill}
                                     className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs"
@@ -571,7 +643,9 @@ export default function BrowseJobs() {
                                     <p className="text-sm font-medium text-gray-900 flex items-center">
                                       {job.client}
                                       {job.verified && (
-                                        <span className="ml-1 text-brand-green">✓</span>
+                                        <span className="ml-1 text-brand-green">
+                                          ✓
+                                        </span>
                                       )}
                                     </p>
                                     <div className="flex items-center space-x-2 text-xs text-gray-500">
@@ -597,11 +671,17 @@ export default function BrowseJobs() {
                             variant="ghost"
                             size="sm"
                             onClick={() => handleSaveJob(job.id)}
-                            className={`${savedJobs.includes(job.id) ? 'text-red-600' : 'text-gray-400'}`}
+                            className={`${savedJobs.includes(job.id) ? "text-red-600" : "text-gray-400"}`}
                           >
-                            <Heart className={`w-4 h-4 ${savedJobs.includes(job.id) ? 'fill-current' : ''}`} />
+                            <Heart
+                              className={`w-4 h-4 ${savedJobs.includes(job.id) ? "fill-current" : ""}`}
+                            />
                           </Button>
-                          <Button variant="ghost" size="sm" className="text-gray-400">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="text-gray-400"
+                          >
                             <Share className="w-4 h-4" />
                           </Button>
                           <Link to={`/job/${job.id}`}>
@@ -623,28 +703,38 @@ export default function BrowseJobs() {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                  onClick={() =>
+                    setCurrentPage((prev) => Math.max(1, prev - 1))
+                  }
                   disabled={currentPage === 1}
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </Button>
-                
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                  <Button
-                    key={page}
-                    variant={currentPage === page ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setCurrentPage(page)}
-                    className={currentPage === page ? "bg-brand-green hover:bg-green-600" : ""}
-                  >
-                    {page}
-                  </Button>
-                ))}
-                
+
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                  (page) => (
+                    <Button
+                      key={page}
+                      variant={currentPage === page ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setCurrentPage(page)}
+                      className={
+                        currentPage === page
+                          ? "bg-brand-green hover:bg-green-600"
+                          : ""
+                      }
+                    >
+                      {page}
+                    </Button>
+                  ),
+                )}
+
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                  onClick={() =>
+                    setCurrentPage((prev) => Math.min(totalPages, prev + 1))
+                  }
                   disabled={currentPage === totalPages}
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -672,28 +762,98 @@ export default function BrowseJobs() {
             <div>
               <h4 className="text-lg font-semibold mb-4">For Freelancers</h4>
               <ul className="space-y-2">
-                <li><Link to="/browse-jobs" className="text-gray-300 hover:text-white transition-colors">Browse Jobs</Link></li>
-                <li><Link to="/how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</Link></li>
-                <li><Link to="/signup" className="text-gray-300 hover:text-white transition-colors">Sign Up</Link></li>
+                <li>
+                  <Link
+                    to="/browse-jobs"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Browse Jobs
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/how-it-works"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    How It Works
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/signup"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Sign Up
+                  </Link>
+                </li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-lg font-semibold mb-4">For Clients</h4>
               <ul className="space-y-2">
-                <li><Link to="/post-job" className="text-gray-300 hover:text-white transition-colors">Post a Job</Link></li>
-                <li><Link to="/why-choose-us" className="text-gray-300 hover:text-white transition-colors">Why Choose Us</Link></li>
-                <li><Link to="/signup" className="text-gray-300 hover:text-white transition-colors">Get Started</Link></li>
+                <li>
+                  <Link
+                    to="/post-job"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Post a Job
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/why-choose-us"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Why Choose Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/signup"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Get Started
+                  </Link>
+                </li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-lg font-semibold mb-4">Support</h4>
               <ul className="space-y-2">
-                <li><Link to="/help" className="text-gray-300 hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</Link></li>
-                <li><Link to="/terms" className="text-gray-300 hover:text-white transition-colors">Terms of Service</Link></li>
-                <li><Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li>
+                  <Link
+                    to="/help"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Help Center
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/privacy"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

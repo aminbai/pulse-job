@@ -91,11 +91,17 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null,
+  );
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -105,9 +111,15 @@ export default function Contact() {
 
     // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", department: "General Support", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        department: "General Support",
+        message: "",
+      });
     } catch (error) {
       setSubmitStatus("error");
     } finally {
@@ -124,7 +136,8 @@ export default function Contact() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
           <p className="text-xl text-green-100 max-w-2xl mx-auto">
-            Have questions? We're here to help. Reach out to our team and we'll get back to you as soon as possible.
+            Have questions? We're here to help. Reach out to our team and we'll
+            get back to you as soon as possible.
           </p>
         </div>
       </section>
@@ -139,7 +152,10 @@ export default function Contact() {
             {contactMethods.map((method, index) => {
               const IconComponent = method.icon;
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="text-center hover:shadow-lg transition-shadow"
+                >
                   <CardContent className="p-6">
                     <div className="w-16 h-16 bg-brand-green-light rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-8 h-8 text-brand-green" />
@@ -148,7 +164,9 @@ export default function Contact() {
                       {method.title}
                     </h3>
                     <p className="text-gray-600 mb-3">{method.description}</p>
-                    <p className="font-medium text-gray-900 mb-4">{method.contact}</p>
+                    <p className="font-medium text-gray-900 mb-4">
+                      {method.contact}
+                    </p>
                     <Button className="bg-brand-green hover:bg-green-600">
                       {method.action}
                     </Button>
@@ -166,7 +184,8 @@ export default function Contact() {
               <CardHeader>
                 <CardTitle className="text-2xl">Send us a Message</CardTitle>
                 <p className="text-gray-600">
-                  Fill out the form below and we'll get back to you within 24 hours.
+                  Fill out the form below and we'll get back to you within 24
+                  hours.
                 </p>
               </CardHeader>
               <CardContent>
@@ -174,7 +193,8 @@ export default function Contact() {
                   <Alert className="mb-6 border-green-200 bg-green-50">
                     <CheckCircle className="h-4 w-4 text-green-600" />
                     <AlertDescription className="text-green-800">
-                      Thank you! Your message has been sent successfully. We'll get back to you soon.
+                      Thank you! Your message has been sent successfully. We'll
+                      get back to you soon.
                     </AlertDescription>
                   </Alert>
                 )}
@@ -183,7 +203,8 @@ export default function Contact() {
                   <Alert className="mb-6 border-red-200 bg-red-50">
                     <AlertCircle className="h-4 w-4 text-red-600" />
                     <AlertDescription className="text-red-800">
-                      Sorry, there was an error sending your message. Please try again.
+                      Sorry, there was an error sending your message. Please try
+                      again.
                     </AlertDescription>
                   </Alert>
                 )}
@@ -226,8 +247,12 @@ export default function Contact() {
                     >
                       <option value="General Support">General Support</option>
                       <option value="Sales Team">Sales Team</option>
-                      <option value="Business Development">Business Development</option>
-                      <option value="Technical Support">Technical Support</option>
+                      <option value="Business Development">
+                        Business Development
+                      </option>
+                      <option value="Technical Support">
+                        Technical Support
+                      </option>
                       <option value="Billing">Billing</option>
                     </select>
                   </div>
@@ -290,14 +315,24 @@ export default function Contact() {
                 {departments.map((dept, index) => {
                   const IconComponent = dept.icon;
                   return (
-                    <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div
+                      key={index}
+                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                    >
                       <div className="w-10 h-10 bg-brand-green-light rounded-lg flex items-center justify-center flex-shrink-0">
                         <IconComponent className="w-5 h-5 text-brand-green" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900">{dept.title}</h4>
-                        <p className="text-sm text-gray-600 mb-1">{dept.description}</p>
-                        <a href={`mailto:${dept.email}`} className="text-sm text-brand-green hover:text-green-600">
+                        <h4 className="font-semibold text-gray-900">
+                          {dept.title}
+                        </h4>
+                        <p className="text-sm text-gray-600 mb-1">
+                          {dept.description}
+                        </p>
+                        <a
+                          href={`mailto:${dept.email}`}
+                          className="text-sm text-brand-green hover:text-green-600"
+                        >
                           {dept.email}
                         </a>
                       </div>
@@ -314,9 +349,14 @@ export default function Contact() {
               </CardHeader>
               <CardContent className="space-y-6">
                 {officeLocations.map((office, index) => (
-                  <div key={index} className="border-b border-gray-200 pb-4 last:border-b-0">
+                  <div
+                    key={index}
+                    className="border-b border-gray-200 pb-4 last:border-b-0"
+                  >
                     <div className="flex items-start justify-between mb-2">
-                      <h4 className="font-semibold text-gray-900">{office.city}</h4>
+                      <h4 className="font-semibold text-gray-900">
+                        {office.city}
+                      </h4>
                       {office.isPrimary && (
                         <span className="bg-brand-green text-white text-xs px-2 py-1 rounded-full">
                           Primary
@@ -349,7 +389,8 @@ export default function Contact() {
                   Looking for Quick Answers?
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Check out our FAQ section for instant answers to common questions.
+                  Check out our FAQ section for instant answers to common
+                  questions.
                 </p>
                 <Button variant="outline" asChild>
                   <a href="/faq">Visit FAQ</a>
@@ -368,7 +409,9 @@ export default function Contact() {
             <CardContent>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-3">Support Hours (GMT+6)</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">
+                    Support Hours (GMT+6)
+                  </h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span>Monday - Friday:</span>
@@ -385,12 +428,15 @@ export default function Contact() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-3">Emergency Support</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">
+                    Emergency Support
+                  </h4>
                   <p className="text-sm text-gray-600 mb-2">
                     For urgent technical issues affecting platform availability
                   </p>
                   <p className="text-sm">
-                    <span className="font-medium">24/7 Emergency Line:</span> +880 1234-567890
+                    <span className="font-medium">24/7 Emergency Line:</span>{" "}
+                    +880 1234-567890
                   </p>
                 </div>
               </div>
@@ -416,20 +462,76 @@ export default function Contact() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                <li><a href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="/how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</a></li>
-                <li><a href="/browse-jobs" className="text-gray-300 hover:text-white transition-colors">Browse Jobs</a></li>
-                <li><a href="/post-job" className="text-gray-300 hover:text-white transition-colors">Post a Job</a></li>
+                <li>
+                  <a
+                    href="/about"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/how-it-works"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    How It Works
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/browse-jobs"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Browse Jobs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/post-job"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Post a Job
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-lg font-semibold mb-4">Support</h4>
               <ul className="space-y-2">
-                <li><a href="/faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
-                <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
-                <li><a href="/terms" className="text-gray-300 hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="/privacy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                <li>
+                  <a
+                    href="/faq"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/contact"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/terms"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/privacy"
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -446,7 +548,11 @@ export default function Contact() {
                 </div>
                 <div className="flex items-start">
                   <MapPin className="w-4 h-4 mr-2 mt-0.5" />
-                  <span>123 Gulshan Avenue<br />Dhaka 1212, Bangladesh</span>
+                  <span>
+                    123 Gulshan Avenue
+                    <br />
+                    Dhaka 1212, Bangladesh
+                  </span>
                 </div>
               </div>
             </div>

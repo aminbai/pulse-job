@@ -21,7 +21,8 @@ const savedJobsData = [
   {
     id: 1,
     title: "Gmail Account Creation",
-    description: "Need 50 new Gmail accounts with phone verification. Must be created from different IP addresses.",
+    description:
+      "Need 50 new Gmail accounts with phone verification. Must be created from different IP addresses.",
     category: "Digital Marketing",
     client: "TechCorp Solutions",
     clientRating: 4.8,
@@ -38,7 +39,8 @@ const savedJobsData = [
   {
     id: 2,
     title: "WordPress Website Development",
-    description: "Create a responsive WordPress website for small business. Include contact forms, gallery, and booking system.",
+    description:
+      "Create a responsive WordPress website for small business. Include contact forms, gallery, and booking system.",
     category: "Web Development",
     client: "Digital Agency",
     clientRating: 4.9,
@@ -55,7 +57,8 @@ const savedJobsData = [
   {
     id: 3,
     title: "Mobile App UI/UX Design",
-    description: "Design modern and user-friendly interface for iOS and Android mobile application.",
+    description:
+      "Design modern and user-friendly interface for iOS and Android mobile application.",
     category: "Design",
     client: "Startup Company",
     clientRating: 4.7,
@@ -76,13 +79,16 @@ export default function SavedJobs() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleRemoveJob = (jobId: number) => {
-    setSavedJobs(prev => prev.filter(job => job.id !== jobId));
+    setSavedJobs((prev) => prev.filter((job) => job.id !== jobId));
   };
 
-  const filteredJobs = savedJobs.filter(job =>
-    job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()))
+  const filteredJobs = savedJobs.filter(
+    (job) =>
+      job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.skills.some((skill) =>
+        skill.toLowerCase().includes(searchTerm.toLowerCase()),
+      ),
   );
 
   return (
@@ -120,10 +126,9 @@ export default function SavedJobs() {
                 {searchTerm ? "No jobs found" : "No saved jobs yet"}
               </h3>
               <p className="text-gray-600 mb-4">
-                {searchTerm 
+                {searchTerm
                   ? "Try adjusting your search terms"
-                  : "Save jobs you're interested in to view them here"
-                }
+                  : "Save jobs you're interested in to view them here"}
               </p>
               <Link to="/browse-jobs">
                 <Button className="bg-brand-green hover:bg-green-600">
@@ -132,14 +137,17 @@ export default function SavedJobs() {
               </Link>
             </div>
           ) : (
-            filteredJobs.map(job => (
+            filteredJobs.map((job) => (
               <Card key={job.id} className="hover:shadow-md transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-3">
                         <h3 className="text-xl font-semibold text-gray-900">
-                          <Link to={`/job/${job.id}`} className="hover:text-brand-green transition-colors">
+                          <Link
+                            to={`/job/${job.id}`}
+                            className="hover:text-brand-green transition-colors"
+                          >
                             {job.title}
                           </Link>
                         </h3>
@@ -149,13 +157,15 @@ export default function SavedJobs() {
                           </span>
                         </div>
                       </div>
-                      
-                      <p className="text-gray-600 mb-4 line-clamp-2">{job.description}</p>
-                      
+
+                      <p className="text-gray-600 mb-4 line-clamp-2">
+                        {job.description}
+                      </p>
+
                       <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
                         <span className="flex items-center">
-                          <DollarSign className="w-4 h-4 mr-1" />
-                          ${job.budget.min} - ${job.budget.max}
+                          <DollarSign className="w-4 h-4 mr-1" />$
+                          {job.budget.min} - ${job.budget.max}
                         </span>
                         <span className="flex items-center">
                           <Clock className="w-4 h-4 mr-1" />
@@ -177,7 +187,7 @@ export default function SavedJobs() {
 
                       {/* Skills */}
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {job.skills.map(skill => (
+                        {job.skills.map((skill) => (
                           <span
                             key={skill}
                             className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs"
@@ -239,15 +249,19 @@ export default function SavedJobs() {
         {/* Stats */}
         {savedJobs.length > 0 && (
           <div className="mt-8 bg-white rounded-lg shadow-sm p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Stats</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Quick Stats
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-brand-green">{savedJobs.length}</div>
+                <div className="text-2xl font-bold text-brand-green">
+                  {savedJobs.length}
+                </div>
                 <div className="text-sm text-gray-600">Total Saved Jobs</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-blue-600">
-                  {savedJobs.filter(job => job.status === "Open").length}
+                  {savedJobs.filter((job) => job.status === "Open").length}
                 </div>
                 <div className="text-sm text-gray-600">Still Open</div>
               </div>

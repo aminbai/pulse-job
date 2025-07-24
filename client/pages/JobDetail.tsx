@@ -61,7 +61,7 @@ const sampleJobData = {
     location: "United States",
     memberSince: "2022",
     verified: true,
-    lastSeen: "2 hours ago"
+    lastSeen: "2 hours ago",
   },
   budget: { min: 25, max: 50 },
   duration: "2-3 days",
@@ -83,16 +83,16 @@ const sampleJobData = {
       freelancer: "John D.",
       budget: 75,
       rating: 5,
-      feedback: "Excellent work, delivered on time with great quality."
+      feedback: "Excellent work, delivered on time with great quality.",
     },
     {
       jobTitle: "Email Marketing Campaign",
       freelancer: "Sarah M.",
       budget: 150,
       rating: 4.5,
-      feedback: "Good communication and professional work."
-    }
-  ]
+      feedback: "Good communication and professional work.",
+    },
+  ],
 };
 
 export default function JobDetail() {
@@ -153,7 +153,9 @@ export default function JobDetail() {
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex-1">
                     <div className="flex items-center space-x-2 mb-2">
-                      <h1 className="text-2xl font-bold text-gray-900">{job.title}</h1>
+                      <h1 className="text-2xl font-bold text-gray-900">
+                        {job.title}
+                      </h1>
                       {job.featured && (
                         <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full font-medium">
                           Featured
@@ -165,7 +167,7 @@ export default function JobDetail() {
                         </span>
                       )}
                     </div>
-                    
+
                     <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
                       <span className="flex items-center">
                         <Calendar className="w-4 h-4 mr-1" />
@@ -184,7 +186,9 @@ export default function JobDetail() {
                     <div className="flex flex-wrap items-center gap-6 text-sm">
                       <div className="flex items-center">
                         <DollarSign className="w-4 h-4 mr-1 text-green-600" />
-                        <span className="font-semibold">${job.budget.min} - ${job.budget.max}</span>
+                        <span className="font-semibold">
+                          ${job.budget.min} - ${job.budget.max}
+                        </span>
                       </div>
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-1 text-blue-600" />
@@ -204,9 +208,16 @@ export default function JobDetail() {
                       onClick={handleSave}
                       className={saved ? "text-red-600" : "text-gray-400"}
                     >
-                      <Heart className={`w-4 h-4 ${saved ? "fill-current" : ""}`} />
+                      <Heart
+                        className={`w-4 h-4 ${saved ? "fill-current" : ""}`}
+                      />
                     </Button>
-                    <Button variant="ghost" size="sm" onClick={handleShare} className="text-gray-400">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={handleShare}
+                      className="text-gray-400"
+                    >
                       <Share className="w-4 h-4" />
                     </Button>
                     <Button variant="ghost" size="sm" className="text-gray-400">
@@ -276,10 +287,16 @@ export default function JobDetail() {
                     </div>
                   </div>
                   <div className="flex space-x-3">
-                    <Button onClick={handleSubmitProposal} className="bg-brand-green hover:bg-green-600">
+                    <Button
+                      onClick={handleSubmitProposal}
+                      className="bg-brand-green hover:bg-green-600"
+                    >
                       Submit Proposal
                     </Button>
-                    <Button variant="outline" onClick={() => setShowProposalForm(false)}>
+                    <Button
+                      variant="outline"
+                      onClick={() => setShowProposalForm(false)}
+                    >
                       Cancel
                     </Button>
                   </div>
@@ -308,7 +325,7 @@ export default function JobDetail() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {job.skills.map(skill => (
+                  {job.skills.map((skill) => (
                     <span
                       key={skill}
                       className="bg-brand-green-light text-brand-green px-3 py-1 rounded-full text-sm font-medium"
@@ -328,8 +345,13 @@ export default function JobDetail() {
               <CardContent>
                 <div className="space-y-4">
                   {job.clientHistory.map((work, index) => (
-                    <div key={index} className="border-b border-gray-200 pb-4 last:border-b-0">
-                      <h4 className="font-medium text-gray-900">{work.jobTitle}</h4>
+                    <div
+                      key={index}
+                      className="border-b border-gray-200 pb-4 last:border-b-0"
+                    >
+                      <h4 className="font-medium text-gray-900">
+                        {work.jobTitle}
+                      </h4>
                       <div className="flex items-center space-x-4 mt-1 text-sm text-gray-500">
                         <span>Freelancer: {work.freelancer}</span>
                         <span>${work.budget}</span>
@@ -338,7 +360,9 @@ export default function JobDetail() {
                           {work.rating}
                         </div>
                       </div>
-                      <p className="text-sm text-gray-600 mt-2">{work.feedback}</p>
+                      <p className="text-sm text-gray-600 mt-2">
+                        {work.feedback}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -360,13 +384,17 @@ export default function JobDetail() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-gray-900">{job.client.name}</h3>
+                  <h3 className="font-semibold text-gray-900">
+                    {job.client.name}
+                  </h3>
                   <div className="flex items-center space-x-2 mt-1">
                     <div className="flex items-center">
                       <Star className="w-4 h-4 text-yellow-400 mr-1" />
                       <span className="font-medium">{job.client.rating}</span>
                     </div>
-                    <span className="text-gray-500">({job.client.reviewsCount} reviews)</span>
+                    <span className="text-gray-500">
+                      ({job.client.reviewsCount} reviews)
+                    </span>
                   </div>
                 </div>
 
@@ -381,7 +409,9 @@ export default function JobDetail() {
                   </div>
                   <div>
                     <p className="text-gray-500">Total Spent</p>
-                    <p className="font-medium">${job.client.totalSpent.toLocaleString()}</p>
+                    <p className="font-medium">
+                      ${job.client.totalSpent.toLocaleString()}
+                    </p>
                   </div>
                   <div>
                     <p className="text-gray-500">Member Since</p>
@@ -425,7 +455,9 @@ export default function JobDetail() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Deadline</span>
-                  <span className="font-medium">{job.applicationsDeadline}</span>
+                  <span className="font-medium">
+                    {job.applicationsDeadline}
+                  </span>
                 </div>
               </CardContent>
             </Card>
@@ -436,8 +468,11 @@ export default function JobDetail() {
                 <CardTitle>Similar Jobs</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="border-b border-gray-200 pb-3 last:border-b-0">
+                {[1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className="border-b border-gray-200 pb-3 last:border-b-0"
+                  >
                     <h4 className="text-sm font-medium text-gray-900 hover:text-brand-green cursor-pointer">
                       Account Creation for Social Media Platforms
                     </h4>
@@ -447,7 +482,10 @@ export default function JobDetail() {
                     </div>
                   </div>
                 ))}
-                <Link to="/browse-jobs" className="text-brand-green text-sm hover:text-green-600 transition-colors">
+                <Link
+                  to="/browse-jobs"
+                  className="text-brand-green text-sm hover:text-green-600 transition-colors"
+                >
                   View more similar jobs →
                 </Link>
               </CardContent>
@@ -459,9 +497,12 @@ export default function JobDetail() {
                 <div className="flex items-start space-x-2">
                   <AlertTriangle className="w-5 h-5 text-orange-500 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-medium text-orange-800">Stay Safe</h4>
+                    <h4 className="text-sm font-medium text-orange-800">
+                      Stay Safe
+                    </h4>
                     <p className="text-xs text-orange-700 mt-1">
-                      Always communicate through our platform and never share personal information.
+                      Always communicate through our platform and never share
+                      personal information.
                     </p>
                   </div>
                 </div>
