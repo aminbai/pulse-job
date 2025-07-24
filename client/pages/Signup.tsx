@@ -29,7 +29,7 @@ import {
   Check,
   X,
 } from "lucide-react";
-import Header from "@/components/Header";
+import PublicHeader from "@/components/PublicHeader";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -638,7 +638,7 @@ export default function Signup() {
               অ্যাকাউন্ট তৈরি করুন
             </h1>
             <p className="text-gray-600 mt-2">
-              GigClickers এ যোগ দিন এবং আপনার যাত্রা শুরু করুন
+              GigClickers এ যোগ দিন এবং আপ���ার যাত্রা শুরু করুন
             </p>
           </div>
 
