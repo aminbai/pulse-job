@@ -57,8 +57,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Job listing app specific colors
-        "brand-green": "#4CAF50",
+        // Landing page specific colors
+        "brand-green": "#28a745",
+        "brand-green-light": "#E8F5E9",
         "text-dark": "#333333",
         "table-stripe": "#f2f2f2",
       },
