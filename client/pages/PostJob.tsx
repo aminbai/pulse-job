@@ -557,19 +557,23 @@ export default function PostJob() {
               {steps.map((step, index) => (
                 <div key={step.id} className="flex items-center">
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center font-medium ${
-                    step.active 
-                      ? 'bg-brand-green text-white' 
-                      : 'bg-gray-200 text-gray-600'
+                    step.completed
+                      ? 'bg-brand-green text-white'
+                      : step.active
+                        ? 'bg-brand-green text-white'
+                        : 'bg-gray-200 text-gray-600'
                   }`}>
-                    {step.id}
+                    {step.completed ? '✓' : step.id}
                   </div>
                   <span className={`ml-2 font-medium ${
-                    step.active ? 'text-brand-green' : 'text-gray-600'
+                    step.completed || step.active ? 'text-brand-green' : 'text-gray-600'
                   }`}>
                     {step.name}
                   </span>
                   {index < steps.length - 1 && (
-                    <div className="w-8 h-0.5 bg-gray-300 mx-4"></div>
+                    <div className={`w-8 h-0.5 mx-4 ${
+                      step.completed ? 'bg-brand-green' : 'bg-gray-300'
+                    }`}></div>
                   )}
                 </div>
               ))}
