@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Header from "@/components/Header";
+import DashboardHeader from "@/components/DashboardHeader";
 
 export default function DealMarketplace() {
   return (
