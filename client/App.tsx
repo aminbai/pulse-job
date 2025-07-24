@@ -26,6 +26,16 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/find-jobs" element={<FindJobs />} />
+          <Route path="/my-account" element={<MyAccount />} />
+          <Route path="/browse-jobs" element={<BrowseJobs />} />
+          <Route path="/post-new-job" element={<PostJob />} />
+          <Route path="/my-work" element={<MyWork />} />
+          <Route path="/job/:id" element={<JobDetail />} />
+          <Route path="/about" element={<PlaceholderPage title="About Us" description="Learn more about Giglancers and our mission to connect freelancers with great opportunities." />} />
+          <Route path="/contact" element={<PlaceholderPage title="Contact Us" description="Get in touch with our support team for any questions or assistance." />} />
+          <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" description="Our privacy policy and data protection information." />} />
+          <Route path="/terms" element={<PlaceholderPage title="Terms of Service" description="Terms and conditions for using the Giglancers platform." />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
