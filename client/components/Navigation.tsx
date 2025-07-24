@@ -19,7 +19,9 @@ const menuItems = [
   {
     title: "Dashboard & Account",
     items: [
-      { name: "Dashboard", path: "/dashboard" },
+      { name: "Old Dashboard", path: "/dashboard" },
+      { name: "User Dashboard", path: "/user-dashboard" },
+      { name: "Admin Dashboard", path: "/admin-dashboard" },
       { name: "My Account", path: "/my-account" },
       { name: "My Jobs", path: "/my-jobs" },
       { name: "My Work", path: "/my-work" },
