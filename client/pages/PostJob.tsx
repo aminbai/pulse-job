@@ -336,17 +336,22 @@ export default function PostJob() {
   const [selectedCountries, setSelectedCountries] = useState<string[]>(['United States', 'Canada', 'Mexico', 'Brazil', 'Argentina', 'Chile', 'Colombia', 'Peru', 'United Kingdom', 'Germany', 'France', 'Italy', 'Spain', 'Russia', 'China', 'Japan', 'India', 'Australia', 'South Africa', 'Nigeria', 'Egypt', 'Morocco']);
   const [selectedCategory, setSelectedCategory] = useState<string>('gmail-account');
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>('New Gmail Account');
-  const [currentStep, setCurrentStep] = useState(3);
+  const [currentStep, setCurrentStep] = useState(4);
 
-  // Form data for step 3
+  // Form data for step 3 (completed)
   const [jobTitle, setJobTitle] = useState<string>('গমেইল নতুন একাউন্ট ১০ টাকা');
-  const [jobDescription, setJobDescription] = useState<string>('১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন একটা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার পর স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গ��়ে অনলাইন রিম্যাট করলে একটা জি মেইল দিয়ে বেশি একাউন্ট খোলা যাবে না।');
+  const [jobDescription, setJobDescription] = useState<string>('১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন এ��টা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার পর স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গড়ে অনলাইন রিম্যাট করলে একটা জি মেইল দিয়ে বেশি একাউন্ট খোলা যাবে না।');
   const [needAutoChecker, setNeedAutoChecker] = useState<boolean>(true);
   const [proof1, setProof1] = useState<string>('ইউজারনে');
   const [proof2, setProof2] = useState<string>('প্যাসওয়ার্ড');
   const [proof3Type, setProof3Type] = useState<string>('Text Proof');
   const [proof4Type, setProof4Type] = useState<string>('Text Proof');
   const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
+
+  // Form data for step 4 (pricing)
+  const [workerNeed, setWorkerNeed] = useState<number>(1);
+  const [workerEarn, setWorkerEarn] = useState<number>(1.000);
+  const [workDuration, setWorkDuration] = useState<number>(7);
 
   const handleZoneSelect = (zoneId: string) => {
     setSelectedZone(zoneId);
