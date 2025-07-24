@@ -20,6 +20,7 @@ import {
   Instagram,
 } from "lucide-react";
 import { useState } from "react";
+import Header from "@/components/Header";
 
 const categories = [
   { name: "Web Development", jobs: 150, icon: Code },
@@ -109,75 +110,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold text-text-dark">
-              GigClickers
-            </Link>
-
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link
-                to="/jobs"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Browse Jobs
-              </Link>
-              <Link
-                to="/job-board"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Job Board
-              </Link>
-              <Link
-                to="/dashboard"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Dashboard
-              </Link>
-              <Link
-                to="/deposit"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Deposit
-              </Link>
-              <Link
-                to="/faq"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                FAQ
-              </Link>
-              <Link
-                to="/share-earn"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Share & Earn
-              </Link>
-              <Link
-                to="/articles"
-                className="text-text-dark hover:text-brand-green transition-colors"
-              >
-                Article
-              </Link>
-            </nav>
-
-            <div className="flex items-center space-x-4">
-              <Link
-                to="/login"
-                className="px-4 py-2 border border-brand-green text-brand-green rounded hover:bg-brand-green hover:text-white transition-colors"
-              >
-                Login
-              </Link>
-              <Link
-                to="/signup"
-                className="px-4 py-2 bg-brand-green text-white rounded hover:bg-green-600 transition-colors"
-              >
-                Sign Up
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="bg-brand-green-light py-20">
@@ -193,7 +126,7 @@ export default function Index() {
                 to get things done.
               </p>
               <Link
-                to="/signup"
+                to="/browse-jobs"
                 className="inline-block bg-brand-green text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors"
               >
                 Get Started
@@ -225,7 +158,7 @@ export default function Index() {
               return (
                 <Link
                   key={index}
-                  to="/jobs"
+                  to="/browse-jobs"
                   className="bg-white border border-brand-green-light rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer block"
                 >
                   <div className="flex items-center mb-4">
@@ -335,7 +268,7 @@ export default function Index() {
                 </li>
               </ul>
               <Link
-                to="/signup"
+                to="/refer-earn"
                 className="inline-block bg-brand-green text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors"
               >
                 GET STARTED
