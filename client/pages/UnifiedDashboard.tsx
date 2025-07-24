@@ -21,8 +21,6 @@ import {
   Calendar,
   FileText,
   MessageSquare,
-  Bell,
-  Settings,
   Filter,
   Eye,
   Facebook,
@@ -32,6 +30,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import DashboardHeader from "@/components/DashboardHeader";
 
 // Sample data for My Jobs
 const myJobs = [
@@ -647,7 +646,7 @@ export default function UnifiedDashboard() {
           <CardContent>
             <p className="text-red-700">
               GigClickers team যেকোনো ক্রেতা বা বিক্রেতার বিরুদ্ধে ব্যবস্থা নেওয়ার ক্ষমতা রাখে 
-              যদি কোনো ক্রেতা বা বিক্রেতা কোনো প্রকার জালিয়াতি বা মার্কেটপ্লেসের নীতির বিরুদ্ধে কোনো কাজ করে।
+              যদি কোনো ক্রেতা বা বিক্রেতা কোনো প্রকার জালিয়াতি বা মার্কেটপ্লেসের নীতির বিরুদ্ধ��� কোনো কাজ করে।
             </p>
           </CardContent>
         </Card>
