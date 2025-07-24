@@ -1,8 +1,6 @@
 import "./global.css";
 
-import { Toaster } from "@/components/ui/toaster";
 import { createRoot } from "react-dom/client";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -24,14 +22,18 @@ import PostJob from "./pages/PostJob";
 import MyWork from "./pages/MyWork";
 import JobDetail from "./pages/JobDetail";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import AboutUs from "./pages/AboutUs";
+import Articles from "./pages/Articles";
+import DealMarketplace from "./pages/DealMarketplace";
+import BrowseDeals from "./pages/BrowseDeals";
+import MyDealOrder from "./pages/MyDealOrder";
+import PostNewDeal from "./pages/PostNewDeal";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -53,6 +55,7 @@ const App = () => (
               />
             }
           />
+          <Route path="/deal-marketplace" element={<DealMarketplace />} />
           <Route
             path="/settings"
             element={
@@ -65,6 +68,9 @@ const App = () => (
           <Route path="/find-jobs" element={<FindJobs />} />
           <Route path="/my-account" element={<MyAccount />} />
           <Route path="/browse-jobs" element={<BrowseJobs />} />
+          <Route path="/browse-deals" element={<BrowseDeals />} />
+          <Route path="/my-deal-order" element={<MyDealOrder />} />
+          <Route path="/post-new-deal" element={<PostNewDeal />} />
           <Route path="/post-job" element={<PostJob />} />
           <Route path="/post-new-job" element={<PostJob />} />
           <Route path="/my-work" element={<MyWork />} />
@@ -105,24 +111,8 @@ const App = () => (
               />
             }
           />
-          <Route
-            path="/articles"
-            element={
-              <PlaceholderPage
-                title="Articles"
-                description="Read our latest articles and insights about freelancing and remote work."
-              />
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <PlaceholderPage
-                title="About Us"
-                description="Learn more about GigClickers and our mission to connect freelancers with great opportunities."
-              />
-            }
-          />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route
             path="/contact"
             element={
@@ -204,16 +194,5 @@ const App = () => (
 );
 
 const container = document.getElementById("root")!;
-
-// Create root only once and store it globally to prevent duplicate creation
-declare global {
-  interface Window {
-    __react_root__?: any;
-  }
-}
-
-if (!window.__react_root__) {
-  window.__react_root__ = createRoot(container);
-}
-
-window.__react_root__.render(<App />);
+const root = createRoot(container);
+root.render(<App />);
