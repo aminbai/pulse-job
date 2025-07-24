@@ -340,7 +340,7 @@ export default function PostJob() {
 
   // Form data for step 3
   const [jobTitle, setJobTitle] = useState<string>('গমেইল নতুন একাউন্ট ১০ টাকা');
-  const [jobDescription, setJobDescription] = useState<string>('১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন একটা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাক��� এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার পর স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গড়ে অনলাইন রিম্যাট করলে একটা জি মেইল দিয়ে বেশি একাউন্ট খোলা যাবে না।');
+  const [jobDescription, setJobDescription] = useState<string>('১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন একটা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার পর স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গ��়ে অনলাইন রিম্যাট করলে একটা জি মেইল দিয়ে বেশি একাউন্ট খোলা যাবে না।');
   const [needAutoChecker, setNeedAutoChecker] = useState<boolean>(true);
   const [proof1, setProof1] = useState<string>('ইউজারনে');
   const [proof2, setProof2] = useState<string>('প্যাসওয়ার্ড');
@@ -729,7 +729,7 @@ export default function PostJob() {
           <div className="flex justify-center">
             <button
               className="bg-brand-green text-white px-12 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={!selectedCategory || !selectedSubcategory}
+              disabled={!jobTitle || !jobDescription || !proof1 || !proof2}
             >
               APPLY FOR NEXT
             </button>
