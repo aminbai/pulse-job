@@ -2,7 +2,14 @@ import { useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, MapPin, Calendar, DollarSign, MessageCircle, Share2 } from "lucide-react";
+import {
+  Star,
+  MapPin,
+  Calendar,
+  DollarSign,
+  MessageCircle,
+  Share2,
+} from "lucide-react";
 import Header from "@/components/Header";
 
 export default function FreelancerProfile() {
@@ -20,30 +27,39 @@ export default function FreelancerProfile() {
     memberSince: "January 2022",
     hourlyRate: "$15-25",
     responseTime: "Within 2 hours",
-    description: "Experienced full-stack developer with 5+ years of expertise in React, Node.js, and modern web technologies. I specialize in creating responsive web applications and user-friendly interfaces.",
+    description:
+      "Experienced full-stack developer with 5+ years of expertise in React, Node.js, and modern web technologies. I specialize in creating responsive web applications and user-friendly interfaces.",
     skills: [
-      "React", "Node.js", "TypeScript", "JavaScript", "HTML/CSS", 
-      "MongoDB", "Express.js", "UI/UX Design", "Figma", "Tailwind CSS"
+      "React",
+      "Node.js",
+      "TypeScript",
+      "JavaScript",
+      "HTML/CSS",
+      "MongoDB",
+      "Express.js",
+      "UI/UX Design",
+      "Figma",
+      "Tailwind CSS",
     ],
     portfolio: [
       {
         id: 1,
         title: "E-commerce Platform",
         image: "/placeholder.svg",
-        description: "Modern e-commerce solution with React and Node.js"
+        description: "Modern e-commerce solution with React and Node.js",
       },
       {
         id: 2,
         title: "Dashboard Design",
-        image: "/placeholder.svg", 
-        description: "Admin dashboard with advanced analytics"
+        image: "/placeholder.svg",
+        description: "Admin dashboard with advanced analytics",
       },
       {
         id: 3,
         title: "Mobile App UI",
         image: "/placeholder.svg",
-        description: "Clean and intuitive mobile app interface"
-      }
+        description: "Clean and intuitive mobile app interface",
+      },
     ],
     reviewsList: [
       {
@@ -51,22 +67,22 @@ export default function FreelancerProfile() {
         client: "Sarah Johnson",
         rating: 5,
         comment: "Excellent work! Delivered on time and exceeded expectations.",
-        date: "2 weeks ago"
+        date: "2 weeks ago",
       },
       {
         id: 2,
         client: "Mike Chen",
         rating: 5,
         comment: "Very professional and skilled developer. Highly recommended!",
-        date: "1 month ago"
-      }
-    ]
+        date: "1 month ago",
+      },
+    ],
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="max-w-6xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
@@ -76,7 +92,10 @@ export default function FreelancerProfile() {
               <CardContent className="p-6">
                 <div className="flex items-start gap-6">
                   <div className="w-24 h-24 bg-brand-green rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                    {freelancer.fullName.split(' ').map(n => n[0]).join('')}
+                    {freelancer.fullName
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
                   </div>
                   <div className="flex-1">
                     <h1 className="text-2xl font-bold text-gray-800 mb-1">
@@ -85,9 +104,7 @@ export default function FreelancerProfile() {
                     <p className="text-lg text-gray-600 mb-3">
                       @{freelancer.username}
                     </p>
-                    <p className="text-gray-700 mb-4">
-                      {freelancer.title}
-                    </p>
+                    <p className="text-gray-700 mb-4">{freelancer.title}</p>
                     <div className="flex items-center gap-6 text-sm text-gray-600">
                       <div className="flex items-center gap-1">
                         <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -128,7 +145,11 @@ export default function FreelancerProfile() {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {freelancer.skills.map((skill, index) => (
-                    <Badge key={index} variant="secondary" className="bg-brand-green-light text-brand-green">
+                    <Badge
+                      key={index}
+                      variant="secondary"
+                      className="bg-brand-green-light text-brand-green"
+                    >
                       {skill}
                     </Badge>
                   ))}
@@ -144,10 +165,15 @@ export default function FreelancerProfile() {
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {freelancer.portfolio.map((item) => (
-                    <div key={item.id} className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                    <div
+                      key={item.id}
+                      className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                    >
                       <div className="aspect-video bg-gray-100 flex items-center justify-center">
                         <div className="w-16 h-16 bg-brand-green rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-xl">P</span>
+                          <span className="text-white font-bold text-xl">
+                            P
+                          </span>
                         </div>
                       </div>
                       <div className="p-4">
@@ -172,18 +198,28 @@ export default function FreelancerProfile() {
               <CardContent>
                 <div className="space-y-4">
                   {freelancer.reviewsList.map((review) => (
-                    <div key={review.id} className="border-b border-gray-200 pb-4 last:border-b-0">
+                    <div
+                      key={review.id}
+                      className="border-b border-gray-200 pb-4 last:border-b-0"
+                    >
                       <div className="flex items-center gap-2 mb-2">
                         <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-sm">
                           {review.client[0]}
                         </div>
                         <div>
-                          <div className="font-medium text-gray-800">{review.client}</div>
+                          <div className="font-medium text-gray-800">
+                            {review.client}
+                          </div>
                           <div className="flex items-center gap-1">
                             {[...Array(review.rating)].map((_, i) => (
-                              <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                              <Star
+                                key={i}
+                                className="w-3 h-3 fill-yellow-400 text-yellow-400"
+                              />
                             ))}
-                            <span className="text-xs text-gray-500 ml-1">{review.date}</span>
+                            <span className="text-xs text-gray-500 ml-1">
+                              {review.date}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -222,7 +258,9 @@ export default function FreelancerProfile() {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Completed Jobs:</span>
-                    <span className="font-medium">{freelancer.completedJobs}</span>
+                    <span className="font-medium">
+                      {freelancer.completedJobs}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Success Rate:</span>
@@ -230,7 +268,9 @@ export default function FreelancerProfile() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Response Time:</span>
-                    <span className="font-medium">{freelancer.responseTime}</span>
+                    <span className="font-medium">
+                      {freelancer.responseTime}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Hourly Rate:</span>
@@ -249,11 +289,11 @@ export default function FreelancerProfile() {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-sm text-gray-700">Available for new projects</span>
+                    <span className="text-sm text-gray-700">
+                      Available for new projects
+                    </span>
                   </div>
-                  <p className="text-sm text-gray-600">
-                    Can start immediately
-                  </p>
+                  <p className="text-sm text-gray-600">Can start immediately</p>
                 </div>
               </CardContent>
             </Card>

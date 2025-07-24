@@ -162,7 +162,7 @@ export default function Navigation({ className }: NavigationProps) {
                   <ChevronDown
                     className={cn(
                       "w-4 h-4 transition-transform",
-                      openDropdown === index ? "rotate-180" : ""
+                      openDropdown === index ? "rotate-180" : "",
                     )}
                   />
                 </button>

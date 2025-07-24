@@ -10,7 +10,7 @@ import {
   Mail,
   RefreshCw,
   ArrowRight,
-  Shield
+  Shield,
 } from "lucide-react";
 import Header from "@/components/Header";
 
@@ -20,7 +20,9 @@ export default function EmailVerification() {
   const token = searchParams.get("token");
   const email = searchParams.get("email");
 
-  const [verificationStatus, setVerificationStatus] = useState<"loading" | "success" | "error" | "expired">("loading");
+  const [verificationStatus, setVerificationStatus] = useState<
+    "loading" | "success" | "error" | "expired"
+  >("loading");
   const [isResending, setIsResending] = useState(false);
   const [resendCooldown, setResendCooldown] = useState(0);
 
@@ -33,19 +35,19 @@ export default function EmailVerification() {
 
       try {
         // Simulate API call to verify email
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+
         // Mock verification logic
         if (token.length > 20) {
           setVerificationStatus("success");
-          
+
           // Auto redirect to login after 3 seconds
           setTimeout(() => {
             navigate("/login", {
               state: {
                 message: "ইমেইল সফলভাবে যাচাই হয়েছে! এখন লগইন করুন।",
-                type: "success"
-              }
+                type: "success",
+              },
             });
           }, 3000);
         } else if (token.length > 10) {
@@ -53,7 +55,6 @@ export default function EmailVerification() {
         } else {
           setVerificationStatus("error");
         }
-        
       } catch (error) {
         setVerificationStatus("error");
       }
@@ -64,19 +65,19 @@ export default function EmailVerification() {
 
   const handleResendVerification = async () => {
     if (resendCooldown > 0 || !email) return;
-    
+
     setIsResending(true);
 
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
       console.log("Resending verification email to:", email);
-      
+
       // Start cooldown
       setResendCooldown(60);
       const countdown = setInterval(() => {
-        setResendCooldown(prev => {
+        setResendCooldown((prev) => {
           if (prev <= 1) {
             clearInterval(countdown);
             return 0;
@@ -84,7 +85,6 @@ export default function EmailVerification() {
           return prev - 1;
         });
       }, 1000);
-      
     } catch (error) {
       console.error("Failed to resend verification email");
     } finally {
@@ -101,7 +101,7 @@ export default function EmailVerification() {
               <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
                 <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
               </div>
-              
+
               <div>
                 <h1 className="text-2xl font-bold text-gray-900 mb-2">
                   ইমেইল যাচাই করা হচ্ছে...
@@ -121,7 +121,7 @@ export default function EmailVerification() {
               <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
                 <CheckCircle className="w-8 h-8 text-green-600" />
               </div>
-              
+
               <div>
                 <h1 className="text-2xl font-bold text-gray-900 mb-2">
                   ইমেইল সফলভাবে যাচাই হয়েছে!
@@ -129,19 +129,22 @@ export default function EmailVerification() {
                 <p className="text-gray-600">
                   {email && (
                     <>
-                      <strong>{email}</strong> ইমেইল ঠিকানা যাচাই সম্পন্ন হয়েছে।
+                      <strong>{email}</strong> ইমেইল ঠিকানা যাচাই সম্পন্ন
+                      হয়েছে।
                     </>
                   )}
                 </p>
                 <p className="text-sm text-gray-500 mt-2">
-                  ৩ সেকেন্ড পরে স্বয়ংক্রিয়ভাবে লগইন প���ইজে নিয়ে যাওয়া হবে...
+                  ৩ সেকেন্ড পরে স্বয়ংক্রিয়ভাবে লগইন প���ইজে নিয়ে যাওয়া
+                  হবে...
                 </p>
               </div>
 
               <Alert className="text-left">
                 <CheckCircle className="h-4 w-4" />
                 <AlertDescription>
-                  আপনার অ্যাকাউন্ট এখন সক্রিয় এবং সকল ফিচার ব্যবহার করতে পারবেন।
+                  আপনার অ্যাকাউন্ট এখন সক্রিয় এবং সকল ফিচার ব্যবহার করতে
+                  পারবেন।
                 </AlertDescription>
               </Alert>
 
@@ -152,7 +155,7 @@ export default function EmailVerification() {
                     এখনই লগইন করুন
                   </Button>
                 </Link>
-                
+
                 <Link to="/">
                   <Button variant="outline" className="w-full">
                     হোমে ফিরে যান
@@ -170,7 +173,7 @@ export default function EmailVerification() {
               <div className="mx-auto w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center">
                 <AlertCircle className="w-8 h-8 text-yellow-600" />
               </div>
-              
+
               <div>
                 <h1 className="text-2xl font-bold text-gray-900 mb-2">
                   যাচাইকরণ লিংক মেয়াদোত্তীর্ণ
@@ -183,7 +186,8 @@ export default function EmailVerification() {
               <Alert>
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>
-                  যাচাইকরণ লিংক ২৪ ঘন্টার জন্য বৈধ থাকে। নতুন লিংক পেতে আবার অনুরোধ করুন।
+                  যাচাইকরণ লিংক ২৪ ঘন্টার জন্য বৈধ থাকে। নতুন লিংক পেতে আবার
+                  অনুরোধ করুন।
                 </AlertDescription>
               </Alert>
 
@@ -211,7 +215,7 @@ export default function EmailVerification() {
                       </>
                     )}
                   </Button>
-                  
+
                   <p className="text-sm text-gray-600">
                     ইমেইল পাঠানো হবে: <strong>{email}</strong>
                   </p>
@@ -219,7 +223,10 @@ export default function EmailVerification() {
               )}
 
               <div className="pt-4 border-t">
-                <Link to="/login" className="text-brand-green hover:text-green-600 font-medium">
+                <Link
+                  to="/login"
+                  className="text-brand-green hover:text-green-600 font-medium"
+                >
                   লগইন পেইজে ফিরে যান
                 </Link>
               </div>
@@ -235,13 +242,14 @@ export default function EmailVerification() {
               <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
                 <AlertCircle className="w-8 h-8 text-red-600" />
               </div>
-              
+
               <div>
                 <h1 className="text-2xl font-bold text-gray-900 mb-2">
                   যাচাইকরণ ব্যর্থ
                 </h1>
                 <p className="text-gray-600">
-                  ইমেইল যাচাই করতে সমস্যা হয়েছে। লিংকটি অবৈধ বা ক্ষতিগ্রস্ত হতে পারে।
+                  ইমেইল যাচাই করতে সমস্যা হয়েছে। লিংকটি অবৈধ বা ক্ষতিগ্রস্ত হতে
+                  পারে।
                 </p>
               </div>
 
@@ -272,7 +280,7 @@ export default function EmailVerification() {
                     )}
                   </Button>
                 )}
-                
+
                 <Link to="/signup">
                   <Button variant="outline" className="w-full">
                     নতুন অ্যাকাউন্ট তৈরি করুন
@@ -283,7 +291,10 @@ export default function EmailVerification() {
               <div className="pt-4 border-t space-y-2">
                 <p className="text-sm text-gray-600">
                   সমস্যা অব্যাহত থাকলে{" "}
-                  <Link to="/contact" className="text-brand-green hover:underline">
+                  <Link
+                    to="/contact"
+                    className="text-brand-green hover:underline"
+                  >
                     সাহায্য কেন্দ্রে
                   </Link>{" "}
                   যোগাযোগ করুন।
@@ -298,7 +309,7 @@ export default function EmailVerification() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <div className="flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-6">
           {renderContent()}

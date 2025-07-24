@@ -1,10 +1,16 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
 interface User {
   id: string;
   email: string;
   name: string;
-  userType: 'freelancer' | 'buyer' | 'admin';
+  userType: "freelancer" | "buyer" | "admin";
   isEmailVerified: boolean;
   profilePicture?: string;
 }
@@ -13,7 +19,11 @@ interface AuthContextType {
   user: User | null;
   isLoading: boolean;
   isAuthenticated: boolean;
-  login: (email: string, password: string, rememberMe?: boolean) => Promise<void>;
+  login: (
+    email: string,
+    password: string,
+    rememberMe?: boolean,
+  ) => Promise<void>;
   logout: () => void;
   signup: (userData: any) => Promise<void>;
   updateUser: (userData: Partial<User>) => void;
@@ -25,7 +35,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };
@@ -48,9 +58,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setIsLoading(true);
     try {
       // Check if user is logged in (from localStorage or API)
-      const savedUser = localStorage.getItem('user');
-      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-      
+      const savedUser = localStorage.getItem("user");
+      const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
       if (isLoggedIn && savedUser) {
         // In a real app, you would validate the token with your API
         const userData = JSON.parse(savedUser);
@@ -61,7 +71,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setIsAuthenticated(false);
       }
     } catch (error) {
-      console.error('Error checking auth status:', error);
+      console.error("Error checking auth status:", error);
       setUser(null);
       setIsAuthenticated(false);
     } finally {
@@ -69,30 +79,34 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
-  const login = async (email: string, password: string, rememberMe: boolean = false) => {
+  const login = async (
+    email: string,
+    password: string,
+    rememberMe: boolean = false,
+  ) => {
     setIsLoading(true);
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       // Mock user data based on email
       const mockUser: User = {
-        id: '1',
+        id: "1",
         email: email,
-        name: email === 'admin@example.com' ? 'Admin User' : 'John Doe',
-        userType: email === 'admin@example.com' ? 'admin' : 'freelancer',
+        name: email === "admin@example.com" ? "Admin User" : "John Doe",
+        userType: email === "admin@example.com" ? "admin" : "freelancer",
         isEmailVerified: true,
       };
 
       // Save to localStorage
-      localStorage.setItem('user', JSON.stringify(mockUser));
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('rememberMe', rememberMe.toString());
-      
+      localStorage.setItem("user", JSON.stringify(mockUser));
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("rememberMe", rememberMe.toString());
+
       setUser(mockUser);
       setIsAuthenticated(true);
     } catch (error) {
-      throw new Error('Login failed');
+      throw new Error("Login failed");
     } finally {
       setIsLoading(false);
     }
@@ -102,15 +116,15 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setIsLoading(true);
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
       // Mock signup process
-      console.log('Signing up user:', userData);
-      
+      console.log("Signing up user:", userData);
+
       // In a real app, the user would need to verify their email first
       // For demo purposes, we'll just show a success message
     } catch (error) {
-      throw new Error('Signup failed');
+      throw new Error("Signup failed");
     } finally {
       setIsLoading(false);
     }
@@ -118,10 +132,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const logout = () => {
     // Clear localStorage
-    localStorage.removeItem('user');
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('rememberMe');
-    
+    localStorage.removeItem("user");
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("rememberMe");
+
     // Reset state
     setUser(null);
     setIsAuthenticated(false);
@@ -131,7 +145,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     if (user) {
       const updatedUser = { ...user, ...userData };
       setUser(updatedUser);
-      localStorage.setItem('user', JSON.stringify(updatedUser));
+      localStorage.setItem("user", JSON.stringify(updatedUser));
     }
   };
 
@@ -146,11 +160,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     checkAuthStatus,
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export default AuthContext;

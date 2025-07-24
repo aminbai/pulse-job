@@ -16,7 +16,7 @@ import {
   ArrowLeft,
   Shield,
   Check,
-  X
+  X,
 } from "lucide-react";
 import Header from "@/components/Header";
 
@@ -28,7 +28,7 @@ export default function ResetPassword() {
 
   const [formData, setFormData] = useState({
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -68,12 +68,11 @@ export default function ResetPassword() {
 
       try {
         // Simulate API call to validate token
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+
         // Mock token validation - in real app, this would be an API call
         const isValid = token.length > 10; // Simple mock validation
         setIsTokenValid(isValid);
-        
       } catch (error) {
         setIsTokenValid(false);
       } finally {
@@ -107,26 +106,26 @@ export default function ResetPassword() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    
-    setFormData(prev => ({
+
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
 
     // Calculate password strength
     if (name === "password") {
       setPasswordStrength(calculatePasswordStrength(value));
     }
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: "" }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -135,21 +134,23 @@ export default function ResetPassword() {
 
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
       // Mock password reset logic
       console.log("Resetting password for:", email, "with token:", token);
-      
+
       // Success - redirect to login with success message
-      navigate("/login", { 
-        state: { 
-          message: "পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে! নতুন পাসওয়ার্ড দিয়ে লগইন করুন।",
-          type: "success"
-        }
+      navigate("/login", {
+        state: {
+          message:
+            "পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে! নতুন পাসওয়ার্ড দিয়ে লগইন করুন।",
+          type: "success",
+        },
       });
-      
     } catch (error) {
-      setErrors({ general: "পাসওয়ার্ড রিসেট করতে সমস্যা হয়েছে। পরে আবার চেষ্টা করুন।" });
+      setErrors({
+        general: "পাসওয়ার্ড রিসেট করতে সমস্যা হয়েছে। পরে আবার চেষ্টা করুন।",
+      });
     } finally {
       setIsLoading(false);
     }
@@ -160,13 +161,15 @@ export default function ResetPassword() {
     return (
       <div className="min-h-screen bg-background">
         <Header />
-        
+
         <div className="flex items-center justify-center py-12 px-4">
           <Card className="w-full max-w-md">
             <CardContent className="p-8 text-center space-y-4">
               <Loader2 className="w-8 h-8 mx-auto animate-spin text-brand-green" />
               <h2 className="text-xl font-semibold">যাচাই করা হচ্ছে...</h2>
-              <p className="text-gray-600">আপনার রি��েট লিংক যাচাই করা হচ্ছে।</p>
+              <p className="text-gray-600">
+                আপনার রি��েট লিংক যাচাই করা হচ্ছে।
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -179,7 +182,7 @@ export default function ResetPassword() {
     return (
       <div className="min-h-screen bg-background">
         <Header />
-        
+
         <div className="flex items-center justify-center py-12 px-4">
           <div className="w-full max-w-md space-y-6">
             <Card>
@@ -187,7 +190,7 @@ export default function ResetPassword() {
                 <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
                   <AlertCircle className="w-8 h-8 text-red-600" />
                 </div>
-                
+
                 <div>
                   <h1 className="text-2xl font-bold text-gray-900 mb-2">
                     অবৈধ বা মেয়াদোত্তীর্ণ লিংক
@@ -210,7 +213,7 @@ export default function ResetPassword() {
                       নতুন রিসেট লিংক চান
                     </Button>
                   </Link>
-                  
+
                   <Link to="/login">
                     <Button variant="outline" className="w-full">
                       লগইন পেইজে ফিরে যান
@@ -228,16 +231,21 @@ export default function ResetPassword() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <div className="flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-6">
           {/* Header */}
           <div className="text-center">
-            <Link to="/login" className="inline-flex items-center text-brand-green hover:text-green-600 mb-4">
+            <Link
+              to="/login"
+              className="inline-flex items-center text-brand-green hover:text-green-600 mb-4"
+            >
               <ArrowLeft className="w-4 h-4 mr-2" />
               লগইনে ফিরে যান
             </Link>
-            <h1 className="text-3xl font-bold text-gray-900">নতুন পাসওয়ার্ড সেট করুন</h1>
+            <h1 className="text-3xl font-bold text-gray-900">
+              নতুন পাসওয়ার্ড সেট করুন
+            </h1>
             <p className="text-gray-600 mt-2">
               {email && (
                 <>
@@ -273,7 +281,7 @@ export default function ResetPassword() {
                       placeholder="শক্তিশালী পাসওয়ার্ড"
                       value={formData.password}
                       onChange={handleInputChange}
-                      className={`pl-10 pr-10 ${errors.password ? 'border-red-500' : ''}`}
+                      className={`pl-10 pr-10 ${errors.password ? "border-red-500" : ""}`}
                       disabled={isLoading}
                     />
                     <button
@@ -282,16 +290,24 @@ export default function ResetPassword() {
                       className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                       disabled={isLoading}
                     >
-                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                      {showPassword ? (
+                        <EyeOff className="w-4 h-4" />
+                      ) : (
+                        <Eye className="w-4 h-4" />
+                      )}
                     </button>
                   </div>
-                  
+
                   {/* Password Strength Indicator */}
                   {formData.password && (
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span>পাসওয়ার্ড শক্তি:</span>
-                        <span className={getPasswordStrengthText(passwordStrength).color}>
+                        <span
+                          className={
+                            getPasswordStrengthText(passwordStrength).color
+                          }
+                        >
                           {getPasswordStrengthText(passwordStrength).text}
                         </span>
                       </div>
@@ -332,7 +348,7 @@ export default function ResetPassword() {
                       </div>
                     </div>
                   )}
-                  
+
                   {errors.password && (
                     <p className="text-sm text-red-600">{errors.password}</p>
                   )}
@@ -340,7 +356,9 @@ export default function ResetPassword() {
 
                 {/* Confirm Password Field */}
                 <div className="space-y-2">
-                  <Label htmlFor="confirmPassword">পাসওয়ার্ড নিশ্চিত করুন *</Label>
+                  <Label htmlFor="confirmPassword">
+                    পাসওয়ার্ড নিশ্চিত করুন *
+                  </Label>
                   <div className="relative">
                     <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                     <Input
@@ -350,20 +368,28 @@ export default function ResetPassword() {
                       placeholder="পাসওয়ার্ড পুনরায় টাইপ করুন"
                       value={formData.confirmPassword}
                       onChange={handleInputChange}
-                      className={`pl-10 pr-10 ${errors.confirmPassword ? 'border-red-500' : ''}`}
+                      className={`pl-10 pr-10 ${errors.confirmPassword ? "border-red-500" : ""}`}
                       disabled={isLoading}
                     />
                     <button
                       type="button"
-                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      onClick={() =>
+                        setShowConfirmPassword(!showConfirmPassword)
+                      }
                       className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                       disabled={isLoading}
                     >
-                      {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                      {showConfirmPassword ? (
+                        <EyeOff className="w-4 h-4" />
+                      ) : (
+                        <Eye className="w-4 h-4" />
+                      )}
                     </button>
                   </div>
                   {errors.confirmPassword && (
-                    <p className="text-sm text-red-600">{errors.confirmPassword}</p>
+                    <p className="text-sm text-red-600">
+                      {errors.confirmPassword}
+                    </p>
                   )}
                 </div>
 
@@ -390,7 +416,10 @@ export default function ResetPassword() {
                   <Shield className="w-3 h-3" />
                   <span>আপনার নতুন পাসওয়ার্ড নিরাপদে সংরক্ষিত হবে</span>
                 </div>
-                <p>পাসওয়া��্ড পরিবর্তনের পর আপনার সকল ডিভাইস থেকে লগআউট হয়ে যাবেন।</p>
+                <p>
+                  পাসওয়া��্ড পরিবর্তনের পর আপনার সকল ডিভাইস থেকে লগআউট হয়ে
+                  যাবেন।
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -398,7 +427,9 @@ export default function ResetPassword() {
           {/* Password Tips */}
           <Card className="bg-blue-50 border-blue-200">
             <CardContent className="p-4">
-              <h3 className="font-medium text-blue-900 mb-2">শক্তিশালী পাসওয়ার্ডের টিপস:</h3>
+              <h3 className="font-medium text-blue-900 mb-2">
+                শক্তিশালী পাসওয়ার্ডের টিপস:
+              </h3>
               <div className="text-sm text-blue-800 space-y-1">
                 <p>• কমপক্ষে ৮ অক্ষর ব্যবহার করুন</p>
                 <p>• বড় ও ছোট হাতের অক্ষর মিশান</p>

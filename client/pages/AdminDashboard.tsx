@@ -58,7 +58,7 @@ import {
   AlertCircle,
   MoreVertical,
   Plus,
-  Minus
+  Minus,
 } from "lucide-react";
 
 export default function AdminDashboard() {
@@ -79,31 +79,129 @@ export default function AdminDashboard() {
     revenue: {
       thisMonth: 145600,
       lastMonth: 128900,
-      growth: 12.9
-    }
+      growth: 12.9,
+    },
   };
 
   const recentUsers = [
-    { id: 1, name: "আহমেদ করিম", email: "ahmed@example.com", type: "Freelancer", status: "Active", joinDate: "2024-01-15" },
-    { id: 2, name: "ফাতিমা খান", email: "fatima@example.com", type: "Buyer", status: "Pending", joinDate: "2024-01-14" },
-    { id: 3, name: "রহিম উদ্দিন", email: "rahim@example.com", type: "Freelancer", status: "Active", joinDate: "2024-01-13" },
-    { id: 4, name: "সালমা বেগম", email: "salma@example.com", type: "Buyer", status: "Suspended", joinDate: "2024-01-12" },
-    { id: 5, name: "নাসির আহমেদ", email: "nasir@example.com", type: "Freelancer", status: "Active", joinDate: "2024-01-11" }
+    {
+      id: 1,
+      name: "আহমেদ করিম",
+      email: "ahmed@example.com",
+      type: "Freelancer",
+      status: "Active",
+      joinDate: "2024-01-15",
+    },
+    {
+      id: 2,
+      name: "ফাতিমা খান",
+      email: "fatima@example.com",
+      type: "Buyer",
+      status: "Pending",
+      joinDate: "2024-01-14",
+    },
+    {
+      id: 3,
+      name: "রহিম উদ্দিন",
+      email: "rahim@example.com",
+      type: "Freelancer",
+      status: "Active",
+      joinDate: "2024-01-13",
+    },
+    {
+      id: 4,
+      name: "সালমা বেগম",
+      email: "salma@example.com",
+      type: "Buyer",
+      status: "Suspended",
+      joinDate: "2024-01-12",
+    },
+    {
+      id: 5,
+      name: "নাসির আহমেদ",
+      email: "nasir@example.com",
+      type: "Freelancer",
+      status: "Active",
+      joinDate: "2024-01-11",
+    },
   ];
 
   const recentJobs = [
-    { id: 1, title: "React Developer", client: "TechCorp", budget: 50000, status: "Active", posted: "2 hours ago" },
-    { id: 2, title: "UI/UX Designer", client: "StartupXYZ", budget: 30000, status: "Pending", posted: "5 hours ago" },
-    { id: 3, title: "Content Writer", client: "BlogCorp", budget: 15000, status: "Active", posted: "1 day ago" },
-    { id: 4, title: "Python Developer", client: "DataTech", budget: 75000, status: "Completed", posted: "2 days ago" },
-    { id: 5, title: "Graphic Designer", client: "CreativeHub", budget: 25000, status: "Active", posted: "3 days ago" }
+    {
+      id: 1,
+      title: "React Developer",
+      client: "TechCorp",
+      budget: 50000,
+      status: "Active",
+      posted: "2 hours ago",
+    },
+    {
+      id: 2,
+      title: "UI/UX Designer",
+      client: "StartupXYZ",
+      budget: 30000,
+      status: "Pending",
+      posted: "5 hours ago",
+    },
+    {
+      id: 3,
+      title: "Content Writer",
+      client: "BlogCorp",
+      budget: 15000,
+      status: "Active",
+      posted: "1 day ago",
+    },
+    {
+      id: 4,
+      title: "Python Developer",
+      client: "DataTech",
+      budget: 75000,
+      status: "Completed",
+      posted: "2 days ago",
+    },
+    {
+      id: 5,
+      title: "Graphic Designer",
+      client: "CreativeHub",
+      budget: 25000,
+      status: "Active",
+      posted: "3 days ago",
+    },
   ];
 
   const reportedIssues = [
-    { id: 1, type: "Payment Dispute", reporter: "আহমেদ করিম", description: "Payment not received", priority: "High", status: "Open" },
-    { id: 2, type: "Spam Content", reporter: "ফাতিমা খান", description: "Inappropriate job posting", priority: "Medium", status: "Investigating" },
-    { id: 3, type: "Account Suspension", reporter: "রহিম উদ্দিন", description: "Account wrongly suspended", priority: "High", status: "Resolved" },
-    { id: 4, type: "Technical Issue", reporter: "সালমা বেগম", description: "Unable to upload files", priority: "Low", status: "Open" }
+    {
+      id: 1,
+      type: "Payment Dispute",
+      reporter: "আহমেদ করিম",
+      description: "Payment not received",
+      priority: "High",
+      status: "Open",
+    },
+    {
+      id: 2,
+      type: "Spam Content",
+      reporter: "ফাতিমা খান",
+      description: "Inappropriate job posting",
+      priority: "Medium",
+      status: "Investigating",
+    },
+    {
+      id: 3,
+      type: "Account Suspension",
+      reporter: "রহিম উদ্দিন",
+      description: "Account wrongly suspended",
+      priority: "High",
+      status: "Resolved",
+    },
+    {
+      id: 4,
+      type: "Technical Issue",
+      reporter: "সালমা বেগম",
+      description: "Unable to upload files",
+      priority: "Low",
+      status: "Open",
+    },
   ];
 
   const systemStats = [
@@ -112,7 +210,7 @@ export default function AdminDashboard() {
     { label: "Active Sessions", value: "1,247", status: "good" },
     { label: "API Response Time", value: "142ms", status: "warning" },
     { label: "Error Rate", value: "0.02%", status: "good" },
-    { label: "Backup Status", value: "Latest: 2h ago", status: "good" }
+    { label: "Backup Status", value: "Latest: 2h ago", status: "good" },
   ];
 
   return (
@@ -125,10 +223,18 @@ export default function AdminDashboard() {
             <Badge className="bg-red-600">Super Admin</Badge>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm" className="text-white hover:bg-gray-800">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-white hover:bg-gray-800"
+            >
               <Bell className="w-4 h-4" />
             </Button>
-            <Button variant="ghost" size="sm" className="text-white hover:bg-gray-800">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-white hover:bg-gray-800"
+            >
               <Settings className="w-4 h-4" />
             </Button>
             <div className="w-8 h-8 bg-brand-green rounded-full flex items-center justify-center">
@@ -139,7 +245,11 @@ export default function AdminDashboard() {
       </header>
 
       <div className="max-w-7xl mx-auto px-6 py-8">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
+        <Tabs
+          value={activeTab}
+          onValueChange={setActiveTab}
+          className="space-y-6"
+        >
           <TabsList className="grid w-full grid-cols-8">
             <TabsTrigger value="overview">ওভারভিউ</TabsTrigger>
             <TabsTrigger value="users">ইউজার</TabsTrigger>
@@ -163,8 +273,12 @@ export default function AdminDashboard() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-600">মোট ইউজার</p>
-                      <p className="text-2xl font-bold">{adminStats.totalUsers.toLocaleString()}</p>
-                      <p className="text-xs text-green-600">+{adminStats.monthlyGrowth}% এই মাসে</p>
+                      <p className="text-2xl font-bold">
+                        {adminStats.totalUsers.toLocaleString()}
+                      </p>
+                      <p className="text-xs text-green-600">
+                        +{adminStats.monthlyGrowth}% এই মাসে
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -178,7 +292,9 @@ export default function AdminDashboard() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-600">চলমান জবস</p>
-                      <p className="text-2xl font-bold">{adminStats.activeJobs.toLocaleString()}</p>
+                      <p className="text-2xl font-bold">
+                        {adminStats.activeJobs.toLocaleString()}
+                      </p>
                       <p className="text-xs text-blue-600">+8.2% গত সপ্তাহে</p>
                     </div>
                   </div>
@@ -193,7 +309,9 @@ export default function AdminDashboard() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-600">মোট আয়</p>
-                      <p className="text-2xl font-bold">৳{adminStats.totalEarnings.toLocaleString()}</p>
+                      <p className="text-2xl font-bold">
+                        ৳{adminStats.totalEarnings.toLocaleString()}
+                      </p>
                       <p className="text-xs text-green-600">+15.3% গত মাসে</p>
                     </div>
                   </div>
@@ -208,8 +326,12 @@ export default function AdminDashboard() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-600">অপেক্ষমান অনুমোদন</p>
-                      <p className="text-2xl font-bold">{adminStats.pendingApprovals}</p>
-                      <p className="text-xs text-red-600">অবিলম্বে পর্যালোচনা প্রয়োজন</p>
+                      <p className="text-2xl font-bold">
+                        {adminStats.pendingApprovals}
+                      </p>
+                      <p className="text-xs text-red-600">
+                        অবিলম্বে পর্যালোচনা প্রয়োজন
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -229,15 +351,21 @@ export default function AdminDashboard() {
                   <div className="space-y-4">
                     <div className="flex justify-between">
                       <span>এই মাস</span>
-                      <span className="font-bold">৳{adminStats.revenue.thisMonth.toLocaleString()}</span>
+                      <span className="font-bold">
+                        ৳{adminStats.revenue.thisMonth.toLocaleString()}
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span>গত মাস</span>
-                      <span className="font-bold">৳{adminStats.revenue.lastMonth.toLocaleString()}</span>
+                      <span className="font-bold">
+                        ৳{adminStats.revenue.lastMonth.toLocaleString()}
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span>বৃদ্ধি</span>
-                      <span className="font-bold text-green-600">+{adminStats.revenue.growth}%</span>
+                      <span className="font-bold text-green-600">
+                        +{adminStats.revenue.growth}%
+                      </span>
                     </div>
                   </div>
                 </CardContent>
@@ -254,11 +382,15 @@ export default function AdminDashboard() {
                   <div className="space-y-4">
                     <div className="flex justify-between">
                       <span>ফ্রিল্যান্সার</span>
-                      <span className="font-bold">{adminStats.activeFreelancers.toLocaleString()}</span>
+                      <span className="font-bold">
+                        {adminStats.activeFreelancers.toLocaleString()}
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span>বায়ার</span>
-                      <span className="font-bold">{adminStats.activeBuyers.toLocaleString()}</span>
+                      <span className="font-bold">
+                        {adminStats.activeBuyers.toLocaleString()}
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span>অনুপাত</span>
@@ -279,7 +411,9 @@ export default function AdminDashboard() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      <span className="text-sm">{adminStats.reportedIssues} নতুন রিপোর্ট</span>
+                      <span className="text-sm">
+                        {adminStats.reportedIssues} নতুন রিপোর্ট
+                      </span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
@@ -303,7 +437,10 @@ export default function AdminDashboard() {
                 <CardContent>
                   <div className="space-y-3">
                     {recentUsers.slice(0, 5).map((user) => (
-                      <div key={user.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50">
+                      <div
+                        key={user.id}
+                        className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50"
+                      >
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 bg-brand-green rounded-full flex items-center justify-center text-white text-sm">
                             {user.name[0]}
@@ -313,11 +450,15 @@ export default function AdminDashboard() {
                             <p className="text-sm text-gray-600">{user.type}</p>
                           </div>
                         </div>
-                        <Badge className={
-                          user.status === "Active" ? "bg-green-100 text-green-800" :
-                          user.status === "Pending" ? "bg-yellow-100 text-yellow-800" :
-                          "bg-red-100 text-red-800"
-                        }>
+                        <Badge
+                          className={
+                            user.status === "Active"
+                              ? "bg-green-100 text-green-800"
+                              : user.status === "Pending"
+                                ? "bg-yellow-100 text-yellow-800"
+                                : "bg-red-100 text-red-800"
+                          }
+                        >
                           {user.status}
                         </Badge>
                       </div>
@@ -333,21 +474,33 @@ export default function AdminDashboard() {
                 <CardContent>
                   <div className="space-y-3">
                     {recentJobs.slice(0, 5).map((job) => (
-                      <div key={job.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50">
+                      <div
+                        key={job.id}
+                        className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50"
+                      >
                         <div>
                           <p className="font-medium">{job.title}</p>
-                          <p className="text-sm text-gray-600">৳{job.budget.toLocaleString()}</p>
+                          <p className="text-sm text-gray-600">
+                            ৳{job.budget.toLocaleString()}
+                          </p>
                         </div>
                         <div className="text-right">
-                          <Badge className={
-                            job.status === "Active" ? "bg-green-100 text-green-800" :
-                            job.status === "Pending" ? "bg-yellow-100 text-yellow-800" :
-                            job.status === "Completed" ? "bg-blue-100 text-blue-800" :
-                            "bg-gray-100 text-gray-800"
-                          }>
+                          <Badge
+                            className={
+                              job.status === "Active"
+                                ? "bg-green-100 text-green-800"
+                                : job.status === "Pending"
+                                  ? "bg-yellow-100 text-yellow-800"
+                                  : job.status === "Completed"
+                                    ? "bg-blue-100 text-blue-800"
+                                    : "bg-gray-100 text-gray-800"
+                            }
+                          >
                             {job.status}
                           </Badge>
-                          <p className="text-xs text-gray-500 mt-1">{job.posted}</p>
+                          <p className="text-xs text-gray-500 mt-1">
+                            {job.posted}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -442,11 +595,15 @@ export default function AdminDashboard() {
                         <TableCell>{user.type}</TableCell>
                         <TableCell>{user.joinDate}</TableCell>
                         <TableCell>
-                          <Badge className={
-                            user.status === "Active" ? "bg-green-100 text-green-800" :
-                            user.status === "Pending" ? "bg-yellow-100 text-yellow-800" :
-                            "bg-red-100 text-red-800"
-                          }>
+                          <Badge
+                            className={
+                              user.status === "Active"
+                                ? "bg-green-100 text-green-800"
+                                : user.status === "Pending"
+                                  ? "bg-yellow-100 text-yellow-800"
+                                  : "bg-red-100 text-red-800"
+                            }
+                          >
                             {user.status}
                           </Badge>
                         </TableCell>
@@ -458,7 +615,11 @@ export default function AdminDashboard() {
                             <Button variant="ghost" size="sm">
                               <Edit className="w-4 h-4" />
                             </Button>
-                            <Button variant="ghost" size="sm" className="text-red-600">
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="text-red-600"
+                            >
                               <Trash2 className="w-4 h-4" />
                             </Button>
                           </div>
@@ -507,7 +668,9 @@ export default function AdminDashboard() {
                 <CardContent className="p-6 text-center">
                   <CheckCircle className="w-8 h-8 mx-auto mb-2 text-purple-600" />
                   <p className="text-sm text-gray-600">সম্পূর্ণ</p>
-                  <p className="text-2xl font-bold">{adminStats.completedProjects}</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.completedProjects}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
@@ -536,16 +699,23 @@ export default function AdminDashboard() {
                   <TableBody>
                     {recentJobs.map((job) => (
                       <TableRow key={job.id}>
-                        <TableCell className="font-medium">{job.title}</TableCell>
+                        <TableCell className="font-medium">
+                          {job.title}
+                        </TableCell>
                         <TableCell>{job.client}</TableCell>
                         <TableCell>৳{job.budget.toLocaleString()}</TableCell>
                         <TableCell>
-                          <Badge className={
-                            job.status === "Active" ? "bg-green-100 text-green-800" :
-                            job.status === "Pending" ? "bg-yellow-100 text-yellow-800" :
-                            job.status === "Completed" ? "bg-blue-100 text-blue-800" :
-                            "bg-gray-100 text-gray-800"
-                          }>
+                          <Badge
+                            className={
+                              job.status === "Active"
+                                ? "bg-green-100 text-green-800"
+                                : job.status === "Pending"
+                                  ? "bg-yellow-100 text-yellow-800"
+                                  : job.status === "Completed"
+                                    ? "bg-blue-100 text-blue-800"
+                                    : "bg-gray-100 text-gray-800"
+                            }
+                          >
                             {job.status}
                           </Badge>
                         </TableCell>
@@ -593,14 +763,18 @@ export default function AdminDashboard() {
                 <CardContent className="p-6 text-center">
                   <DollarSign className="w-8 h-8 mx-auto mb-2 text-green-600" />
                   <p className="text-sm text-gray-600">মোট রেভিনিউ</p>
-                  <p className="text-2xl font-bold">৳{adminStats.totalEarnings.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">
+                    ৳{adminStats.totalEarnings.toLocaleString()}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <TrendingUp className="w-8 h-8 mx-auto mb-2 text-blue-600" />
                   <p className="text-sm text-gray-600">এই মাসের আয়</p>
-                  <p className="text-2xl font-bold">৳{adminStats.revenue.thisMonth.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">
+                    ৳{adminStats.revenue.thisMonth.toLocaleString()}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
@@ -639,16 +813,22 @@ export default function AdminDashboard() {
                   <TableBody>
                     {[1, 2, 3, 4, 5].map((i) => (
                       <TableRow key={i}>
-                        <TableCell className="font-mono">#TXN{1000 + i}</TableCell>
+                        <TableCell className="font-mono">
+                          #TXN{1000 + i}
+                        </TableCell>
                         <TableCell>ইউজার {i}</TableCell>
                         <TableCell>
                           <Badge variant="outline">
                             {i % 2 === 0 ? "জমা" : "উত্তোলন"}
                           </Badge>
                         </TableCell>
-                        <TableCell>৳{(Math.random() * 10000 + 1000).toFixed(0)}</TableCell>
                         <TableCell>
-                          <Badge className="bg-green-100 text-green-800">সম্পূর্ণ</Badge>
+                          ৳{(Math.random() * 10000 + 1000).toFixed(0)}
+                        </TableCell>
+                        <TableCell>
+                          <Badge className="bg-green-100 text-green-800">
+                            সম্পূর্ণ
+                          </Badge>
                         </TableCell>
                         <TableCell>২০২৪-০১-১৫</TableCell>
                       </TableRow>
@@ -682,7 +862,9 @@ export default function AdminDashboard() {
                 <CardContent className="p-6 text-center">
                   <Clock className="w-8 h-8 mx-auto mb-2 text-yellow-600" />
                   <p className="text-sm text-gray-600">পেন্ডিং</p>
-                  <p className="text-2xl font-bold">{adminStats.reportedIssues}</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.reportedIssues}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
@@ -718,24 +900,34 @@ export default function AdminDashboard() {
                   <TableBody>
                     {reportedIssues.map((issue) => (
                       <TableRow key={issue.id}>
-                        <TableCell className="font-medium">{issue.type}</TableCell>
+                        <TableCell className="font-medium">
+                          {issue.type}
+                        </TableCell>
                         <TableCell>{issue.reporter}</TableCell>
                         <TableCell>{issue.description}</TableCell>
                         <TableCell>
-                          <Badge className={
-                            issue.priority === "High" ? "bg-red-100 text-red-800" :
-                            issue.priority === "Medium" ? "bg-yellow-100 text-yellow-800" :
-                            "bg-green-100 text-green-800"
-                          }>
+                          <Badge
+                            className={
+                              issue.priority === "High"
+                                ? "bg-red-100 text-red-800"
+                                : issue.priority === "Medium"
+                                  ? "bg-yellow-100 text-yellow-800"
+                                  : "bg-green-100 text-green-800"
+                            }
+                          >
                             {issue.priority}
                           </Badge>
                         </TableCell>
                         <TableCell>
-                          <Badge className={
-                            issue.status === "Open" ? "bg-red-100 text-red-800" :
-                            issue.status === "Investigating" ? "bg-yellow-100 text-yellow-800" :
-                            "bg-green-100 text-green-800"
-                          }>
+                          <Badge
+                            className={
+                              issue.status === "Open"
+                                ? "bg-red-100 text-red-800"
+                                : issue.status === "Investigating"
+                                  ? "bg-yellow-100 text-yellow-800"
+                                  : "bg-green-100 text-green-800"
+                            }
+                          >
                             {issue.status}
                           </Badge>
                         </TableCell>
@@ -777,11 +969,15 @@ export default function AdminDashboard() {
                         <p className="text-sm text-gray-600">{stat.label}</p>
                         <p className="text-xl font-bold">{stat.value}</p>
                       </div>
-                      <div className={`w-3 h-3 rounded-full ${
-                        stat.status === "good" ? "bg-green-500" :
-                        stat.status === "warning" ? "bg-yellow-500" :
-                        "bg-red-500"
-                      }`}></div>
+                      <div
+                        className={`w-3 h-3 rounded-full ${
+                          stat.status === "good"
+                            ? "bg-green-500"
+                            : stat.status === "warning"
+                              ? "bg-yellow-500"
+                              : "bg-red-500"
+                        }`}
+                      ></div>
                     </div>
                   </CardContent>
                 </Card>
@@ -835,7 +1031,9 @@ export default function AdminDashboard() {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span>ফায়ারওয়াল স্ট্যাটাস</span>
-                      <Badge className="bg-green-100 text-green-800">সক্রিয়</Badge>
+                      <Badge className="bg-green-100 text-green-800">
+                        সক্রিয়
+                      </Badge>
                     </div>
                     <div className="flex justify-between items-center">
                       <span>SSL সার্টিফিকেট</span>
@@ -904,23 +1102,56 @@ export default function AdminDashboard() {
               <CardContent>
                 <div className="space-y-4">
                   {[
-                    { title: "হোম পেইজ", type: "Page", status: "Published", lastModified: "2 days ago" },
-                    { title: "About Us", type: "Page", status: "Published", lastModified: "1 week ago" },
-                    { title: "Welcome Email", type: "Email Template", status: "Active", lastModified: "3 days ago" },
-                    { title: "Privacy Policy", type: "Legal", status: "Published", lastModified: "1 month ago" },
-                    { title: "Terms of Service", type: "Legal", status: "Draft", lastModified: "5 days ago" }
+                    {
+                      title: "হোম পেইজ",
+                      type: "Page",
+                      status: "Published",
+                      lastModified: "2 days ago",
+                    },
+                    {
+                      title: "About Us",
+                      type: "Page",
+                      status: "Published",
+                      lastModified: "1 week ago",
+                    },
+                    {
+                      title: "Welcome Email",
+                      type: "Email Template",
+                      status: "Active",
+                      lastModified: "3 days ago",
+                    },
+                    {
+                      title: "Privacy Policy",
+                      type: "Legal",
+                      status: "Published",
+                      lastModified: "1 month ago",
+                    },
+                    {
+                      title: "Terms of Service",
+                      type: "Legal",
+                      status: "Draft",
+                      lastModified: "5 days ago",
+                    },
                   ].map((content, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 border rounded-lg">
+                    <div
+                      key={index}
+                      className="flex items-center justify-between p-4 border rounded-lg"
+                    >
                       <div>
                         <h3 className="font-medium">{content.title}</h3>
-                        <p className="text-sm text-gray-600">{content.type} • {content.lastModified}</p>
+                        <p className="text-sm text-gray-600">
+                          {content.type} • {content.lastModified}
+                        </p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge className={
-                          content.status === "Published" || content.status === "Active" ? 
-                          "bg-green-100 text-green-800" : 
-                          "bg-yellow-100 text-yellow-800"
-                        }>
+                        <Badge
+                          className={
+                            content.status === "Published" ||
+                            content.status === "Active"
+                              ? "bg-green-100 text-green-800"
+                              : "bg-yellow-100 text-yellow-800"
+                          }
+                        >
                           {content.status}
                         </Badge>
                         <Button variant="ghost" size="sm">
@@ -937,7 +1168,7 @@ export default function AdminDashboard() {
           {/* Settings Tab */}
           <TabsContent value="settings" className="space-y-6">
             <h2 className="text-2xl font-bold">সিস্টেম সেটিংস</h2>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
@@ -950,19 +1181,27 @@ export default function AdminDashboard() {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span>ইউজার রেজিস্ট্রেশন</span>
-                      <Button variant="outline" size="sm">সক্রিয়</Button>
+                      <Button variant="outline" size="sm">
+                        সক্রিয়
+                      </Button>
                     </div>
                     <div className="flex justify-between items-center">
                       <span>জব পোস্টিং</span>
-                      <Button variant="outline" size="sm">সক্রিয়</Button>
+                      <Button variant="outline" size="sm">
+                        সক্রিয়
+                      </Button>
                     </div>
                     <div className="flex justify-between items-center">
                       <span>পেমেন্ট গেটওয়ে</span>
-                      <Button variant="outline" size="sm">সক্রিয়</Button>
+                      <Button variant="outline" size="sm">
+                        সক্রিয়
+                      </Button>
                     </div>
                     <div className="flex justify-between items-center">
                       <span>ইমেইল নোটিফিকেশন</span>
-                      <Button variant="outline" size="sm">সক্রিয়</Button>
+                      <Button variant="outline" size="sm">
+                        সক্রিয়
+                      </Button>
                     </div>
                   </div>
                 </CardContent>

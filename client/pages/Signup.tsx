@@ -27,7 +27,7 @@ import {
   Users,
   Briefcase,
   Check,
-  X
+  X,
 } from "lucide-react";
 import Header from "@/components/Header";
 
@@ -37,23 +37,23 @@ export default function Signup() {
   const [formData, setFormData] = useState({
     // Step 1: User Type
     userType: "",
-    
+
     // Step 2: Basic Info
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    
+
     // Step 3: Location & Password
     country: "Bangladesh",
     city: "",
     password: "",
     confirmPassword: "",
-    
+
     // Step 4: Agreements
     agreeTerms: false,
     agreePrivacy: false,
-    agreeMarketing: false
+    agreeMarketing: false,
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -106,7 +106,11 @@ export default function Signup() {
         }
         if (!formData.phone) {
           newErrors.phone = "ফোন নম্বর প্রয়োজন";
-        } else if (!/^(\+8801|8801|01)[3-9]\d{8}$/.test(formData.phone.replace(/\s/g, ""))) {
+        } else if (
+          !/^(\+8801|8801|01)[3-9]\d{8}$/.test(
+            formData.phone.replace(/\s/g, ""),
+          )
+        ) {
           newErrors.phone = "বৈধ বাংলাদেশী ফোন নম্বর প্রবেশ করুন";
         }
         break;
@@ -146,20 +150,20 @@ export default function Signup() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
-    
-    setFormData(prev => ({
+
+    setFormData((prev) => ({
       ...prev,
-      [name]: newValue
+      [name]: newValue,
     }));
 
     // Calculate password strength
     if (name === "password") {
       setPasswordStrength(calculatePasswordStrength(value));
     }
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: "" }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
@@ -188,18 +192,18 @@ export default function Signup() {
 
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 3000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+
       // Mock signup logic
       console.log("Signup data:", formData);
-      
+
       // Show success and redirect
-      navigate("/login", { 
-        state: { 
-          message: "অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে! আপনার ইমেইল যাচাই করুন এবং লগইন করুন।" 
-        }
+      navigate("/login", {
+        state: {
+          message:
+            "অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে! আপনার ইমেইল যাচাই করুন এবং লগইন করুন।",
+        },
       });
-      
     } catch (error) {
       setErrors({ general: "সার্ভার ত্রুটি। পরে আবার চেষ্টা করুন।" });
     } finally {
@@ -215,13 +219,17 @@ export default function Signup() {
   const renderStep1 = () => (
     <div className="space-y-6">
       <div className="text-center">
-        <h2 className="text-xl font-semibold mb-2">আপনি কোন ধরনের ব্যবহারকারী?</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          আপনি কোন ধরনের ব্যবহারকারী?
+        </h2>
         <p className="text-gray-600">আপনার পরিচয় নির্বাচন করুন</p>
       </div>
 
       <RadioGroup
         value={formData.userType}
-        onValueChange={(value) => setFormData(prev => ({ ...prev, userType: value }))}
+        onValueChange={(value) =>
+          setFormData((prev) => ({ ...prev, userType: value }))
+        }
         className="space-y-4"
       >
         <div className="flex items-center space-x-3 border rounded-lg p-4 hover:bg-gray-50 cursor-pointer">
@@ -231,10 +239,15 @@ export default function Signup() {
               <Users className="w-6 h-6 text-green-600" />
             </div>
             <div>
-              <Label htmlFor="freelancer" className="text-base font-medium cursor-pointer">
+              <Label
+                htmlFor="freelancer"
+                className="text-base font-medium cursor-pointer"
+              >
                 ফ্রিল্যান্সার
               </Label>
-              <p className="text-sm text-gray-600">কাজ খুঁজছেন এবং সেবা প্রদান করতে চান</p>
+              <p className="text-sm text-gray-600">
+                কাজ খুঁজছেন এবং সেবা প্রদান করতে চান
+              </p>
             </div>
           </div>
         </div>
@@ -246,10 +259,15 @@ export default function Signup() {
               <Briefcase className="w-6 h-6 text-blue-600" />
             </div>
             <div>
-              <Label htmlFor="buyer" className="text-base font-medium cursor-pointer">
+              <Label
+                htmlFor="buyer"
+                className="text-base font-medium cursor-pointer"
+              >
                 বায়ার/ক্লায়েন্ট
               </Label>
-              <p className="text-sm text-gray-600">কাজ দিতে চান এবং ফ্রিল্যান্সার নিয়োগ করতে চান</p>
+              <p className="text-sm text-gray-600">
+                কাজ দিতে চান এবং ফ্রিল্যান্সার নিয়োগ করতে চান
+              </p>
             </div>
           </div>
         </div>
@@ -279,7 +297,7 @@ export default function Signup() {
               placeholder="যেমন: আহমেদ"
               value={formData.firstName}
               onChange={handleInputChange}
-              className={`pl-10 ${errors.firstName ? 'border-red-500' : ''}`}
+              className={`pl-10 ${errors.firstName ? "border-red-500" : ""}`}
             />
           </div>
           {errors.firstName && (
@@ -297,7 +315,7 @@ export default function Signup() {
               placeholder="যেমন: করিম"
               value={formData.lastName}
               onChange={handleInputChange}
-              className={`pl-10 ${errors.lastName ? 'border-red-500' : ''}`}
+              className={`pl-10 ${errors.lastName ? "border-red-500" : ""}`}
             />
           </div>
           {errors.lastName && (
@@ -317,12 +335,10 @@ export default function Signup() {
             placeholder="your@email.com"
             value={formData.email}
             onChange={handleInputChange}
-            className={`pl-10 ${errors.email ? 'border-red-500' : ''}`}
+            className={`pl-10 ${errors.email ? "border-red-500" : ""}`}
           />
         </div>
-        {errors.email && (
-          <p className="text-sm text-red-600">{errors.email}</p>
-        )}
+        {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
       </div>
 
       <div className="space-y-2">
@@ -335,12 +351,10 @@ export default function Signup() {
             placeholder="01XXXXXXXXX"
             value={formData.phone}
             onChange={handleInputChange}
-            className={`pl-10 ${errors.phone ? 'border-red-500' : ''}`}
+            className={`pl-10 ${errors.phone ? "border-red-500" : ""}`}
           />
         </div>
-        {errors.phone && (
-          <p className="text-sm text-red-600">{errors.phone}</p>
-        )}
+        {errors.phone && <p className="text-sm text-red-600">{errors.phone}</p>}
       </div>
     </div>
   );
@@ -378,12 +392,10 @@ export default function Signup() {
               placeholder="যেমন: ঢাকা"
               value={formData.city}
               onChange={handleInputChange}
-              className={`pl-10 ${errors.city ? 'border-red-500' : ''}`}
+              className={`pl-10 ${errors.city ? "border-red-500" : ""}`}
             />
           </div>
-          {errors.city && (
-            <p className="text-sm text-red-600">{errors.city}</p>
-          )}
+          {errors.city && <p className="text-sm text-red-600">{errors.city}</p>}
         </div>
       </div>
 
@@ -398,17 +410,21 @@ export default function Signup() {
             placeholder="শক্তিশালী পাসওয়ার্ড"
             value={formData.password}
             onChange={handleInputChange}
-            className={`pl-10 pr-10 ${errors.password ? 'border-red-500' : ''}`}
+            className={`pl-10 pr-10 ${errors.password ? "border-red-500" : ""}`}
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
           >
-            {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+            {showPassword ? (
+              <EyeOff className="w-4 h-4" />
+            ) : (
+              <Eye className="w-4 h-4" />
+            )}
           </button>
         </div>
-        
+
         {/* Password Strength Indicator */}
         {formData.password && (
           <div className="space-y-2">
@@ -455,7 +471,7 @@ export default function Signup() {
             </div>
           </div>
         )}
-        
+
         {errors.password && (
           <p className="text-sm text-red-600">{errors.password}</p>
         )}
@@ -472,14 +488,18 @@ export default function Signup() {
             placeholder="পাসওয়ার্ড পুনরায় টাইপ করুন"
             value={formData.confirmPassword}
             onChange={handleInputChange}
-            className={`pl-10 pr-10 ${errors.confirmPassword ? 'border-red-500' : ''}`}
+            className={`pl-10 pr-10 ${errors.confirmPassword ? "border-red-500" : ""}`}
           />
           <button
             type="button"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
           >
-            {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+            {showConfirmPassword ? (
+              <EyeOff className="w-4 h-4" />
+            ) : (
+              <Eye className="w-4 h-4" />
+            )}
           </button>
         </div>
         {errors.confirmPassword && (
@@ -493,7 +513,9 @@ export default function Signup() {
     <div className="space-y-6">
       <div className="text-center mb-6">
         <h2 className="text-xl font-semibold mb-2">শর্তাবলী ও চুক্তি</h2>
-        <p className="text-gray-600">চূড়ান্ত করার আগে শর্তাবলী পড়ুন এবং সম্মতি দিন</p>
+        <p className="text-gray-600">
+          চূড়ান্ত করার আগে শর্তাবলী পড়ুন এবং সম্মতি দিন
+        </p>
       </div>
 
       <div className="space-y-4">
@@ -502,13 +524,20 @@ export default function Signup() {
             id="agreeTerms"
             name="agreeTerms"
             checked={formData.agreeTerms}
-            onCheckedChange={(checked) => 
-              setFormData(prev => ({ ...prev, agreeTerms: checked as boolean }))
+            onCheckedChange={(checked) =>
+              setFormData((prev) => ({
+                ...prev,
+                agreeTerms: checked as boolean,
+              }))
             }
           />
           <div className="flex-1">
             <Label htmlFor="agreeTerms" className="cursor-pointer">
-              আমি <Link to="/terms" className="text-brand-green hover:underline">ব্যবহারের শর্তাবলী</Link> পড়েছি এবং সম্মত আছি *
+              আমি{" "}
+              <Link to="/terms" className="text-brand-green hover:underline">
+                ব্যবহারের শর্তাবলী
+              </Link>{" "}
+              পড়েছি এবং সম্মত আছি *
             </Label>
             {errors.agreeTerms && (
               <p className="text-sm text-red-600 mt-1">{errors.agreeTerms}</p>
@@ -521,13 +550,20 @@ export default function Signup() {
             id="agreePrivacy"
             name="agreePrivacy"
             checked={formData.agreePrivacy}
-            onCheckedChange={(checked) => 
-              setFormData(prev => ({ ...prev, agreePrivacy: checked as boolean }))
+            onCheckedChange={(checked) =>
+              setFormData((prev) => ({
+                ...prev,
+                agreePrivacy: checked as boolean,
+              }))
             }
           />
           <div className="flex-1">
             <Label htmlFor="agreePrivacy" className="cursor-pointer">
-              আমি <Link to="/privacy" className="text-brand-green hover:underline">গোপনীয়তা নীতি</Link> পড়েছি এবং সম্মত আছি *
+              আমি{" "}
+              <Link to="/privacy" className="text-brand-green hover:underline">
+                গোপনীয়তা নীতি
+              </Link>{" "}
+              পড়েছি এবং সম্মত আছি *
             </Label>
             {errors.agreePrivacy && (
               <p className="text-sm text-red-600 mt-1">{errors.agreePrivacy}</p>
@@ -540,8 +576,11 @@ export default function Signup() {
             id="agreeMarketing"
             name="agreeMarketing"
             checked={formData.agreeMarketing}
-            onCheckedChange={(checked) => 
-              setFormData(prev => ({ ...prev, agreeMarketing: checked as boolean }))
+            onCheckedChange={(checked) =>
+              setFormData((prev) => ({
+                ...prev,
+                agreeMarketing: checked as boolean,
+              }))
             }
           />
           <div className="flex-1">
@@ -558,7 +597,7 @@ export default function Signup() {
       <Alert>
         <Info className="h-4 w-4" />
         <AlertDescription>
-          অ্যাকাউন্ট তৈরির পর আপনার ইমেইলে একটি যাচাইকরণ লিংক পাঠানো হবে। 
+          অ্যাকাউন্ট তৈরির পর আপনার ইমেইলে একটি যাচাইকরণ লিংক পাঠানো হবে।
           অ্যাকাউন্ট সক্রিয় করতে সেই লিংকে ক্লিক করুন।
         </AlertDescription>
       </Alert>
@@ -567,28 +606,40 @@ export default function Signup() {
 
   const renderCurrentStep = () => {
     switch (currentStep) {
-      case 1: return renderStep1();
-      case 2: return renderStep2();
-      case 3: return renderStep3();
-      case 4: return renderStep4();
-      default: return renderStep1();
+      case 1:
+        return renderStep1();
+      case 2:
+        return renderStep2();
+      case 3:
+        return renderStep3();
+      case 4:
+        return renderStep4();
+      default:
+        return renderStep1();
     }
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <div className="flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-6">
           {/* Header */}
           <div className="text-center">
-            <Link to="/" className="inline-flex items-center text-brand-green hover:text-green-600 mb-4">
+            <Link
+              to="/"
+              className="inline-flex items-center text-brand-green hover:text-green-600 mb-4"
+            >
               <ArrowLeft className="w-4 h-4 mr-2" />
               হোমে ফিরে যান
             </Link>
-            <h1 className="text-3xl font-bold text-gray-900">অ্যাকাউন্ট তৈরি করুন</h1>
-            <p className="text-gray-600 mt-2">GigClickers এ যোগ দিন এবং আপনার যাত্রা শুরু করুন</p>
+            <h1 className="text-3xl font-bold text-gray-900">
+              অ্যাকাউন্ট তৈরি করুন
+            </h1>
+            <p className="text-gray-600 mt-2">
+              GigClickers এ যোগ দিন এবং আপনার যাত্রা শুরু করুন
+            </p>
           </div>
 
           {/* Progress Indicator */}
@@ -634,12 +685,12 @@ export default function Signup() {
                     পূর্ববর্তী
                   </Button>
                 )}
-                
+
                 <Button
                   type="button"
                   onClick={handleNext}
                   disabled={isLoading}
-                  className={`bg-brand-green hover:bg-green-600 ${currentStep === 1 ? 'w-full' : 'flex-1'}`}
+                  className={`bg-brand-green hover:bg-green-600 ${currentStep === 1 ? "w-full" : "flex-1"}`}
                 >
                   {isLoading ? (
                     <>
@@ -662,7 +713,9 @@ export default function Signup() {
                       <span className="w-full border-t" />
                     </div>
                     <div className="relative flex justify-center text-xs uppercase">
-                      <span className="bg-background px-2 text-muted-foreground">অথবা</span>
+                      <span className="bg-background px-2 text-muted-foreground">
+                        অথবা
+                      </span>
                     </div>
                   </div>
 
@@ -705,7 +758,10 @@ export default function Signup() {
           <div className="text-center">
             <p className="text-gray-600">
               ইতিমধ্যে অ্যাকাউন্ট আছে?{" "}
-              <Link to="/login" className="text-brand-green hover:text-green-600 font-medium">
+              <Link
+                to="/login"
+                className="text-brand-green hover:text-green-600 font-medium"
+              >
                 লগইন করুন
               </Link>
             </p>

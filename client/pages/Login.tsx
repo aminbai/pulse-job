@@ -18,7 +18,7 @@ import {
   Facebook,
   Mail as GoogleIcon,
   Github,
-  Shield
+  Shield,
 } from "lucide-react";
 import Header from "@/components/Header";
 
@@ -27,7 +27,7 @@ export default function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    rememberMe: false
+    rememberMe: false,
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -60,20 +60,20 @@ export default function Login() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: "" }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (isBlocked) {
       return;
     }
@@ -86,35 +86,40 @@ export default function Login() {
 
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
       // Mock login logic
-      const isValidLogin = formData.email === "user@example.com" && formData.password === "password123";
-      
+      const isValidLogin =
+        formData.email === "user@example.com" &&
+        formData.password === "password123";
+
       if (isValidLogin) {
         // Success - redirect to dashboard
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("userEmail", formData.email);
         localStorage.setItem("rememberMe", formData.rememberMe.toString());
-        
+
         // Reset login attempts on successful login
         setLoginAttempts(0);
-        
+
         // Show success message and redirect
         navigate("/user-dashboard");
       } else {
         // Failed login
         const newAttempts = loginAttempts + 1;
         setLoginAttempts(newAttempts);
-        
+
         if (newAttempts >= 5) {
           setIsBlocked(true);
           setBlockTimeRemaining(300); // 5 minutes
-          setErrors({ general: "অত্যধিক ভুল প্রচেষ্টার কারণে অ্যাকাউন্ট ৫ মিনিটের জন্য ব্লক করা হয়েছে" });
-          
+          setErrors({
+            general:
+              "অত্যধিক ভুল প্রচেষ্টার কারণে অ্যাকাউন্ট ৫ মিনিটের জন্য ব্লক করা হয়েছে",
+          });
+
           // Start countdown
           const countdown = setInterval(() => {
-            setBlockTimeRemaining(prev => {
+            setBlockTimeRemaining((prev) => {
               if (prev <= 1) {
                 clearInterval(countdown);
                 setIsBlocked(false);
@@ -125,8 +130,8 @@ export default function Login() {
             });
           }, 1000);
         } else {
-          setErrors({ 
-            general: `ভুল ইমেইল বা পাসওয়ার্ড। আরও ${5 - newAttempts} টি প্রচেষ্টা বাকি।` 
+          setErrors({
+            general: `ভুল ইমেইল বা পাসওয়ার্ড। আরও ${5 - newAttempts} টি প্রচেষ্টা বাকি।`,
           });
         }
       }
@@ -145,18 +150,21 @@ export default function Login() {
   const formatTime = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <div className="flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-6">
           {/* Header */}
           <div className="text-center">
-            <Link to="/" className="inline-flex items-center text-brand-green hover:text-green-600 mb-4">
+            <Link
+              to="/"
+              className="inline-flex items-center text-brand-green hover:text-green-600 mb-4"
+            >
               <ArrowLeft className="w-4 h-4 mr-2" />
               হোমে ফিরে যান
             </Link>
@@ -183,7 +191,8 @@ export default function Login() {
                 <Alert>
                   <Shield className="h-4 w-4" />
                   <AlertDescription>
-                    অ্যাকাউন্ট ব্লক করা হয়েছে। {formatTime(blockTimeRemaining)} পরে আবার চেষ্টা করুন।
+                    অ্যাকাউন্ট ব্লক করা হয়েছে। {formatTime(blockTimeRemaining)}{" "}
+                    পরে আবার চেষ্টা করুন।
                   </AlertDescription>
                 </Alert>
               )}
@@ -201,7 +210,7 @@ export default function Login() {
                       placeholder="your@email.com"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`pl-10 ${errors.email ? 'border-red-500' : ''}`}
+                      className={`pl-10 ${errors.email ? "border-red-500" : ""}`}
                       disabled={isLoading || isBlocked}
                     />
                   </div>
@@ -222,7 +231,7 @@ export default function Login() {
                       placeholder="আপনার পাসওয়ার্ড"
                       value={formData.password}
                       onChange={handleInputChange}
-                      className={`pl-10 pr-10 ${errors.password ? 'border-red-500' : ''}`}
+                      className={`pl-10 pr-10 ${errors.password ? "border-red-500" : ""}`}
                       disabled={isLoading || isBlocked}
                     />
                     <button
@@ -231,7 +240,11 @@ export default function Login() {
                       className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                       disabled={isLoading || isBlocked}
                     >
-                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                      {showPassword ? (
+                        <EyeOff className="w-4 h-4" />
+                      ) : (
+                        <Eye className="w-4 h-4" />
+                      )}
                     </button>
                   </div>
                   {errors.password && (
@@ -246,8 +259,11 @@ export default function Login() {
                       id="rememberMe"
                       name="rememberMe"
                       checked={formData.rememberMe}
-                      onCheckedChange={(checked) => 
-                        setFormData(prev => ({ ...prev, rememberMe: checked as boolean }))
+                      onCheckedChange={(checked) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          rememberMe: checked as boolean,
+                        }))
                       }
                       disabled={isLoading || isBlocked}
                     />
@@ -255,7 +271,7 @@ export default function Login() {
                       আমাকে মনে ��াখুন
                     </Label>
                   </div>
-                  <Link 
+                  <Link
                     to="/forgot-password"
                     className="text-sm text-brand-green hover:text-green-600"
                   >
@@ -286,7 +302,9 @@ export default function Login() {
                   <span className="w-full border-t" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-background px-2 text-muted-foreground">অথবা</span>
+                  <span className="bg-background px-2 text-muted-foreground">
+                    অথবা
+                  </span>
                 </div>
               </div>
 
@@ -329,7 +347,10 @@ export default function Login() {
           <div className="text-center">
             <p className="text-gray-600">
               অ্যাকাউন্ট নেই?{" "}
-              <Link to="/signup" className="text-brand-green hover:text-green-600 font-medium">
+              <Link
+                to="/signup"
+                className="text-brand-green hover:text-green-600 font-medium"
+              >
                 এখনই সাইন আপ করুন
               </Link>
             </p>
@@ -338,10 +359,16 @@ export default function Login() {
           {/* Demo Credentials */}
           <Card className="bg-blue-50 border-blue-200">
             <CardContent className="p-4">
-              <h3 className="font-medium text-blue-900 mb-2">ডেমো অ্যাকাউন্ট:</h3>
+              <h3 className="font-medium text-blue-900 mb-2">
+                ডেমো অ্যাকাউন্ট:
+              </h3>
               <div className="text-sm text-blue-800 space-y-1">
-                <p><strong>ইমেইল:</strong> user@example.com</p>
-                <p><strong>পাসওয়ার্ড:</strong> password123</p>
+                <p>
+                  <strong>ইমেইল:</strong> user@example.com
+                </p>
+                <p>
+                  <strong>পাসওয়ার্ড:</strong> password123
+                </p>
               </div>
             </CardContent>
           </Card>
