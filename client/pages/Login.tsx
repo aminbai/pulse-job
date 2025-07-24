@@ -20,7 +20,7 @@ import {
   Github,
   Shield,
 } from "lucide-react";
-import Header from "@/components/Header";
+import PublicHeader from "@/components/PublicHeader";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -346,7 +346,7 @@ export default function Login() {
           {/* Sign Up Link */}
           <div className="text-center">
             <p className="text-gray-600">
-              অ্যাকাউন্ট নেই?{" "}
+              অ্যাকাউন্��� নেই?{" "}
               <Link
                 to="/signup"
                 className="text-brand-green hover:text-green-600 font-medium"
