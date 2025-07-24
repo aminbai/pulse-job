@@ -30,6 +30,8 @@ import MyDealOrder from "./pages/MyDealOrder";
 import PostNewDeal from "./pages/PostNewDeal";
 import FreelancerProfile from "./pages/FreelancerProfile";
 import MyPost from "./pages/MyPost";
+import UserDashboard from "./pages/UserDashboard";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
