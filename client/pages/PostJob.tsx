@@ -335,25 +335,34 @@ export default function PostJob() {
   };
 
   const handleCountryToggle = (countryName: string) => {
-    setSelectedCountries(prev => 
-      prev.includes(countryName) 
+    setSelectedCountries(prev =>
+      prev.includes(countryName)
         ? prev.filter(c => c !== countryName)
         : [...prev, countryName]
     );
   };
 
   const handleSelectAll = () => {
-    const filteredCountries = selectedZone === 'international' 
+    const filteredCountries = selectedZone === 'international'
       ? countries.filter(c => c.region === 'international')
       : countries.filter(c => c.region === selectedZone);
-    
+
     const allCountryNames = filteredCountries.map(c => c.name);
-    
+
     if (selectedCountries.length === allCountryNames.length) {
       setSelectedCountries([]);
     } else {
       setSelectedCountries(allCountryNames);
     }
+  };
+
+  const handleCategorySelect = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    setSelectedSubcategory('');
+  };
+
+  const handleSubcategorySelect = (subcategory: string) => {
+    setSelectedSubcategory(subcategory);
   };
 
   const filteredCountries = selectedZone 
