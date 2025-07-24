@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import JobListings from "./pages/JobListings";
+import JobBoard from "./pages/JobBoard";
 import FindJobs from "./pages/FindJobs";
 import MyAccount from "./pages/MyAccount";
 import BrowseJobs from "./pages/BrowseJobs";
