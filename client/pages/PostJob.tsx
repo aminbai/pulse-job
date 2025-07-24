@@ -429,63 +429,47 @@ export default function PostJob() {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Left Column - Form */}
           <div className="lg:col-span-3">
-            {/* Targeting Zone */}
+            {/* Category Selection */}
             <div className="bg-white rounded-lg shadow-sm border p-6 mb-6">
-              <h2 className="text-xl font-semibold text-gray-900 mb-6">Targeting Zone</h2>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {targetingZones.map((zone) => {
-                  const IconComponent = zone.icon;
-                  return (
+              <h2 className="text-xl font-semibold text-gray-900 mb-6">Choose the job category</h2>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => handleCategorySelect(category.id)}
+                    className={`p-4 rounded-lg border-2 transition-all hover:shadow-md text-left ${
+                      selectedCategory === category.id
+                        ? 'border-brand-green bg-green-50 text-brand-green'
+                        : 'border-gray-200 hover:border-gray-300'
+                    }`}
+                  >
+                    <p className="font-medium text-sm">{category.name}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Subcategory Selection */}
+            {selectedCategory && (
+              <div className="bg-white rounded-lg shadow-sm border p-6">
+                <h2 className="text-xl font-semibold text-gray-900 mb-6">Choose the subcategory</h2>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {categories
+                    .find(cat => cat.id === selectedCategory)
+                    ?.subcategories.map((subcategory) => (
                     <button
-                      key={zone.id}
-                      onClick={() => handleZoneSelect(zone.id)}
-                      className={`p-6 rounded-lg border-2 transition-all hover:shadow-md ${
-                        selectedZone === zone.id
+                      key={subcategory}
+                      onClick={() => handleSubcategorySelect(subcategory)}
+                      className={`p-4 rounded-lg border-2 transition-all hover:shadow-md text-left ${
+                        selectedSubcategory === subcategory
                           ? 'border-brand-green bg-green-50 text-brand-green'
                           : 'border-gray-200 hover:border-gray-300'
                       }`}
                     >
-                      <IconComponent className="w-8 h-8 mx-auto mb-3" />
-                      <p className="font-medium text-center">{zone.label}</p>
+                      <p className="font-medium text-sm">{subcategory}</p>
                     </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Country Selection */}
-            {selectedZone && (
-              <div className="bg-white rounded-lg shadow-sm border p-6">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-xl font-semibold text-gray-900">Select Countries</h2>
-                  <button
-                    onClick={handleSelectAll}
-                    className="bg-brand-green text-white px-4 py-2 rounded hover:bg-green-600 transition-colors"
-                  >
-                    {selectedCountries.length === filteredCountries.length ? 'Deselect All' : 'Select All'}
-                  </button>
-                </div>
-
-                <p className="text-gray-600 mb-6">
-                  Select all countries or select any country (check ask to put your targeting region in the country selections) and any 
-                  country you don't select will be blacked.
-                </p>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                  {filteredCountries.map((country) => (
-                    <label
-                      key={country.name}
-                      className="flex items-center space-x-2 p-2 hover:bg-gray-50 rounded cursor-pointer"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={selectedCountries.includes(country.name)}
-                        onChange={() => handleCountryToggle(country.name)}
-                        className="w-4 h-4 text-brand-green border-gray-300 rounded focus:ring-brand-green"
-                      />
-                      <span className="text-sm text-gray-700">{country.name}</span>
-                    </label>
                   ))}
                 </div>
               </div>
