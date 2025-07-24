@@ -183,6 +183,37 @@ export default function Index() {
               </tbody>
             </table>
           </div>
+
+          {/* Mobile Card Layout */}
+          <div className="md:hidden">
+            {jobListings.map((job) => (
+              <div key={job.id} className="border-b p-4 hover:bg-gray-50 transition-colors">
+                <div className="flex items-start space-x-3 mb-2">
+                  <span className="text-2xl">{job.icon}</span>
+                  <div className="flex-1">
+                    <Link
+                      to={`/job/${job.id}`}
+                      className="text-brand-green hover:text-green-600 font-medium transition-colors block mb-1"
+                    >
+                      {job.title}
+                    </Link>
+                    <p className="text-sm text-gray-600 mb-2">{job.category}</p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center text-green-600 font-semibold">
+                        <DollarSign className="w-4 h-4 mr-1" />
+                        {job.reward.replace('$', '')}
+                      </div>
+                      <div className="flex items-center text-gray-600 text-sm">
+                        <Clock className="w-4 h-4 mr-1" />
+                        {job.estimatedTime}
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-2">{job.postedDate}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Pagination or Load More Button */}
