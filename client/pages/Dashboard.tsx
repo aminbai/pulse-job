@@ -20,6 +20,7 @@ import {
   Instagram,
   Plus,
   ArrowRight,
+  Search,
 } from "lucide-react";
 
 const dashboardStats = [
