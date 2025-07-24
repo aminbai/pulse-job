@@ -166,9 +166,11 @@ const countries = [
 ];
 
 export default function PostJob() {
-  const [selectedZone, setSelectedZone] = useState<string>('');
-  const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
-  const [currentStep, setCurrentStep] = useState(1);
+  const [selectedZone, setSelectedZone] = useState<string>('international');
+  const [selectedCountries, setSelectedCountries] = useState<string[]>(['United States', 'Canada', 'Mexico', 'Brazil', 'Argentina', 'Chile', 'Colombia', 'Peru', 'United Kingdom', 'Germany', 'France', 'Italy', 'Spain', 'Russia', 'China', 'Japan', 'India', 'Australia', 'South Africa', 'Nigeria', 'Egypt', 'Morocco']);
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string>('');
+  const [currentStep, setCurrentStep] = useState(2);
 
   const handleZoneSelect = (zoneId: string) => {
     setSelectedZone(zoneId);
