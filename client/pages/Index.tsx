@@ -124,6 +124,12 @@ export default function Index() {
                 Browse Jobs
               </Link>
               <Link
+                to="/job-board"
+                className="text-text-dark hover:text-brand-green transition-colors"
+              >
+                Job Board
+              </Link>
+              <Link
                 to="/faq"
                 className="text-text-dark hover:text-brand-green transition-colors"
               >
