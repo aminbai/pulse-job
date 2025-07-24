@@ -339,8 +339,8 @@ export default function PostJob() {
   const [currentStep, setCurrentStep] = useState(4);
 
   // Form data for step 3 (completed)
-  const [jobTitle, setJobTitle] = useState<string>('গমেইল নতুন একাউন্ট ১০ টাকা');
-  const [jobDescription, setJobDescription] = useState<string>('১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন এ��টা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার পর স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গড়ে অনলাইন রিম্যাট করলে একটা জি মেইল দিয়ে বেশি একাউন্ট খোলা যাবে না।');
+  const [jobTitle, setJobTitle] = useState<string>('গমেইল নতুন একাউন্ট ১০ ট��কা');
+  const [jobDescription, setJobDescription] = useState<string>('১. নাম, বয়স, ছুলা, ঠিকানার ইত্যাদির নাম আমি দিবো। info, help, call, gov, ok, not, good, fresh নতুন একটা একাউন্ট এসব তথ্য ফেলবেন মেনে। ৩৫টি ফুলপেকারতি রচনা করন।।সেইম দেশের ই আনলোক করতে হাঙ্গার একজন নির্দেশক দিবেন তাসমাক। \n\n২. আপনাদের নাম দেয়া কোনোও ই-মেইল থাকে এবং ওইটা দিয়ে রিভার করতে হাঙ্গার।\n\n৩. গুগল নাম্বার ভেরিফাই করার পর স্ক্রিন শট দিতে হাঙ্গার এবং সেই নাম্বার দিয়ে দুইটার অন্যান্য সময় কীটনাশক ব্যবহার করতে পারবেন না।।।তো যেখানে সব প্রোফাইল জোনর হিন্দি ফ্রি আধিকার গড়ে অনলাইন রিম্যাট করলে একটা জ��� মেইল দিয়ে বেশি একাউন্ট খোলা যাবে না।');
   const [needAutoChecker, setNeedAutoChecker] = useState<boolean>(true);
   const [proof1, setProof1] = useState<string>('ইউজারনে');
   const [proof2, setProof2] = useState<string>('প্যাসওয়ার্ড');
@@ -395,6 +395,19 @@ export default function PostJob() {
       setThumbnailFile(file);
     }
   };
+
+  // Calculate total costs
+  const calculateTotalJobCost = () => {
+    const baseCost = workerNeed * workerEarn;
+    const serviceFee = baseCost * 0.1; // 10% service fee
+    return {
+      totalCost: (baseCost + serviceFee).toFixed(3),
+      serviceFee: serviceFee.toFixed(3),
+      baseCost: baseCost.toFixed(3)
+    };
+  };
+
+  const costs = calculateTotalJobCost();
 
   const filteredCountries = selectedZone 
     ? countries.filter(c => c.region === selectedZone)
