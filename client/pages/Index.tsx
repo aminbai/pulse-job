@@ -136,6 +136,12 @@ export default function Index() {
                 Dashboard
               </Link>
               <Link
+                to="/deposit"
+                className="text-text-dark hover:text-brand-green transition-colors"
+              >
+                Deposit
+              </Link>
+              <Link
                 to="/faq"
                 className="text-text-dark hover:text-brand-green transition-colors"
               >
