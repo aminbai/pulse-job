@@ -36,6 +36,7 @@ import UnifiedDashboard from "./pages/UnifiedDashboard";
 import HowItWorks from "./pages/HowItWorks";
 import WhyChooseUs from "./pages/WhyChooseUs";
 import SavedJobs from "./pages/SavedJobs";
+import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
