@@ -184,16 +184,5 @@ const App = () => (
 );
 
 const container = document.getElementById("root")!;
-
-// Create root only once and store it globally to prevent duplicate creation
-declare global {
-  interface Window {
-    __react_root__?: any;
-  }
-}
-
-if (!window.__react_root__) {
-  window.__react_root__ = createRoot(container);
-}
-
-window.__react_root__.render(<App />);
+const root = createRoot(container);
+root.render(<App />);
