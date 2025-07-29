@@ -55,11 +55,44 @@ interface DashboardHeaderProps {
 
 export default function DashboardHeader({
   userType = "user",
-  userName = "User",
+  userName,
 }: DashboardHeaderProps) {
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+
+  // Use auth context user data if available, fallback to props
+  const currentUser = user || { name: userName || "User", userType: userType, role: userType };
+  const displayName = currentUser.name || userName || "User";
+  const isAdmin = currentUser.userType === "admin" || currentUser.role === "admin";
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+    setUserMenuOpen(false);
+  };
+
+  const getUserIcon = () => {
+    switch (currentUser.userType || currentUser.role) {
+      case 'admin': return Shield;
+      case 'buyer': return Briefcase;
+      case 'both': return Users;
+      default: return User;
+    }
+  };
+
+  const getUserBadgeColor = () => {
+    switch (currentUser.userType || currentUser.role) {
+      case 'admin': return 'bg-red-500';
+      case 'buyer': return 'bg-green-500';
+      case 'both': return 'bg-purple-500';
+      default: return 'bg-blue-500';
+    }
+  };
+
+  const UserIcon = getUserIcon();
 
   const handleDropdownToggle = (index: number) => {
     setOpenDropdown(openDropdown === index ? null : index);
