@@ -6,7 +6,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import JobListings from "./pages/JobListings";
 import JobBoard from "./pages/JobBoard";
 import Dashboard from "./pages/Dashboard";
 import Deposit from "./pages/Deposit";
@@ -30,7 +29,6 @@ import MyDealOrder from "./pages/MyDealOrder";
 import PostNewDeal from "./pages/PostNewDeal";
 import FreelancerProfile from "./pages/FreelancerProfile";
 import MyPost from "./pages/MyPost";
-import UserDashboard from "./pages/UserDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import UnifiedDashboard from "./pages/UnifiedDashboard";
 import HowItWorks from "./pages/HowItWorks";
@@ -46,6 +44,10 @@ import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import EmailVerification from "./pages/EmailVerification";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
+import DMCAPolicy from "./pages/DMCAPolicy";
+import FAQ from "./pages/FAQ";
 import { AuthProvider } from "./contexts/AuthContext";
 
 const queryClient = new QueryClient();
@@ -57,10 +59,9 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/jobs" element={<JobListings />} />
+            <Route path="/jobs" element={<BrowseJobs />} />
             <Route path="/job-board" element={<JobBoard />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/user-dashboard" element={<UserDashboard />} />
             <Route path="/admin-dashboard" element={<AdminDashboard />} />
             <Route path="/unified-dashboard" element={<UnifiedDashboard />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
@@ -111,15 +112,7 @@ const App = () => (
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/verify-email" element={<EmailVerification />} />
-            <Route
-              path="/faq"
-              element={
-                <PlaceholderPage
-                  title="FAQ"
-                  description="Find answers to frequently asked questions about using GigClickers platform."
-                />
-              }
-            />
+            <Route path="/faq" element={<FAQ />} />
             <Route
               path="/share-earn"
               element={
@@ -136,33 +129,9 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/press" element={<Press />} />
             <Route path="/terms" element={<Terms />} />
-            <Route
-              path="/privacy"
-              element={
-                <PlaceholderPage
-                  title="Privacy Policy"
-                  description="Our privacy policy and data protection information."
-                />
-              }
-            />
-            <Route
-              path="/cookies"
-              element={
-                <PlaceholderPage
-                  title="Cookie Policy"
-                  description="Learn about how we use cookies to improve your experience."
-                />
-              }
-            />
-            <Route
-              path="/dmca"
-              element={
-                <PlaceholderPage
-                  title="DMCA"
-                  description="Digital Millennium Copyright Act information and procedures."
-                />
-              }
-            />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/cookies" element={<CookiePolicy />} />
+            <Route path="/dmca" element={<DMCAPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
