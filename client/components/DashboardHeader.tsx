@@ -204,7 +204,7 @@ export default function DashboardHeader({
                       </div>
                       {user.rating && (
                         <div className="mt-2 text-xs text-gray-600">
-                          ⭐ {user.rating} �� {user.completedJobs} jobs completed
+                          ⭐ {user.rating} • {user.completedJobs} jobs completed
                         </div>
                       )}
                     </div>
@@ -308,15 +308,33 @@ export default function DashboardHeader({
       </div>
 
       {/* Balance/Stats Bar for Dashboard */}
-      <div className="bg-green-600 py-2">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between text-sm">
-            <span>Pending: $0.000</span>
-            <span>Earned: $0.000</span>
-            <span>Deposit: $1.909</span>
+      {user && (
+        <div className="bg-green-600 py-2">
+          <div className="container mx-auto px-4">
+            <div className="flex justify-between items-center text-sm">
+              {currentUser.userType === 'admin' ? (
+                <>
+                  <span>System Status: ✅ Online</span>
+                  <span>Total Users: 25,847</span>
+                  <span>Active Jobs: 1,456</span>
+                </>
+              ) : currentUser.userType === 'buyer' ? (
+                <>
+                  <span>Available Budget: $2,450</span>
+                  <span>Active Projects: 3</span>
+                  <span>Total Spent: $8,900</span>
+                </>
+              ) : (
+                <>
+                  <span>Pending: ${user.totalEarnings ? (user.totalEarnings * 0.1).toFixed(2) : '0.00'}</span>
+                  <span>Earned: ${user.totalEarnings?.toLocaleString() || '0'}</span>
+                  <span>Available: $2,450</span>
+                </>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }
