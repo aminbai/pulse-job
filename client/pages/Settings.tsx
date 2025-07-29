@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { PublicHeader } from "@/components/PublicHeader";
+import PublicHeader from "@/components/PublicHeader";
 
 export default function Settings() {
   const [profile, setProfile] = useState({
@@ -634,7 +634,7 @@ export default function Settings() {
                       <div className="flex items-center gap-3">
                         <CreditCard className="w-8 h-8 text-gray-400" />
                         <div>
-                          <p className="font-medium">•••• •••• •••• 4242</p>
+                          <p className="font-medium">•��•• •••• •••• 4242</p>
                           <p className="text-sm text-gray-600">Expires 12/25</p>
                         </div>
                         <Badge>Default</Badge>
