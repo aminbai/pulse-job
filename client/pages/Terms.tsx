@@ -44,7 +44,7 @@ export default function Terms() {
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Terms of Service</h1>
             <p className="text-xl text-green-100 max-w-2xl mx-auto mb-6">
-              Please read these terms carefully before using GigClickers
+              Please read these terms carefully before using ClickerPlus
             </p>
             <div className="flex items-center justify-center space-x-4 text-sm">
               <div className="flex items-center">
@@ -104,10 +104,10 @@ export default function Terms() {
               <Card>
                 <CardContent className="p-8">
                   <div className="prose max-w-none">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Welcome to GigClickers</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Welcome to ClickerPlus</h2>
                     <p className="text-gray-700 mb-4">
-                      These Terms of Service ("Terms") govern your use of the GigClickers website and services 
-                      operated by GigClickers Ltd. ("we", "us", "our"). By accessing or using our service, 
+                      These Terms of Service ("Terms") govern your use of the ClickerPlus website and services 
+                      operated by ClickerPlus Ltd. ("we", "us", "our"). By accessing or using our service, 
                       you agree to be bound by these Terms.
                     </p>
                     <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
@@ -136,12 +136,12 @@ export default function Terms() {
                 </CardHeader>
                 <CardContent className="prose max-w-none">
                   <p>
-                    By accessing and using GigClickers, you accept and agree to be bound by the terms 
+                    By accessing and using ClickerPlus, you accept and agree to be bound by the terms 
                     and provision of this agreement. If you do not agree to abide by the above, 
                     please do not use this service.
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>These Terms constitute a legally binding agreement between you and GigClickers</li>
+                    <li>These Terms constitute a legally binding agreement between you and ClickerPlus</li>
                     <li>You must be at least 18 years old to use our services</li>
                     <li>You represent that you have the legal capacity to enter into these Terms</li>
                     <li>Your continued use of the service constitutes acceptance of any updates to these Terms</li>
@@ -159,7 +159,7 @@ export default function Terms() {
                 </CardHeader>
                 <CardContent className="prose max-w-none">
                   <p>
-                    GigClickers is an online marketplace that connects freelancers with clients seeking 
+                    ClickerPlus is an online marketplace that connects freelancers with clients seeking 
                     various services. Our platform facilitates:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
@@ -185,7 +185,7 @@ export default function Terms() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="prose max-w-none">
-                  <p>To use GigClickers, you must register for an account. You agree to:</p>
+                  <p>To use ClickerPlus, you must register for an account. You agree to:</p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Provide accurate, current, and complete information during registration</li>
                     <li>Maintain and update your information to keep it accurate and current</li>
@@ -213,7 +213,7 @@ export default function Terms() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="prose max-w-none">
-                  <p>You agree not to use GigClickers to:</p>
+                  <p>You agree not to use ClickerPlus to:</p>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <h4 className="font-medium text-gray-900 mb-2">Prohibited Activities</h4>
@@ -290,19 +290,19 @@ export default function Terms() {
                 </CardHeader>
                 <CardContent className="prose max-w-none">
                   <p>
-                    Intellectual property rights for work completed through GigClickers are governed 
+                    Intellectual property rights for work completed through ClickerPlus are governed 
                     by the specific agreement between the client and freelancer. Generally:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Clients own the rights to work they commission and pay for</li>
                     <li>Freelancers retain rights to their general methods and expertise</li>
                     <li>Both parties must respect third-party intellectual property</li>
-                    <li>GigClickers retains rights to our platform, logo, and proprietary technology</li>
+                    <li>ClickerPlus retains rights to our platform, logo, and proprietary technology</li>
                   </ul>
                   <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
                     <h4 className="font-medium text-amber-800 mb-2">Copyright Notice</h4>
                     <p className="text-sm text-amber-700">
-                      All content on GigClickers, including text, graphics, logos, and software, 
+                      All content on ClickerPlus, including text, graphics, logos, and software, 
                       is protected by copyright and other intellectual property laws.
                     </p>
                   </div>
@@ -384,7 +384,7 @@ export default function Terms() {
                 </CardHeader>
                 <CardContent className="prose max-w-none">
                   <p>
-                    Either you or GigClickers may terminate your account at any time:
+                    Either you or ClickerPlus may terminate your account at any time:
                   </p>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
@@ -397,7 +397,7 @@ export default function Terms() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900 mb-2">GigClickers-Initiated Termination</h4>
+                      <h4 className="font-medium text-gray-900 mb-2">ClickerPlus-Initiated Termination</h4>
                       <ul className="list-disc pl-6 space-y-1 text-sm">
                         <li>Violation of Terms of Service</li>
                         <li>Fraudulent or suspicious activity</li>
@@ -419,7 +419,7 @@ export default function Terms() {
                 </CardHeader>
                 <CardContent className="prose max-w-none">
                   <p>
-                    GigClickers provides a platform for connecting freelancers and clients. 
+                    ClickerPlus provides a platform for connecting freelancers and clients. 
                     Our liability is limited as follows:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
@@ -478,7 +478,7 @@ export default function Terms() {
                       <div className="space-y-2 text-sm">
                         <div className="flex items-center">
                           <Mail className="w-4 h-4 mr-2 text-gray-400" />
-                          <span>legal@gigclickers.com</span>
+                          <span>legal@clickerplus.com</span>
                         </div>
                         <div className="flex items-center">
                           <Phone className="w-4 h-4 mr-2 text-gray-400" />
@@ -489,7 +489,7 @@ export default function Terms() {
                     <div>
                       <h4 className="font-medium text-gray-900 mb-3">Mailing Address</h4>
                       <div className="text-sm text-gray-600">
-                        <p>GigClickers Ltd.</p>
+                        <p>ClickerPlus Ltd.</p>
                         <p>123 Gulshan Avenue</p>
                         <p>Gulshan-2, Dhaka 1212</p>
                         <p>Bangladesh</p>
@@ -529,12 +529,12 @@ export default function Terms() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">GigClickers</h3>
+              <h3 className="text-2xl font-bold mb-4">ClickerPlus</h3>
               <p className="text-gray-300 mb-4">
                 Connecting talent with opportunity worldwide.
               </p>
               <p className="text-sm text-gray-400">
-                &copy; 2024 GigClickers. All rights reserved.
+                &copy; 2024 ClickerPlus. All rights reserved.
               </p>
             </div>
 
@@ -560,7 +560,7 @@ export default function Terms() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <div className="space-y-2 text-sm text-gray-300">
-                <div>legal@gigclickers.com</div>
+                <div>legal@clickerplus.com</div>
                 <div>+880 1234-567890</div>
                 <div>Dhaka, Bangladesh</div>
               </div>

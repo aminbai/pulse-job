@@ -198,7 +198,7 @@ export default function Blog() {
       <section className="bg-brand-green text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">GigClickers Blog</h1>
+            <h1 className="text-4xl font-bold mb-4">ClickerPlus Blog</h1>
             <p className="text-xl text-green-100 max-w-2xl mx-auto mb-8">
               Insights, tips, and stories from the world of freelancing and remote work
             </p>
@@ -491,12 +491,12 @@ export default function Blog() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">GigClickers</h3>
+              <h3 className="text-2xl font-bold mb-4">ClickerPlus</h3>
               <p className="text-gray-300 mb-4">
                 Connecting talent with opportunity worldwide.
               </p>
               <p className="text-sm text-gray-400">
-                &copy; 2024 GigClickers. All rights reserved.
+                &copy; 2024 ClickerPlus. All rights reserved.
               </p>
             </div>
 

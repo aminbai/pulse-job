@@ -88,7 +88,7 @@ export default function Signup() {
     switch (step) {
       case 1:
         if (!formData.userType) {
-          newErrors.userType = "ব্যবহারকারীর ধরন ন��র্বাচন করুন";
+          newErrors.userType = "ব্যবহারকারীর ধরন ন��র্বাচ��� করুন";
         }
         break;
 
@@ -120,7 +120,7 @@ export default function Signup() {
           newErrors.city = "শহরের নাম প্রয়োজন";
         }
         if (!formData.password) {
-          newErrors.password = "��াসওয়ার্ড প্রয়োজন";
+          newErrors.password = "��াসওয���ার্ড প্রয়োজন";
         } else if (formData.password.length < 8) {
           newErrors.password = "পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে";
         } else if (passwordStrength < 50) {
@@ -201,7 +201,7 @@ export default function Signup() {
       navigate("/login", {
         state: {
           message:
-            "অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে! আপনার ইমেইল যাচাই করুন এবং লগইন করুন।",
+            "অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে! আপনার ইমেইল যাচাই ���রুন এবং লগইন করুন।",
         },
       });
     } catch (error) {
@@ -266,7 +266,7 @@ export default function Signup() {
                 বায়ার/ক্লায়েন্ট
               </Label>
               <p className="text-sm text-gray-600">
-                কাজ দিতে চান এবং ��্রিল্যান্সার নিয়োগ করতে চান
+                কাজ দিতে চান এবং ��্রি���্যান্সার নিয়োগ করতে চান
               </p>
             </div>
           </div>
@@ -597,7 +597,7 @@ export default function Signup() {
       <Alert>
         <Info className="h-4 w-4" />
         <AlertDescription>
-          অ্যাকাউন্ট তৈরির পর আপনার ইমেইলে একটি য��চাইকরণ লিংক পাঠানো হবে।
+          অ্যাকাউন্ট তৈরির পর আপনার ইমেইলে একটি য��চা���করণ লিংক পাঠানো হবে।
           অ্যাকাউন্ট সক্রিয় করতে সেই লিংকে ক্লিক করুন।
         </AlertDescription>
       </Alert>
@@ -638,7 +638,7 @@ export default function Signup() {
               অ্যাকাউন্ট তৈরি করুন
             </h1>
             <p className="text-gray-600 mt-2">
-              GigClickers এ যোগ দিন এবং আপনার যাত্রা শুরু করুন
+              ClickerPlus এ যোগ দিন এবং আপনার যাত্রা শুরু করুন
             </p>
           </div>
 

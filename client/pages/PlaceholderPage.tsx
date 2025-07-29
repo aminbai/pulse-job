@@ -40,7 +40,7 @@ export default function PlaceholderPage({
       {/* Simple Footer */}
       <footer className="bg-brand-green text-white py-4 mt-16">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; GigClickers - All Rights Reserved</p>
+          <p>&copy; ClickerPlus - All Rights Reserved</p>
         </div>
       </footer>
     </div>

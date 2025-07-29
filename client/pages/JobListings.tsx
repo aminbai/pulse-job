@@ -94,7 +94,7 @@ export default function JobListings() {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <Link to="/" className="text-2xl font-bold">
-              GigClickers
+              ClickerPlus
             </Link>
             <nav className="hidden md:flex items-center space-x-6">
               <Link
@@ -287,7 +287,7 @@ export default function JobListings() {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-center md:text-left">
-              <p>&copy; GigClickers</p>
+              <p>&copy; ClickerPlus</p>
               <p className="text-sm text-green-100">All Rights Reserved</p>
             </div>
 
