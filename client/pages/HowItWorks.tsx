@@ -37,7 +37,7 @@ export default function HowItWorks() {
       <main className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-text-dark mb-4">
-            How GigClickers Works
+            How ClickerPlus Works
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Getting started is simple. Follow these easy steps to begin your

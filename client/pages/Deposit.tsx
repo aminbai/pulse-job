@@ -76,7 +76,7 @@ export default function Deposit() {
               to="/"
               className="text-2xl font-bold hover:text-green-100 transition-colors"
             >
-              GigClickers
+              ClickerPlus
             </Link>
 
             <nav className="hidden md:flex items-center space-x-6">
@@ -197,18 +197,18 @@ export default function Deposit() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4 text-brand-green">
-                GigClickers
+                ClickerPlus
               </h3>
               <p className="text-sm mb-4">
                 Connecting talent with opportunity worldwide.
               </p>
               <p className="text-xs text-gray-600">
-                &copy; 2025 gigclickers.com. All Rights Reserved.
+                &copy; 2025 clickerplus.com. All Rights Reserved.
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3">About GigClickers</h4>
+              <h4 className="font-semibold mb-3">About ClickerPlus</h4>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
