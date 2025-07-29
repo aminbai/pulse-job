@@ -1,33 +1,53 @@
 const categories = [
   {
-    id: "gmail-account",
-    name: "Gmail Account",
-    subcategories: ["New Gmail Account", "Old Gmail Account", "Gmail + YouTube Account"],
+    id: "social-media",
+    name: "Social Media Marketing",
+    subcategories: ["Facebook Marketing", "Instagram Growth", "Twitter Management", "LinkedIn Marketing", "TikTok Promotion", "YouTube Marketing"],
   },
   {
-    id: "social-media",
-    name: "Social Media",
-    subcategories: ["Facebook", "Twitter", "Instagram", "LinkedIn"],
+    id: "gmail-account",
+    name: "Account Creation",
+    subcategories: ["Gmail Accounts", "Social Media Accounts", "Website Registrations", "App Signups"],
+  },
+  {
+    id: "content-writing",
+    name: "Content & Writing",
+    subcategories: ["Article Writing", "Blog Posts", "Product Descriptions", "SEO Content", "Social Media Posts"],
   },
   {
     id: "data-entry",
-    name: "Data Entry",
-    subcategories: ["Excel Data Entry", "Database Management", "Data Processing"],
+    name: "Data Entry & Processing",
+    subcategories: ["Excel Data Entry", "Database Management", "Data Mining", "Data Cleaning", "CRM Data Entry"],
   },
   {
-    id: "mobile-application",
-    name: "Mobile Application",
-    subcategories: ["Android Apps", "iOS Apps", "Cross-Platform"],
+    id: "web-research",
+    name: "Web Research",
+    subcategories: ["Market Research", "Lead Generation", "Contact Research", "Product Research", "Competitor Analysis"],
   },
   {
-    id: "review",
-    name: "Review",
-    subcategories: ["Product Reviews", "Service Reviews", "App Reviews"],
+    id: "reviews-ratings",
+    name: "Reviews & Ratings",
+    subcategories: ["Product Reviews", "App Store Reviews", "Google Reviews", "Yelp Reviews", "Service Reviews"],
   },
   {
-    id: "survey",
-    name: "Survey",
-    subcategories: ["Online Surveys", "Market Research", "Data Collection"],
+    id: "survey-testing",
+    name: "Surveys & Testing",
+    subcategories: ["Online Surveys", "App Testing", "Website Testing", "User Experience Testing", "Product Testing"],
+  },
+  {
+    id: "promotion-marketing",
+    name: "Promotion & Marketing",
+    subcategories: ["Brand Promotion", "Product Launch", "Influencer Marketing", "Email Marketing", "Affiliate Marketing"],
+  },
+  {
+    id: "mobile-apps",
+    name: "Mobile Applications",
+    subcategories: ["App Downloads", "App Reviews", "App Testing", "App Promotion", "Mobile Games"],
+  },
+  {
+    id: "verification-services",
+    name: "Verification Services",
+    subcategories: ["Phone Verification", "Email Verification", "Identity Verification", "OTP Services", "Document Verification"],
   },
 ];
 
@@ -48,7 +68,7 @@ export default function CategoryStep({
     <div className="space-y-6">
       <h3 className="text-xl font-semibold text-gray-900">Choose the job category</h3>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {categories.map((category) => (
           <button
             key={category.id}
@@ -75,14 +95,14 @@ export default function CategoryStep({
       {selectedCategory && (
         <div className="space-y-4">
           <h4 className="font-medium text-gray-900">Choose subcategory</h4>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {categories
               .find((cat) => cat.id === selectedCategory)
               ?.subcategories.map((subcategory) => (
                 <button
                   key={subcategory}
                   onClick={() => onSubcategorySelect(subcategory)}
-                  className={`p-3 text-sm rounded border ${
+                  className={`p-3 text-sm rounded-lg border-2 font-medium transition-all hover:shadow-md ${
                     selectedSubcategory === subcategory
                       ? "bg-brand-green text-white border-brand-green"
                       : "bg-white text-gray-700 border-gray-300 hover:border-gray-400"
