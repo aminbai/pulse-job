@@ -10,9 +10,14 @@ interface User {
   id: string;
   email: string;
   name: string;
-  userType: "freelancer" | "buyer" | "admin";
+  userType: "freelancer" | "buyer" | "admin" | "both";
+  role: "freelancer" | "buyer" | "admin" | "both";
   isEmailVerified: boolean;
   profilePicture?: string;
+  level?: string;
+  rating?: number;
+  completedJobs?: number;
+  totalEarnings?: number;
 }
 
 interface AuthContextType {
