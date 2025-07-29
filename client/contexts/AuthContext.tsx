@@ -65,10 +65,31 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Check if user is logged in (from localStorage or API)
       const savedUser = localStorage.getItem("user");
       const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+      const userEmail = localStorage.getItem("userEmail");
+      const userType = localStorage.getItem("userType");
+      const userName = localStorage.getItem("userName");
 
-      if (isLoggedIn && savedUser) {
-        // In a real app, you would validate the token with your API
-        const userData = JSON.parse(savedUser);
+      if (isLoggedIn && (savedUser || userEmail)) {
+        let userData;
+
+        if (savedUser) {
+          userData = JSON.parse(savedUser);
+        } else {
+          // Create user object from localStorage data
+          userData = {
+            id: "demo-" + Date.now(),
+            email: userEmail,
+            name: userName || "Demo User",
+            userType: userType || "freelancer",
+            role: userType || "freelancer",
+            isEmailVerified: true,
+            level: "Expert",
+            rating: 4.8,
+            completedJobs: 45,
+            totalEarnings: 12500
+          };
+        }
+
         setUser(userData);
         setIsAuthenticated(true);
       } else {
