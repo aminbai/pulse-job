@@ -86,7 +86,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             level: "Expert",
             rating: 4.8,
             completedJobs: 45,
-            totalEarnings: 12500
+            totalEarnings: 12500,
           };
         }
 
@@ -117,58 +117,58 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       // Demo accounts mapping
       const demoAccounts = {
-        'admin@clickerplus.com': {
-          id: 'admin-1',
-          name: 'System Administrator',
-          userType: 'admin' as const,
-          role: 'admin' as const,
-          level: 'Super Admin',
+        "admin@clickerplus.com": {
+          id: "admin-1",
+          name: "System Administrator",
+          userType: "admin" as const,
+          role: "admin" as const,
+          level: "Super Admin",
           rating: 5.0,
           completedJobs: 0,
-          totalEarnings: 0
+          totalEarnings: 0,
         },
-        'freelancer@clickerplus.com': {
-          id: 'freelancer-1',
-          name: 'John Smith (Expert)',
-          userType: 'freelancer' as const,
-          role: 'freelancer' as const,
-          level: 'Expert',
+        "freelancer@clickerplus.com": {
+          id: "freelancer-1",
+          name: "John Smith (Expert)",
+          userType: "freelancer" as const,
+          role: "freelancer" as const,
+          level: "Expert",
           rating: 4.8,
           completedJobs: 45,
-          totalEarnings: 12500
+          totalEarnings: 12500,
         },
-        'buyer@clickerplus.com': {
-          id: 'buyer-1',
-          name: 'TechCorp Solutions',
-          userType: 'buyer' as const,
-          role: 'buyer' as const,
-          level: 'Business',
+        "buyer@clickerplus.com": {
+          id: "buyer-1",
+          name: "TechCorp Solutions",
+          userType: "buyer" as const,
+          role: "buyer" as const,
+          level: "Business",
           rating: 4.6,
           completedJobs: 0,
-          totalEarnings: 0
+          totalEarnings: 0,
         },
-        'user@clickerplus.com': {
-          id: 'both-1',
-          name: 'Sarah Johnson',
-          userType: 'both' as const,
-          role: 'both' as const,
-          level: 'Experienced',
+        "user@clickerplus.com": {
+          id: "both-1",
+          name: "Sarah Johnson",
+          userType: "both" as const,
+          role: "both" as const,
+          level: "Experienced",
           rating: 4.7,
           completedJobs: 23,
-          totalEarnings: 8900
-        }
+          totalEarnings: 8900,
+        },
       };
 
       // Get demo account data or create default
       const accountData = demoAccounts[email as keyof typeof demoAccounts] || {
-        id: 'user-1',
-        name: 'Demo User',
-        userType: 'freelancer' as const,
-        role: 'freelancer' as const,
-        level: 'Beginner',
+        id: "user-1",
+        name: "Demo User",
+        userType: "freelancer" as const,
+        role: "freelancer" as const,
+        level: "Beginner",
         rating: 4.0,
         completedJobs: 0,
-        totalEarnings: 0
+        totalEarnings: 0,
       };
 
       const mockUser: User = {

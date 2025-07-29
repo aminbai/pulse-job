@@ -25,56 +25,56 @@ import {
   Settings,
   Copy,
   Crown,
-  Briefcase
+  Briefcase,
 } from "lucide-react";
 import PublicHeader from "@/components/PublicHeader";
 
 // Demo accounts with different user types
 const demoAccounts = [
   {
-    type: 'admin',
-    title: 'Admin Account',
-    email: 'admin@clickerplus.com',
-    password: 'admin123',
-    name: 'System Administrator',
-    description: 'Full system access with all administrative features',
-    dashboard: '/admin-dashboard',
+    type: "admin",
+    title: "Admin Account",
+    email: "admin@clickerplus.com",
+    password: "admin123",
+    name: "System Administrator",
+    description: "Full system access with all administrative features",
+    dashboard: "/admin-dashboard",
     icon: Shield,
-    color: 'bg-red-100 text-red-800 border-red-200'
+    color: "bg-red-100 text-red-800 border-red-200",
   },
   {
-    type: 'freelancer',
-    title: 'Freelancer Account',
-    email: 'freelancer@clickerplus.com',
-    password: 'freelancer123',
-    name: 'John Smith (Expert)',
-    description: 'Professional freelancer with multiple completed projects',
-    dashboard: '/dashboard',
+    type: "freelancer",
+    title: "Freelancer Account",
+    email: "freelancer@clickerplus.com",
+    password: "freelancer123",
+    name: "John Smith (Expert)",
+    description: "Professional freelancer with multiple completed projects",
+    dashboard: "/dashboard",
     icon: User,
-    color: 'bg-blue-100 text-blue-800 border-blue-200'
+    color: "bg-blue-100 text-blue-800 border-blue-200",
   },
   {
-    type: 'buyer',
-    title: 'Buyer Account',
-    email: 'buyer@clickerplus.com',
-    password: 'buyer123',
-    name: 'TechCorp Solutions',
-    description: 'Business client looking to hire talented freelancers',
-    dashboard: '/dashboard',
+    type: "buyer",
+    title: "Buyer Account",
+    email: "buyer@clickerplus.com",
+    password: "buyer123",
+    name: "TechCorp Solutions",
+    description: "Business client looking to hire talented freelancers",
+    dashboard: "/dashboard",
     icon: Briefcase,
-    color: 'bg-green-100 text-green-800 border-green-200'
+    color: "bg-green-100 text-green-800 border-green-200",
   },
   {
-    type: 'both',
-    title: 'Dual Account',
-    email: 'user@clickerplus.com',
-    password: 'user123',
-    name: 'Sarah Johnson',
-    description: 'Both freelancer and buyer (dual role)',
-    dashboard: '/dashboard',
+    type: "both",
+    title: "Dual Account",
+    email: "user@clickerplus.com",
+    password: "user123",
+    name: "Sarah Johnson",
+    description: "Both freelancer and buyer (dual role)",
+    dashboard: "/dashboard",
     icon: Users,
-    color: 'bg-purple-100 text-purple-800 border-purple-200'
-  }
+    color: "bg-purple-100 text-purple-800 border-purple-200",
+  },
 ];
 
 export default function Login() {
@@ -145,11 +145,11 @@ export default function Login() {
     }
   };
 
-  const handleDemoLogin = async (account: typeof demoAccounts[0]) => {
+  const handleDemoLogin = async (account: (typeof demoAccounts)[0]) => {
     setFormData({
       email: account.email,
       password: account.password,
-      rememberMe: false
+      rememberMe: false,
     });
 
     setIsLoading(true);
@@ -193,7 +193,9 @@ export default function Login() {
 
       // Check against demo accounts
       const validAccount = demoAccounts.find(
-        account => account.email === formData.email && account.password === formData.password
+        (account) =>
+          account.email === formData.email &&
+          account.password === formData.password,
       );
 
       if (validAccount) {
@@ -252,7 +254,7 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-gray-50">
       <PublicHeader />
-      
+
       <div className="pt-16 flex items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl w-full space-y-8">
           {/* Header */}
@@ -275,7 +277,9 @@ export default function Login() {
             <div>
               <Card className="shadow-lg">
                 <CardHeader className="space-y-1">
-                  <CardTitle className="text-2xl font-bold text-center">Login</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-center">
+                    Login
+                  </CardTitle>
                   <p className="text-gray-600 text-center">
                     Enter your credentials to access your account
                   </p>
@@ -413,18 +417,32 @@ export default function Login() {
                         <div className="w-full border-t border-gray-300" />
                       </div>
                       <div className="relative flex justify-center text-sm">
-                        <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                        <span className="px-2 bg-white text-gray-500">
+                          Or continue with
+                        </span>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-3 gap-3">
-                      <Button variant="outline" className="w-full" disabled={isLoading || isBlocked}>
+                      <Button
+                        variant="outline"
+                        className="w-full"
+                        disabled={isLoading || isBlocked}
+                      >
                         <GoogleIcon className="w-4 h-4" />
                       </Button>
-                      <Button variant="outline" className="w-full" disabled={isLoading || isBlocked}>
+                      <Button
+                        variant="outline"
+                        className="w-full"
+                        disabled={isLoading || isBlocked}
+                      >
                         <Facebook className="w-4 h-4" />
                       </Button>
-                      <Button variant="outline" className="w-full" disabled={isLoading || isBlocked}>
+                      <Button
+                        variant="outline"
+                        className="w-full"
+                        disabled={isLoading || isBlocked}
+                      >
                         <Github className="w-4 h-4" />
                       </Button>
                     </div>
@@ -462,7 +480,10 @@ export default function Login() {
                   {demoAccounts.map((account) => {
                     const IconComponent = account.icon;
                     return (
-                      <Card key={account.type} className={`border-2 hover:shadow-md transition-all ${account.color}`}>
+                      <Card
+                        key={account.type}
+                        className={`border-2 hover:shadow-md transition-all ${account.color}`}
+                      >
                         <CardContent className="p-4">
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center gap-3">
@@ -470,17 +491,23 @@ export default function Login() {
                                 <IconComponent className="w-5 h-5" />
                               </div>
                               <div>
-                                <h3 className="font-semibold text-gray-900">{account.title}</h3>
-                                <p className="text-sm font-medium text-gray-700">{account.name}</p>
+                                <h3 className="font-semibold text-gray-900">
+                                  {account.title}
+                                </h3>
+                                <p className="text-sm font-medium text-gray-700">
+                                  {account.name}
+                                </p>
                               </div>
                             </div>
                             <Badge variant="outline" className="text-xs">
                               {account.type.toUpperCase()}
                             </Badge>
                           </div>
-                          
-                          <p className="text-sm text-gray-600 mb-3">{account.description}</p>
-                          
+
+                          <p className="text-sm text-gray-600 mb-3">
+                            {account.description}
+                          </p>
+
                           <div className="space-y-2 mb-3">
                             <div className="flex items-center justify-between text-sm">
                               <span className="text-gray-600">Email:</span>
@@ -492,7 +519,12 @@ export default function Login() {
                                   size="sm"
                                   variant="ghost"
                                   className="h-6 w-6 p-0"
-                                  onClick={() => copyToClipboard(account.email, `${account.type}-email`)}
+                                  onClick={() =>
+                                    copyToClipboard(
+                                      account.email,
+                                      `${account.type}-email`,
+                                    )
+                                  }
                                 >
                                   {copiedAccount === `${account.type}-email` ? (
                                     <CheckCircle className="w-3 h-3 text-green-600" />
@@ -512,9 +544,15 @@ export default function Login() {
                                   size="sm"
                                   variant="ghost"
                                   className="h-6 w-6 p-0"
-                                  onClick={() => copyToClipboard(account.password, `${account.type}-password`)}
+                                  onClick={() =>
+                                    copyToClipboard(
+                                      account.password,
+                                      `${account.type}-password`,
+                                    )
+                                  }
                                 >
-                                  {copiedAccount === `${account.type}-password` ? (
+                                  {copiedAccount ===
+                                  `${account.type}-password` ? (
                                     <CheckCircle className="w-3 h-3 text-green-600" />
                                   ) : (
                                     <Copy className="w-3 h-3" />
@@ -523,7 +561,7 @@ export default function Login() {
                               </div>
                             </div>
                           </div>
-                          
+
                           <Button
                             onClick={() => handleDemoLogin(account)}
                             disabled={isLoading}
@@ -535,17 +573,21 @@ export default function Login() {
                             ) : (
                               <IconComponent className="w-4 h-4 mr-2" />
                             )}
-                            Login as {account.type === 'both' ? 'Dual User' : account.type}
+                            Login as{" "}
+                            {account.type === "both"
+                              ? "Dual User"
+                              : account.type}
                           </Button>
                         </CardContent>
                       </Card>
                     );
                   })}
-                  
+
                   <Alert className="bg-yellow-50 border-yellow-200">
                     <AlertCircle className="h-4 w-4 text-yellow-600" />
                     <AlertDescription className="text-yellow-800">
-                      <strong>Note:</strong> Demo accounts reset daily and contain sample data for testing purposes.
+                      <strong>Note:</strong> Demo accounts reset daily and
+                      contain sample data for testing purposes.
                     </AlertDescription>
                   </Alert>
                 </CardContent>

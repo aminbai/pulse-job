@@ -10,34 +10,166 @@ import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Separator } from "@/components/ui/separator";
 import {
-  BarChart3, Users, DollarSign, Briefcase, TrendingUp, AlertTriangle, Shield, Settings,
-  Database, FileText, Mail, Bell, Eye, Edit, Trash2, Search, Filter, Download, Upload,
-  UserCheck, UserX, MessageSquare, Star, Calendar, Clock, Activity, Target, Award,
-  Zap, Globe, Lock, RefreshCw, CheckCircle, XCircle, AlertCircle, MoreVertical,
-  Plus, Minus, LogOut, User, CreditCard, Banknote, PieChart, LineChart, BarChart,
-  TrendingDown, Home, Building2, MapPin, Phone, ExternalLink, Copy, Bookmark,
-  FileCheck, UserPlus, Package, Truck, ShoppingCart, Monitor, Smartphone, Tablet,
-  Chrome, Firefox, Safari, Server, Cpu, HardDrive, Wifi, Signal, BatteryLow,
-  BatteryFull, WifiOff, AlertOctagon, CheckSquare, Square, MinusSquare, UserCog,
-  Ban, ShieldCheck, Flag, Heart, ThumbsUp, ThumbsDown, Share2, Send, Archive,
-  FileImage, FileVideo, FileAudio, FilePlus, FolderPlus, Move, Scissors, Clipboard,
-  MousePointer, Keyboard, Headphones, Camera, Mic, Video, Image, Music, Film,
-  BookOpen, Newspaper, Calendar as CalendarIcon, Clock3, Clock9, ClockArrowUp,
-  ClockArrowDown, Timer, Stopwatch, Hourglass, Sun, Moon, CloudRain, CloudSnow,
-  Wind, Thermometer, Droplets, Zap as Lightning, Flashlight, Lightbulb, Candle
+  BarChart3,
+  Users,
+  DollarSign,
+  Briefcase,
+  TrendingUp,
+  AlertTriangle,
+  Shield,
+  Settings,
+  Database,
+  FileText,
+  Mail,
+  Bell,
+  Eye,
+  Edit,
+  Trash2,
+  Search,
+  Filter,
+  Download,
+  Upload,
+  UserCheck,
+  UserX,
+  MessageSquare,
+  Star,
+  Calendar,
+  Clock,
+  Activity,
+  Target,
+  Award,
+  Zap,
+  Globe,
+  Lock,
+  RefreshCw,
+  CheckCircle,
+  XCircle,
+  AlertCircle,
+  MoreVertical,
+  Plus,
+  Minus,
+  LogOut,
+  User,
+  CreditCard,
+  Banknote,
+  PieChart,
+  LineChart,
+  BarChart,
+  TrendingDown,
+  Home,
+  Building2,
+  MapPin,
+  Phone,
+  ExternalLink,
+  Copy,
+  Bookmark,
+  FileCheck,
+  UserPlus,
+  Package,
+  Truck,
+  ShoppingCart,
+  Monitor,
+  Smartphone,
+  Tablet,
+  Chrome,
+  Firefox,
+  Safari,
+  Server,
+  Cpu,
+  HardDrive,
+  Wifi,
+  Signal,
+  BatteryLow,
+  BatteryFull,
+  WifiOff,
+  AlertOctagon,
+  CheckSquare,
+  Square,
+  MinusSquare,
+  UserCog,
+  Ban,
+  ShieldCheck,
+  Flag,
+  Heart,
+  ThumbsUp,
+  ThumbsDown,
+  Share2,
+  Send,
+  Archive,
+  FileImage,
+  FileVideo,
+  FileAudio,
+  FilePlus,
+  FolderPlus,
+  Move,
+  Scissors,
+  Clipboard,
+  MousePointer,
+  Keyboard,
+  Headphones,
+  Camera,
+  Mic,
+  Video,
+  Image,
+  Music,
+  Film,
+  BookOpen,
+  Newspaper,
+  Calendar as CalendarIcon,
+  Clock3,
+  Clock9,
+  ClockArrowUp,
+  ClockArrowDown,
+  Timer,
+  Stopwatch,
+  Hourglass,
+  Sun,
+  Moon,
+  CloudRain,
+  CloudSnow,
+  Wind,
+  Thermometer,
+  Droplets,
+  Zap as Lightning,
+  Flashlight,
+  Lightbulb,
+  Candle,
 } from "lucide-react";
 
 interface User {
   id: string;
   name: string;
   email: string;
-  type: 'freelancer' | 'client' | 'admin';
-  status: 'active' | 'inactive' | 'suspended' | 'pending';
+  type: "freelancer" | "client" | "admin";
+  status: "active" | "inactive" | "suspended" | "pending";
   joinDate: string;
   lastActivity: string;
   earnings: number;
@@ -55,12 +187,18 @@ interface Job {
   client: string;
   freelancer?: string;
   budget: number;
-  status: 'active' | 'in_progress' | 'completed' | 'cancelled' | 'disputed' | 'pending';
+  status:
+    | "active"
+    | "in_progress"
+    | "completed"
+    | "cancelled"
+    | "disputed"
+    | "pending";
   category: string;
   postedDate: string;
   deadline: string;
   applications: number;
-  priority: 'low' | 'medium' | 'high' | 'urgent';
+  priority: "low" | "medium" | "high" | "urgent";
   featured: boolean;
 }
 
@@ -68,9 +206,9 @@ interface Transaction {
   id: string;
   userId: string;
   userName: string;
-  type: 'deposit' | 'withdrawal' | 'payment' | 'refund' | 'fee';
+  type: "deposit" | "withdrawal" | "payment" | "refund" | "fee";
   amount: number;
-  status: 'completed' | 'pending' | 'failed' | 'cancelled';
+  status: "completed" | "pending" | "failed" | "cancelled";
   date: string;
   method: string;
   description: string;
@@ -79,7 +217,7 @@ interface Transaction {
 interface SystemMetric {
   name: string;
   value: string | number;
-  status: 'good' | 'warning' | 'critical';
+  status: "good" | "warning" | "critical";
   change?: number;
   unit?: string;
 }
@@ -114,263 +252,348 @@ export default function AdminDashboard() {
     databaseSize: 2.4,
     apiCalls: 1247893,
     errorRate: 0.02,
-    responseTime: 142
+    responseTime: 142,
   };
 
   const mockUsers: User[] = [
     {
-      id: '1',
-      name: 'Ahmed Karim',
-      email: 'ahmed@example.com',
-      type: 'freelancer',
-      status: 'active',
-      joinDate: '2024-01-15',
-      lastActivity: '2 hours ago',
+      id: "1",
+      name: "Ahmed Karim",
+      email: "ahmed@example.com",
+      type: "freelancer",
+      status: "active",
+      joinDate: "2024-01-15",
+      lastActivity: "2 hours ago",
       earnings: 45600,
       completedJobs: 23,
       rating: 4.8,
-      location: 'Dhaka, Bangladesh',
-      phone: '+880123456789',
-      verified: true
+      location: "Dhaka, Bangladesh",
+      phone: "+880123456789",
+      verified: true,
     },
     {
-      id: '2',
-      name: 'Fatima Khan',
-      email: 'fatima@example.com',
-      type: 'client',
-      status: 'pending',
-      joinDate: '2024-01-14',
-      lastActivity: '1 day ago',
+      id: "2",
+      name: "Fatima Khan",
+      email: "fatima@example.com",
+      type: "client",
+      status: "pending",
+      joinDate: "2024-01-14",
+      lastActivity: "1 day ago",
       earnings: 0,
       completedJobs: 0,
       rating: 0,
-      location: 'Chittagong, Bangladesh',
-      phone: '+880123456788',
-      verified: false
+      location: "Chittagong, Bangladesh",
+      phone: "+880123456788",
+      verified: false,
     },
     {
-      id: '3',
-      name: 'Rahim Uddin',
-      email: 'rahim@example.com',
-      type: 'freelancer',
-      status: 'active',
-      joinDate: '2024-01-13',
-      lastActivity: '5 minutes ago',
+      id: "3",
+      name: "Rahim Uddin",
+      email: "rahim@example.com",
+      type: "freelancer",
+      status: "active",
+      joinDate: "2024-01-13",
+      lastActivity: "5 minutes ago",
       earnings: 78900,
       completedJobs: 45,
       rating: 4.9,
-      location: 'Sylhet, Bangladesh',
-      phone: '+880123456787',
-      verified: true
+      location: "Sylhet, Bangladesh",
+      phone: "+880123456787",
+      verified: true,
     },
     {
-      id: '4',
-      name: 'Salma Begum',
-      email: 'salma@example.com',
-      type: 'client',
-      status: 'suspended',
-      joinDate: '2024-01-12',
-      lastActivity: '3 days ago',
+      id: "4",
+      name: "Salma Begum",
+      email: "salma@example.com",
+      type: "client",
+      status: "suspended",
+      joinDate: "2024-01-12",
+      lastActivity: "3 days ago",
       earnings: 0,
       completedJobs: 0,
       rating: 0,
-      location: 'Rajshahi, Bangladesh',
-      phone: '+880123456786',
-      verified: true
+      location: "Rajshahi, Bangladesh",
+      phone: "+880123456786",
+      verified: true,
     },
     {
-      id: '5',
-      name: 'Nasir Ahmed',
-      email: 'nasir@example.com',
-      type: 'freelancer',
-      status: 'active',
-      joinDate: '2024-01-11',
-      lastActivity: '30 minutes ago',
+      id: "5",
+      name: "Nasir Ahmed",
+      email: "nasir@example.com",
+      type: "freelancer",
+      status: "active",
+      joinDate: "2024-01-11",
+      lastActivity: "30 minutes ago",
       earnings: 34500,
       completedJobs: 18,
       rating: 4.6,
-      location: 'Khulna, Bangladesh',
-      phone: '+880123456785',
-      verified: true
-    }
+      location: "Khulna, Bangladesh",
+      phone: "+880123456785",
+      verified: true,
+    },
   ];
 
   const mockJobs: Job[] = [
     {
-      id: '1',
-      title: 'React Developer for E-commerce Platform',
-      client: 'TechCorp Ltd.',
-      freelancer: 'Ahmed Karim',
+      id: "1",
+      title: "React Developer for E-commerce Platform",
+      client: "TechCorp Ltd.",
+      freelancer: "Ahmed Karim",
       budget: 75000,
-      status: 'in_progress',
-      category: 'Web Development',
-      postedDate: '2024-01-15',
-      deadline: '2024-02-15',
+      status: "in_progress",
+      category: "Web Development",
+      postedDate: "2024-01-15",
+      deadline: "2024-02-15",
       applications: 23,
-      priority: 'high',
-      featured: true
+      priority: "high",
+      featured: true,
     },
     {
-      id: '2',
-      title: 'UI/UX Design for Mobile App',
-      client: 'StartupXYZ',
+      id: "2",
+      title: "UI/UX Design for Mobile App",
+      client: "StartupXYZ",
       budget: 45000,
-      status: 'active',
-      category: 'Design',
-      postedDate: '2024-01-14',
-      deadline: '2024-02-10',
+      status: "active",
+      category: "Design",
+      postedDate: "2024-01-14",
+      deadline: "2024-02-10",
       applications: 15,
-      priority: 'medium',
-      featured: false
+      priority: "medium",
+      featured: false,
     },
     {
-      id: '3',
-      title: 'Content Writing for Blog',
-      client: 'BlogCorp',
-      freelancer: 'Fatima Khan',
+      id: "3",
+      title: "Content Writing for Blog",
+      client: "BlogCorp",
+      freelancer: "Fatima Khan",
       budget: 15000,
-      status: 'completed',
-      category: 'Writing',
-      postedDate: '2024-01-10',
-      deadline: '2024-01-20',
+      status: "completed",
+      category: "Writing",
+      postedDate: "2024-01-10",
+      deadline: "2024-01-20",
       applications: 8,
-      priority: 'low',
-      featured: false
+      priority: "low",
+      featured: false,
     },
     {
-      id: '4',
-      title: 'Python Backend Development',
-      client: 'DataTech Solutions',
+      id: "4",
+      title: "Python Backend Development",
+      client: "DataTech Solutions",
       budget: 95000,
-      status: 'disputed',
-      category: 'Programming',
-      postedDate: '2024-01-08',
-      deadline: '2024-02-08',
+      status: "disputed",
+      category: "Programming",
+      postedDate: "2024-01-08",
+      deadline: "2024-02-08",
       applications: 31,
-      priority: 'urgent',
-      featured: true
+      priority: "urgent",
+      featured: true,
     },
     {
-      id: '5',
-      title: 'Digital Marketing Campaign',
-      client: 'MarketPro',
+      id: "5",
+      title: "Digital Marketing Campaign",
+      client: "MarketPro",
       budget: 35000,
-      status: 'pending',
-      category: 'Marketing',
-      postedDate: '2024-01-12',
-      deadline: '2024-02-12',
+      status: "pending",
+      category: "Marketing",
+      postedDate: "2024-01-12",
+      deadline: "2024-02-12",
       applications: 12,
-      priority: 'medium',
-      featured: false
-    }
+      priority: "medium",
+      featured: false,
+    },
   ];
 
   const mockTransactions: Transaction[] = [
     {
-      id: 'TXN001',
-      userId: '1',
-      userName: 'Ahmed Karim',
-      type: 'payment',
+      id: "TXN001",
+      userId: "1",
+      userName: "Ahmed Karim",
+      type: "payment",
       amount: 7500,
-      status: 'completed',
-      date: '2024-01-15',
-      method: 'Bank Transfer',
-      description: 'Payment for React development project'
+      status: "completed",
+      date: "2024-01-15",
+      method: "Bank Transfer",
+      description: "Payment for React development project",
     },
     {
-      id: 'TXN002',
-      userId: '2',
-      userName: 'Fatima Khan',
-      type: 'deposit',
+      id: "TXN002",
+      userId: "2",
+      userName: "Fatima Khan",
+      type: "deposit",
       amount: 15000,
-      status: 'pending',
-      date: '2024-01-14',
-      method: 'Mobile Banking',
-      description: 'Account deposit for job posting'
+      status: "pending",
+      date: "2024-01-14",
+      method: "Mobile Banking",
+      description: "Account deposit for job posting",
     },
     {
-      id: 'TXN003',
-      userId: '3',
-      userName: 'Rahim Uddin',
-      type: 'withdrawal',
+      id: "TXN003",
+      userId: "3",
+      userName: "Rahim Uddin",
+      type: "withdrawal",
       amount: 12000,
-      status: 'completed',
-      date: '2024-01-13',
-      method: 'Bank Transfer',
-      description: 'Earnings withdrawal'
+      status: "completed",
+      date: "2024-01-13",
+      method: "Bank Transfer",
+      description: "Earnings withdrawal",
     },
     {
-      id: 'TXN004',
-      userId: '4',
-      userName: 'Salma Begum',
-      type: 'refund',
+      id: "TXN004",
+      userId: "4",
+      userName: "Salma Begum",
+      type: "refund",
       amount: 5000,
-      status: 'failed',
-      date: '2024-01-12',
-      method: 'Card',
-      description: 'Refund for cancelled project'
+      status: "failed",
+      date: "2024-01-12",
+      method: "Card",
+      description: "Refund for cancelled project",
     },
     {
-      id: 'TXN005',
-      userId: '5',
-      userName: 'Nasir Ahmed',
-      type: 'fee',
+      id: "TXN005",
+      userId: "5",
+      userName: "Nasir Ahmed",
+      type: "fee",
       amount: 750,
-      status: 'completed',
-      date: '2024-01-11',
-      method: 'Platform Fee',
-      description: 'Platform commission fee'
-    }
+      status: "completed",
+      date: "2024-01-11",
+      method: "Platform Fee",
+      description: "Platform commission fee",
+    },
   ];
 
   const systemMetrics: SystemMetric[] = [
-    { name: 'Server Uptime', value: 99.9, status: 'good', unit: '%' },
-    { name: 'CPU Usage', value: 67, status: 'warning', unit: '%', change: 5 },
-    { name: 'Memory Usage', value: 78, status: 'warning', unit: '%', change: -2 },
-    { name: 'Disk Space', value: 45, status: 'good', unit: '%', change: 1 },
-    { name: 'Active Sessions', value: 1247, status: 'good', change: 12 },
-    { name: 'API Response Time', value: 142, status: 'warning', unit: 'ms', change: 8 },
-    { name: 'Error Rate', value: 0.02, status: 'good', unit: '%', change: -0.01 },
-    { name: 'Database Connections', value: 89, status: 'good', change: -3 }
+    { name: "Server Uptime", value: 99.9, status: "good", unit: "%" },
+    { name: "CPU Usage", value: 67, status: "warning", unit: "%", change: 5 },
+    {
+      name: "Memory Usage",
+      value: 78,
+      status: "warning",
+      unit: "%",
+      change: -2,
+    },
+    { name: "Disk Space", value: 45, status: "good", unit: "%", change: 1 },
+    { name: "Active Sessions", value: 1247, status: "good", change: 12 },
+    {
+      name: "API Response Time",
+      value: 142,
+      status: "warning",
+      unit: "ms",
+      change: 8,
+    },
+    {
+      name: "Error Rate",
+      value: 0.02,
+      status: "good",
+      unit: "%",
+      change: -0.01,
+    },
+    { name: "Database Connections", value: 89, status: "good", change: -3 },
   ];
 
   const recentActivities = [
-    { type: 'user_registered', message: 'New user Ahmed registered', time: '2 minutes ago', icon: UserPlus },
-    { type: 'job_posted', message: 'New job posted: React Developer', time: '5 minutes ago', icon: Briefcase },
-    { type: 'payment_completed', message: 'Payment of ৳7,500 processed', time: '10 minutes ago', icon: CreditCard },
-    { type: 'dispute_opened', message: 'Dispute opened for job #1234', time: '15 minutes ago', icon: AlertTriangle },
-    { type: 'user_verified', message: 'User Fatima Khan verified', time: '30 minutes ago', icon: CheckCircle },
-    { type: 'system_backup', message: 'Automated backup completed', time: '1 hour ago', icon: Database },
-    { type: 'security_alert', message: 'Failed login attempts detected', time: '2 hours ago', icon: Shield },
-    { type: 'maintenance', message: 'Server maintenance completed', time: '3 hours ago', icon: Settings }
+    {
+      type: "user_registered",
+      message: "New user Ahmed registered",
+      time: "2 minutes ago",
+      icon: UserPlus,
+    },
+    {
+      type: "job_posted",
+      message: "New job posted: React Developer",
+      time: "5 minutes ago",
+      icon: Briefcase,
+    },
+    {
+      type: "payment_completed",
+      message: "Payment of ৳7,500 processed",
+      time: "10 minutes ago",
+      icon: CreditCard,
+    },
+    {
+      type: "dispute_opened",
+      message: "Dispute opened for job #1234",
+      time: "15 minutes ago",
+      icon: AlertTriangle,
+    },
+    {
+      type: "user_verified",
+      message: "User Fatima Khan verified",
+      time: "30 minutes ago",
+      icon: CheckCircle,
+    },
+    {
+      type: "system_backup",
+      message: "Automated backup completed",
+      time: "1 hour ago",
+      icon: Database,
+    },
+    {
+      type: "security_alert",
+      message: "Failed login attempts detected",
+      time: "2 hours ago",
+      icon: Shield,
+    },
+    {
+      type: "maintenance",
+      message: "Server maintenance completed",
+      time: "3 hours ago",
+      icon: Settings,
+    },
   ];
 
   const filteredUsers = useMemo(() => {
-    return mockUsers.filter(user =>
-      user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.email.toLowerCase().includes(searchTerm.toLowerCase())
+    return mockUsers.filter(
+      (user) =>
+        user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        user.email.toLowerCase().includes(searchTerm.toLowerCase()),
     );
   }, [searchTerm]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'active': case 'completed': case 'good': return 'bg-green-100 text-green-800';
-      case 'pending': case 'warning': return 'bg-yellow-100 text-yellow-800';
-      case 'suspended': case 'failed': case 'critical': case 'disputed': return 'bg-red-100 text-red-800';
-      case 'inactive': case 'cancelled': return 'bg-gray-100 text-gray-800';
-      case 'in_progress': return 'bg-blue-100 text-blue-800';
-      default: return 'bg-gray-100 text-gray-800';
+      case "active":
+      case "completed":
+      case "good":
+        return "bg-green-100 text-green-800";
+      case "pending":
+      case "warning":
+        return "bg-yellow-100 text-yellow-800";
+      case "suspended":
+      case "failed":
+      case "critical":
+      case "disputed":
+        return "bg-red-100 text-red-800";
+      case "inactive":
+      case "cancelled":
+        return "bg-gray-100 text-gray-800";
+      case "in_progress":
+        return "bg-blue-100 text-blue-800";
+      default:
+        return "bg-gray-100 text-gray-800";
     }
   };
 
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case 'active': case 'completed': case 'good': return CheckCircle;
-      case 'pending': case 'warning': return Clock;
-      case 'suspended': case 'failed': case 'critical': case 'disputed': return XCircle;
-      case 'inactive': case 'cancelled': return MinusSquare;
-      case 'in_progress': return Activity;
-      default: return AlertCircle;
+      case "active":
+      case "completed":
+      case "good":
+        return CheckCircle;
+      case "pending":
+      case "warning":
+        return Clock;
+      case "suspended":
+      case "failed":
+      case "critical":
+      case "disputed":
+        return XCircle;
+      case "inactive":
+      case "cancelled":
+        return MinusSquare;
+      case "in_progress":
+        return Activity;
+      default:
+        return AlertCircle;
     }
   };
 
@@ -400,7 +623,7 @@ export default function AdminDashboard() {
                   <p className="text-sm text-gray-300">Super Administrator</p>
                 </div>
               </div>
-              
+
               {/* System Status Indicator */}
               <div className="flex items-center gap-2 px-3 py-1 bg-green-600 rounded-full">
                 <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
@@ -409,7 +632,9 @@ export default function AdminDashboard() {
 
               {/* Maintenance Mode Toggle */}
               <div className="flex items-center gap-2">
-                <Label htmlFor="maintenance" className="text-sm">Maintenance Mode</Label>
+                <Label htmlFor="maintenance" className="text-sm">
+                  Maintenance Mode
+                </Label>
                 <Switch
                   id="maintenance"
                   checked={maintenanceMode}
@@ -422,11 +647,15 @@ export default function AdminDashboard() {
               {/* Quick Stats */}
               <div className="hidden md:flex items-center gap-4 text-sm">
                 <div className="text-center">
-                  <div className="font-bold">{adminStats.activeUsers.toLocaleString()}</div>
+                  <div className="font-bold">
+                    {adminStats.activeUsers.toLocaleString()}
+                  </div>
                   <div className="text-gray-300">Active Users</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-bold">৳{(adminStats.monthlyRevenue / 1000).toFixed(0)}k</div>
+                  <div className="font-bold">
+                    ৳{(adminStats.monthlyRevenue / 1000).toFixed(0)}k
+                  </div>
                   <div className="text-gray-300">Monthly Revenue</div>
                 </div>
                 <div className="text-center">
@@ -439,7 +668,11 @@ export default function AdminDashboard() {
 
               {/* Action Buttons */}
               <div className="flex items-center gap-2">
-                <Button variant="ghost" size="sm" className="text-white hover:bg-gray-700 relative">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-white hover:bg-gray-700 relative"
+                >
                   <Bell className="w-5 h-5" />
                   {notifications > 0 && (
                     <Badge className="absolute -top-1 -right-1 w-5 h-5 p-0 bg-red-500 text-xs">
@@ -447,12 +680,20 @@ export default function AdminDashboard() {
                     </Badge>
                   )}
                 </Button>
-                
-                <Button variant="ghost" size="sm" className="text-white hover:bg-gray-700">
+
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-white hover:bg-gray-700"
+                >
                   <Settings className="w-5 h-5" />
                 </Button>
 
-                <Button variant="ghost" size="sm" className="text-white hover:bg-gray-700">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-white hover:bg-gray-700"
+                >
                   <Download className="w-5 h-5" />
                 </Button>
 
@@ -467,7 +708,11 @@ export default function AdminDashboard() {
                     <div className="font-medium">Admin User</div>
                     <div className="text-xs text-gray-300">Super Admin</div>
                   </div>
-                  <Button variant="ghost" size="sm" className="text-white hover:bg-gray-700">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-white hover:bg-gray-700"
+                  >
                     <LogOut className="w-4 h-4" />
                   </Button>
                 </div>
@@ -478,7 +723,11 @@ export default function AdminDashboard() {
       </header>
 
       <div className="max-w-7xl mx-auto px-6 py-8">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
+        <Tabs
+          value={activeTab}
+          onValueChange={setActiveTab}
+          className="space-y-6"
+        >
           <TabsList className="grid w-full grid-cols-9 gap-1 p-1 bg-white rounded-lg shadow-sm">
             <TabsTrigger value="overview" className="flex items-center gap-2">
               <Home className="w-4 h-4" />
@@ -526,11 +775,17 @@ export default function AdminDashboard() {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-gray-600">Total Users</p>
-                      <p className="text-3xl font-bold text-gray-900">{adminStats.totalUsers.toLocaleString()}</p>
+                      <p className="text-sm font-medium text-gray-600">
+                        Total Users
+                      </p>
+                      <p className="text-3xl font-bold text-gray-900">
+                        {adminStats.totalUsers.toLocaleString()}
+                      </p>
                       <div className="flex items-center mt-2">
                         <TrendingUp className="w-4 h-4 text-green-600 mr-1" />
-                        <span className="text-sm text-green-600">+{adminStats.userGrowthRate}% this month</span>
+                        <span className="text-sm text-green-600">
+                          +{adminStats.userGrowthRate}% this month
+                        </span>
                       </div>
                     </div>
                     <div className="p-3 bg-blue-100 rounded-lg">
@@ -544,11 +799,17 @@ export default function AdminDashboard() {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-gray-600">Monthly Revenue</p>
-                      <p className="text-3xl font-bold text-gray-900">৳{adminStats.monthlyRevenue.toLocaleString()}</p>
+                      <p className="text-sm font-medium text-gray-600">
+                        Monthly Revenue
+                      </p>
+                      <p className="text-3xl font-bold text-gray-900">
+                        ৳{adminStats.monthlyRevenue.toLocaleString()}
+                      </p>
                       <div className="flex items-center mt-2">
                         <TrendingUp className="w-4 h-4 text-green-600 mr-1" />
-                        <span className="text-sm text-green-600">+15.3% from last month</span>
+                        <span className="text-sm text-green-600">
+                          +15.3% from last month
+                        </span>
                       </div>
                     </div>
                     <div className="p-3 bg-green-100 rounded-lg">
@@ -562,11 +823,17 @@ export default function AdminDashboard() {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-gray-600">Active Jobs</p>
-                      <p className="text-3xl font-bold text-gray-900">{adminStats.activeJobs.toLocaleString()}</p>
+                      <p className="text-sm font-medium text-gray-600">
+                        Active Jobs
+                      </p>
+                      <p className="text-3xl font-bold text-gray-900">
+                        {adminStats.activeJobs.toLocaleString()}
+                      </p>
                       <div className="flex items-center mt-2">
                         <TrendingUp className="w-4 h-4 text-green-600 mr-1" />
-                        <span className="text-sm text-green-600">+8.2% this week</span>
+                        <span className="text-sm text-green-600">
+                          +8.2% this week
+                        </span>
                       </div>
                     </div>
                     <div className="p-3 bg-purple-100 rounded-lg">
@@ -580,11 +847,17 @@ export default function AdminDashboard() {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-gray-600">Support Tickets</p>
-                      <p className="text-3xl font-bold text-gray-900">{adminStats.supportTickets}</p>
+                      <p className="text-sm font-medium text-gray-600">
+                        Support Tickets
+                      </p>
+                      <p className="text-3xl font-bold text-gray-900">
+                        {adminStats.supportTickets}
+                      </p>
                       <div className="flex items-center mt-2">
                         <Clock className="w-4 h-4 text-yellow-600 mr-1" />
-                        <span className="text-sm text-yellow-600">23 pending review</span>
+                        <span className="text-sm text-yellow-600">
+                          23 pending review
+                        </span>
                       </div>
                     </div>
                     <div className="p-3 bg-red-100 rounded-lg">
@@ -608,23 +881,38 @@ export default function AdminDashboard() {
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
                       <span>Job Completion Rate</span>
-                      <span className="font-medium">{adminStats.jobCompletionRate}%</span>
+                      <span className="font-medium">
+                        {adminStats.jobCompletionRate}%
+                      </span>
                     </div>
-                    <Progress value={adminStats.jobCompletionRate} className="h-2" />
+                    <Progress
+                      value={adminStats.jobCompletionRate}
+                      className="h-2"
+                    />
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
                       <span>User Conversion Rate</span>
-                      <span className="font-medium">{adminStats.conversionRate}%</span>
+                      <span className="font-medium">
+                        {adminStats.conversionRate}%
+                      </span>
                     </div>
-                    <Progress value={adminStats.conversionRate} className="h-2" />
+                    <Progress
+                      value={adminStats.conversionRate}
+                      className="h-2"
+                    />
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
                       <span>Average Rating</span>
-                      <span className="font-medium">{adminStats.averageRating}/5.0</span>
+                      <span className="font-medium">
+                        {adminStats.averageRating}/5.0
+                      </span>
                     </div>
-                    <Progress value={(adminStats.averageRating / 5) * 100} className="h-2" />
+                    <Progress
+                      value={(adminStats.averageRating / 5) * 100}
+                      className="h-2"
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -641,28 +929,38 @@ export default function AdminDashboard() {
                     <span className="text-sm">Server Uptime</span>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="font-medium">{adminStats.systemUptime}%</span>
+                      <span className="font-medium">
+                        {adminStats.systemUptime}%
+                      </span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm">Server Load</span>
                     <div className="flex items-center gap-2">
-                      <div className={`w-2 h-2 ${adminStats.serverLoad > 80 ? 'bg-red-500' : adminStats.serverLoad > 60 ? 'bg-yellow-500' : 'bg-green-500'} rounded-full`}></div>
-                      <span className="font-medium">{adminStats.serverLoad}%</span>
+                      <div
+                        className={`w-2 h-2 ${adminStats.serverLoad > 80 ? "bg-red-500" : adminStats.serverLoad > 60 ? "bg-yellow-500" : "bg-green-500"} rounded-full`}
+                      ></div>
+                      <span className="font-medium">
+                        {adminStats.serverLoad}%
+                      </span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm">API Response Time</span>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                      <span className="font-medium">{adminStats.responseTime}ms</span>
+                      <span className="font-medium">
+                        {adminStats.responseTime}ms
+                      </span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm">Error Rate</span>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="font-medium">{adminStats.errorRate}%</span>
+                      <span className="font-medium">
+                        {adminStats.errorRate}%
+                      </span>
                     </div>
                   </div>
                 </CardContent>
@@ -685,8 +983,12 @@ export default function AdminDashboard() {
                             <IconComponent className="w-3 h-3 text-gray-600" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <p className="text-sm text-gray-900 truncate">{activity.message}</p>
-                            <p className="text-xs text-gray-500">{activity.time}</p>
+                            <p className="text-sm text-gray-900 truncate">
+                              {activity.message}
+                            </p>
+                            <p className="text-xs text-gray-500">
+                              {activity.time}
+                            </p>
                           </div>
                         </div>
                       );
@@ -708,15 +1010,24 @@ export default function AdminDashboard() {
                       <UserPlus className="w-6 h-6" />
                       <span>Add User</span>
                     </Button>
-                    <Button variant="outline" className="flex flex-col items-center gap-2 h-auto py-4">
+                    <Button
+                      variant="outline"
+                      className="flex flex-col items-center gap-2 h-auto py-4"
+                    >
                       <Plus className="w-6 h-6" />
                       <span>Create Job</span>
                     </Button>
-                    <Button variant="outline" className="flex flex-col items-center gap-2 h-auto py-4">
+                    <Button
+                      variant="outline"
+                      className="flex flex-col items-center gap-2 h-auto py-4"
+                    >
                       <Download className="w-6 h-6" />
                       <span>Export Data</span>
                     </Button>
-                    <Button variant="outline" className="flex flex-col items-center gap-2 h-auto py-4">
+                    <Button
+                      variant="outline"
+                      className="flex flex-col items-center gap-2 h-auto py-4"
+                    >
                       <Mail className="w-6 h-6" />
                       <span>Send Notice</span>
                     </Button>
@@ -731,19 +1042,31 @@ export default function AdminDashboard() {
                 <CardContent>
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div>
-                      <p className="text-2xl font-bold text-blue-600">{adminStats.totalJobs.toLocaleString()}</p>
+                      <p className="text-2xl font-bold text-blue-600">
+                        {adminStats.totalJobs.toLocaleString()}
+                      </p>
                       <p className="text-sm text-gray-600">Total Jobs Posted</p>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-green-600">৳{(adminStats.totalEarnings / 1000).toFixed(0)}k</p>
-                      <p className="text-sm text-gray-600">Total Transactions</p>
+                      <p className="text-2xl font-bold text-green-600">
+                        ৳{(adminStats.totalEarnings / 1000).toFixed(0)}k
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Total Transactions
+                      </p>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-purple-600">{adminStats.completedJobs.toLocaleString()}</p>
-                      <p className="text-sm text-gray-600">Completed Projects</p>
+                      <p className="text-2xl font-bold text-purple-600">
+                        {adminStats.completedJobs.toLocaleString()}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Completed Projects
+                      </p>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-orange-600">৳{(adminStats.platformFees / 1000).toFixed(0)}k</p>
+                      <p className="text-2xl font-bold text-orange-600">
+                        ৳{(adminStats.platformFees / 1000).toFixed(0)}k
+                      </p>
                       <p className="text-sm text-gray-600">Platform Revenue</p>
                     </div>
                   </div>
@@ -756,11 +1079,15 @@ export default function AdminDashboard() {
           <TabsContent value="users" className="space-y-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900">User Management</h2>
-                <p className="text-gray-600">Manage all platform users, their permissions, and activities</p>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  User Management
+                </h2>
+                <p className="text-gray-600">
+                  Manage all platform users, their permissions, and activities
+                </p>
               </div>
               <div className="flex gap-2">
-                <Button variant="outline" onClick={() => exportData('users')}>
+                <Button variant="outline" onClick={() => exportData("users")}>
                   <Download className="w-4 h-4 mr-2" />
                   Export Users
                 </Button>
@@ -777,28 +1104,36 @@ export default function AdminDashboard() {
                 <CardContent className="p-6 text-center">
                   <Users className="w-8 h-8 mx-auto mb-2 text-blue-600" />
                   <p className="text-sm text-gray-600">Total Users</p>
-                  <p className="text-2xl font-bold">{adminStats.totalUsers.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.totalUsers.toLocaleString()}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <UserCheck className="w-8 h-8 mx-auto mb-2 text-green-600" />
                   <p className="text-sm text-gray-600">Active Users</p>
-                  <p className="text-2xl font-bold">{adminStats.activeUsers.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.activeUsers.toLocaleString()}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <Clock className="w-8 h-8 mx-auto mb-2 text-yellow-600" />
                   <p className="text-sm text-gray-600">New Today</p>
-                  <p className="text-2xl font-bold">{adminStats.newUsersToday}</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.newUsersToday}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <Star className="w-8 h-8 mx-auto mb-2 text-purple-600" />
                   <p className="text-sm text-gray-600">Avg. Rating</p>
-                  <p className="text-2xl font-bold">{adminStats.averageRating}</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.averageRating}
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -873,15 +1208,28 @@ export default function AdminDashboard() {
                             <div className="flex items-center gap-3">
                               <Avatar>
                                 <AvatarImage src={user.avatar} />
-                                <AvatarFallback>{user.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                                <AvatarFallback>
+                                  {user.name
+                                    .split(" ")
+                                    .map((n) => n[0])
+                                    .join("")}
+                                </AvatarFallback>
                               </Avatar>
                               <div>
                                 <div className="flex items-center gap-2">
-                                  <span className="font-medium">{user.name}</span>
-                                  {user.verified && <CheckCircle className="w-4 h-4 text-green-600" />}
+                                  <span className="font-medium">
+                                    {user.name}
+                                  </span>
+                                  {user.verified && (
+                                    <CheckCircle className="w-4 h-4 text-green-600" />
+                                  )}
                                 </div>
-                                <p className="text-sm text-gray-600">{user.email}</p>
-                                <p className="text-xs text-gray-500">{user.location}</p>
+                                <p className="text-sm text-gray-600">
+                                  {user.email}
+                                </p>
+                                <p className="text-xs text-gray-500">
+                                  {user.location}
+                                </p>
                               </div>
                             </div>
                           </TableCell>
@@ -897,52 +1245,82 @@ export default function AdminDashboard() {
                             </Badge>
                           </TableCell>
                           <TableCell>
-                            {user.type === 'freelancer' ? (
+                            {user.type === "freelancer" ? (
                               <div className="text-sm">
                                 <div className="flex items-center gap-1">
                                   <Star className="w-3 h-3 text-yellow-500" />
                                   <span>{user.rating}</span>
                                 </div>
                                 <div className="text-gray-600">
-                                  {user.completedJobs} jobs • ৳{user.earnings.toLocaleString()}
+                                  {user.completedJobs} jobs • ৳
+                                  {user.earnings.toLocaleString()}
                                 </div>
                               </div>
                             ) : (
                               <span className="text-sm text-gray-500">-</span>
                             )}
                           </TableCell>
-                          <TableCell className="text-sm">{user.joinDate}</TableCell>
-                          <TableCell className="text-sm text-gray-600">{user.lastActivity}</TableCell>
+                          <TableCell className="text-sm">
+                            {user.joinDate}
+                          </TableCell>
+                          <TableCell className="text-sm text-gray-600">
+                            {user.lastActivity}
+                          </TableCell>
                           <TableCell>
                             <div className="flex gap-1">
-                              <Button variant="ghost" size="sm" title="View Details">
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                title="View Details"
+                              >
                                 <Eye className="w-4 h-4" />
                               </Button>
-                              <Button variant="ghost" size="sm" title="Edit User">
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                title="Edit User"
+                              >
                                 <Edit className="w-4 h-4" />
                               </Button>
-                              <Button variant="ghost" size="sm" title="Send Message">
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                title="Send Message"
+                              >
                                 <Mail className="w-4 h-4" />
                               </Button>
-                              {user.status === 'active' ? (
+                              {user.status === "active" ? (
                                 <AlertDialog>
                                   <AlertDialogTrigger asChild>
-                                    <Button variant="ghost" size="sm" className="text-red-600" title="Suspend User">
+                                    <Button
+                                      variant="ghost"
+                                      size="sm"
+                                      className="text-red-600"
+                                      title="Suspend User"
+                                    >
                                       <Ban className="w-4 h-4" />
                                     </Button>
                                   </AlertDialogTrigger>
                                   <AlertDialogContent>
                                     <AlertDialogHeader>
-                                      <AlertDialogTitle>Suspend User</AlertDialogTitle>
+                                      <AlertDialogTitle>
+                                        Suspend User
+                                      </AlertDialogTitle>
                                       <AlertDialogDescription>
-                                        Are you sure you want to suspend {user.name}? They will not be able to access their account.
+                                        Are you sure you want to suspend{" "}
+                                        {user.name}? They will not be able to
+                                        access their account.
                                       </AlertDialogDescription>
                                     </AlertDialogHeader>
                                     <AlertDialogFooter>
-                                      <AlertDialogCancel>Cancel</AlertDialogCancel>
-                                      <AlertDialogAction 
+                                      <AlertDialogCancel>
+                                        Cancel
+                                      </AlertDialogCancel>
+                                      <AlertDialogAction
                                         className="bg-red-600 hover:bg-red-700"
-                                        onClick={() => handleUserAction(user.id, 'suspend')}
+                                        onClick={() =>
+                                          handleUserAction(user.id, "suspend")
+                                        }
                                       >
                                         Suspend
                                       </AlertDialogAction>
@@ -950,12 +1328,14 @@ export default function AdminDashboard() {
                                   </AlertDialogContent>
                                 </AlertDialog>
                               ) : (
-                                <Button 
-                                  variant="ghost" 
-                                  size="sm" 
-                                  className="text-green-600" 
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="text-green-600"
                                   title="Activate User"
-                                  onClick={() => handleUserAction(user.id, 'activate')}
+                                  onClick={() =>
+                                    handleUserAction(user.id, "activate")
+                                  }
                                 >
                                   <UserCheck className="w-4 h-4" />
                                 </Button>
@@ -976,14 +1356,16 @@ export default function AdminDashboard() {
             <div className="flex justify-between items-center">
               <div>
                 <h2 className="text-2xl font-bold">Job Management</h2>
-                <p className="text-gray-600">Monitor and manage all job postings and applications</p>
+                <p className="text-gray-600">
+                  Monitor and manage all job postings and applications
+                </p>
               </div>
               <div className="flex gap-2">
                 <Button variant="outline">
                   <Filter className="w-4 h-4 mr-2" />
                   Advanced Filters
                 </Button>
-                <Button variant="outline" onClick={() => exportData('jobs')}>
+                <Button variant="outline" onClick={() => exportData("jobs")}>
                   <Download className="w-4 h-4 mr-2" />
                   Export Report
                 </Button>
@@ -996,35 +1378,45 @@ export default function AdminDashboard() {
                 <CardContent className="p-6 text-center">
                   <Briefcase className="w-8 h-8 mx-auto mb-2 text-blue-600" />
                   <p className="text-sm text-gray-600">Total Jobs</p>
-                  <p className="text-2xl font-bold">{adminStats.totalJobs.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.totalJobs.toLocaleString()}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <Activity className="w-8 h-8 mx-auto mb-2 text-green-600" />
                   <p className="text-sm text-gray-600">Active</p>
-                  <p className="text-2xl font-bold">{adminStats.activeJobs.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.activeJobs.toLocaleString()}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <CheckCircle className="w-8 h-8 mx-auto mb-2 text-purple-600" />
                   <p className="text-sm text-gray-600">Completed</p>
-                  <p className="text-2xl font-bold">{adminStats.completedJobs.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.completedJobs.toLocaleString()}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <DollarSign className="w-8 h-8 mx-auto mb-2 text-orange-600" />
                   <p className="text-sm text-gray-600">Avg. Value</p>
-                  <p className="text-2xl font-bold">৳{adminStats.averageJobValue.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">
+                    ৳{adminStats.averageJobValue.toLocaleString()}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <Target className="w-8 h-8 mx-auto mb-2 text-red-600" />
                   <p className="text-sm text-gray-600">Success Rate</p>
-                  <p className="text-2xl font-bold">{adminStats.jobCompletionRate}%</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.jobCompletionRate}%
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -1053,8 +1445,12 @@ export default function AdminDashboard() {
                             <div>
                               <div className="flex items-center gap-2">
                                 <span className="font-medium">{job.title}</span>
-                                {job.featured && <Star className="w-4 h-4 text-yellow-500" />}
-                                {job.priority === 'urgent' && <AlertTriangle className="w-4 h-4 text-red-500" />}
+                                {job.featured && (
+                                  <Star className="w-4 h-4 text-yellow-500" />
+                                )}
+                                {job.priority === "urgent" && (
+                                  <AlertTriangle className="w-4 h-4 text-red-500" />
+                                )}
                               </div>
                               <Badge variant="outline" className="mt-1 text-xs">
                                 {job.category}
@@ -1062,18 +1458,26 @@ export default function AdminDashboard() {
                             </div>
                           </TableCell>
                           <TableCell>{job.client}</TableCell>
-                          <TableCell className="font-semibold">৳{job.budget.toLocaleString()}</TableCell>
+                          <TableCell className="font-semibold">
+                            ৳{job.budget.toLocaleString()}
+                          </TableCell>
                           <TableCell>
                             <Badge className={getStatusColor(job.status)}>
                               <StatusIcon className="w-3 h-3 mr-1" />
-                              {job.status.replace('_', ' ')}
+                              {job.status.replace("_", " ")}
                             </Badge>
                           </TableCell>
                           <TableCell>
-                            <span className="font-medium">{job.applications}</span>
-                            <span className="text-gray-500 text-sm ml-1">applications</span>
+                            <span className="font-medium">
+                              {job.applications}
+                            </span>
+                            <span className="text-gray-500 text-sm ml-1">
+                              applications
+                            </span>
                           </TableCell>
-                          <TableCell className="text-sm">{job.deadline}</TableCell>
+                          <TableCell className="text-sm">
+                            {job.deadline}
+                          </TableCell>
                           <TableCell>
                             <div className="flex gap-1">
                               <Button variant="ghost" size="sm">
@@ -1101,10 +1505,15 @@ export default function AdminDashboard() {
             <div className="flex justify-between items-center">
               <div>
                 <h2 className="text-2xl font-bold">Financial Management</h2>
-                <p className="text-gray-600">Monitor transactions, revenue, and financial analytics</p>
+                <p className="text-gray-600">
+                  Monitor transactions, revenue, and financial analytics
+                </p>
               </div>
               <div className="flex gap-2">
-                <Select value={selectedDateRange} onValueChange={setSelectedDateRange}>
+                <Select
+                  value={selectedDateRange}
+                  onValueChange={setSelectedDateRange}
+                >
                   <SelectTrigger className="w-40">
                     <SelectValue />
                   </SelectTrigger>
@@ -1115,7 +1524,7 @@ export default function AdminDashboard() {
                     <SelectItem value="1y">Last year</SelectItem>
                   </SelectContent>
                 </Select>
-                <Button variant="outline" onClick={() => exportData('finance')}>
+                <Button variant="outline" onClick={() => exportData("finance")}>
                   <Download className="w-4 h-4 mr-2" />
                   Export Report
                 </Button>
@@ -1128,32 +1537,48 @@ export default function AdminDashboard() {
                 <CardContent className="p-6 text-center">
                   <Banknote className="w-8 h-8 mx-auto mb-2 text-green-600" />
                   <p className="text-sm text-gray-600">Total Revenue</p>
-                  <p className="text-2xl font-bold">৳{adminStats.totalEarnings.toLocaleString()}</p>
-                  <p className="text-xs text-green-600 mt-1">+15.3% from last month</p>
+                  <p className="text-2xl font-bold">
+                    ৳{adminStats.totalEarnings.toLocaleString()}
+                  </p>
+                  <p className="text-xs text-green-600 mt-1">
+                    +15.3% from last month
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <DollarSign className="w-8 h-8 mx-auto mb-2 text-blue-600" />
                   <p className="text-sm text-gray-600">Platform Fees</p>
-                  <p className="text-2xl font-bold">৳{adminStats.platformFees.toLocaleString()}</p>
-                  <p className="text-xs text-blue-600 mt-1">10% commission rate</p>
+                  <p className="text-2xl font-bold">
+                    ৳{adminStats.platformFees.toLocaleString()}
+                  </p>
+                  <p className="text-xs text-blue-600 mt-1">
+                    10% commission rate
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <Clock className="w-8 h-8 mx-auto mb-2 text-yellow-600" />
                   <p className="text-sm text-gray-600">Pending Payouts</p>
-                  <p className="text-2xl font-bold">৳{adminStats.pendingPayouts.toLocaleString()}</p>
-                  <p className="text-xs text-yellow-600 mt-1">45 transactions pending</p>
+                  <p className="text-2xl font-bold">
+                    ৳{adminStats.pendingPayouts.toLocaleString()}
+                  </p>
+                  <p className="text-xs text-yellow-600 mt-1">
+                    45 transactions pending
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <TrendingUp className="w-8 h-8 mx-auto mb-2 text-purple-600" />
                   <p className="text-sm text-gray-600">Monthly Growth</p>
-                  <p className="text-2xl font-bold">+{adminStats.userGrowthRate}%</p>
-                  <p className="text-xs text-purple-600 mt-1">Revenue growth rate</p>
+                  <p className="text-2xl font-bold">
+                    +{adminStats.userGrowthRate}%
+                  </p>
+                  <p className="text-xs text-purple-600 mt-1">
+                    Revenue growth rate
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -1188,7 +1613,9 @@ export default function AdminDashboard() {
                       const StatusIcon = getStatusIcon(transaction.status);
                       return (
                         <TableRow key={transaction.id}>
-                          <TableCell className="font-mono">{transaction.id}</TableCell>
+                          <TableCell className="font-mono">
+                            {transaction.id}
+                          </TableCell>
                           <TableCell>{transaction.userName}</TableCell>
                           <TableCell>
                             <Badge variant="outline" className="capitalize">
@@ -1196,29 +1623,52 @@ export default function AdminDashboard() {
                             </Badge>
                           </TableCell>
                           <TableCell className="font-semibold">
-                            <span className={transaction.type === 'withdrawal' || transaction.type === 'refund' ? 'text-red-600' : 'text-green-600'}>
-                              {transaction.type === 'withdrawal' || transaction.type === 'refund' ? '-' : '+'}৳{transaction.amount.toLocaleString()}
+                            <span
+                              className={
+                                transaction.type === "withdrawal" ||
+                                transaction.type === "refund"
+                                  ? "text-red-600"
+                                  : "text-green-600"
+                              }
+                            >
+                              {transaction.type === "withdrawal" ||
+                              transaction.type === "refund"
+                                ? "-"
+                                : "+"}
+                              ৳{transaction.amount.toLocaleString()}
                             </span>
                           </TableCell>
                           <TableCell>{transaction.method}</TableCell>
                           <TableCell>
-                            <Badge className={getStatusColor(transaction.status)}>
+                            <Badge
+                              className={getStatusColor(transaction.status)}
+                            >
                               <StatusIcon className="w-3 h-3 mr-1" />
                               {transaction.status}
                             </Badge>
                           </TableCell>
-                          <TableCell className="text-sm">{transaction.date}</TableCell>
+                          <TableCell className="text-sm">
+                            {transaction.date}
+                          </TableCell>
                           <TableCell>
                             <div className="flex gap-1">
                               <Button variant="ghost" size="sm">
                                 <Eye className="w-4 h-4" />
                               </Button>
-                              {transaction.status === 'pending' && (
+                              {transaction.status === "pending" && (
                                 <>
-                                  <Button variant="ghost" size="sm" className="text-green-600">
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    className="text-green-600"
+                                  >
                                     <CheckCircle className="w-4 h-4" />
                                   </Button>
-                                  <Button variant="ghost" size="sm" className="text-red-600">
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    className="text-red-600"
+                                  >
                                     <XCircle className="w-4 h-4" />
                                   </Button>
                                 </>
@@ -1239,7 +1689,10 @@ export default function AdminDashboard() {
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold">Analytics & Insights</h2>
               <div className="flex gap-2">
-                <Select value={selectedDateRange} onValueChange={setSelectedDateRange}>
+                <Select
+                  value={selectedDateRange}
+                  onValueChange={setSelectedDateRange}
+                >
                   <SelectTrigger className="w-40">
                     <SelectValue />
                   </SelectTrigger>
@@ -1263,7 +1716,9 @@ export default function AdminDashboard() {
                 <CardContent className="p-6 text-center">
                   <LineChart className="w-8 h-8 mx-auto mb-2 text-blue-600" />
                   <p className="text-sm text-gray-600">User Growth</p>
-                  <p className="text-2xl font-bold">+{adminStats.userGrowthRate}%</p>
+                  <p className="text-2xl font-bold">
+                    +{adminStats.userGrowthRate}%
+                  </p>
                 </CardContent>
               </Card>
               <Card>
@@ -1277,14 +1732,18 @@ export default function AdminDashboard() {
                 <CardContent className="p-6 text-center">
                   <PieChart className="w-8 h-8 mx-auto mb-2 text-purple-600" />
                   <p className="text-sm text-gray-600">Conversion Rate</p>
-                  <p className="text-2xl font-bold">{adminStats.conversionRate}%</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.conversionRate}%
+                  </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
                   <Target className="w-8 h-8 mx-auto mb-2 text-orange-600" />
                   <p className="text-sm text-gray-600">Success Rate</p>
-                  <p className="text-2xl font-bold">{adminStats.jobCompletionRate}%</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.jobCompletionRate}%
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -1299,7 +1758,9 @@ export default function AdminDashboard() {
                   <div className="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
                     <div className="text-center">
                       <BarChart3 className="w-12 h-12 mx-auto mb-2 text-gray-400" />
-                      <p className="text-gray-500">Revenue chart would appear here</p>
+                      <p className="text-gray-500">
+                        Revenue chart would appear here
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -1313,7 +1774,9 @@ export default function AdminDashboard() {
                   <div className="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
                     <div className="text-center">
                       <Activity className="w-12 h-12 mx-auto mb-2 text-gray-400" />
-                      <p className="text-gray-500">Activity chart would appear here</p>
+                      <p className="text-gray-500">
+                        Activity chart would appear here
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -1344,7 +1807,9 @@ export default function AdminDashboard() {
                 <CardContent className="p-6 text-center">
                   <Clock className="w-8 h-8 mx-auto mb-2 text-yellow-600" />
                   <p className="text-sm text-gray-600">Pending</p>
-                  <p className="text-2xl font-bold">{adminStats.supportTickets}</p>
+                  <p className="text-2xl font-bold">
+                    {adminStats.supportTickets}
+                  </p>
                 </CardContent>
               </Card>
               <Card>
@@ -1384,17 +1849,37 @@ export default function AdminDashboard() {
                   <TableBody>
                     {Array.from({ length: 5 }, (_, i) => (
                       <TableRow key={i}>
-                        <TableCell className="font-mono">#TKT{1000 + i}</TableCell>
+                        <TableCell className="font-mono">
+                          #TKT{1000 + i}
+                        </TableCell>
                         <TableCell>User {i + 1}</TableCell>
                         <TableCell>Payment Issue</TableCell>
                         <TableCell>
-                          <Badge className={i % 3 === 0 ? 'bg-red-100 text-red-800' : i % 3 === 1 ? 'bg-yellow-100 text-yellow-800' : 'bg-green-100 text-green-800'}>
-                            {i % 3 === 0 ? 'High' : i % 3 === 1 ? 'Medium' : 'Low'}
+                          <Badge
+                            className={
+                              i % 3 === 0
+                                ? "bg-red-100 text-red-800"
+                                : i % 3 === 1
+                                  ? "bg-yellow-100 text-yellow-800"
+                                  : "bg-green-100 text-green-800"
+                            }
+                          >
+                            {i % 3 === 0
+                              ? "High"
+                              : i % 3 === 1
+                                ? "Medium"
+                                : "Low"}
                           </Badge>
                         </TableCell>
                         <TableCell>
-                          <Badge className={i % 2 === 0 ? 'bg-yellow-100 text-yellow-800' : 'bg-green-100 text-green-800'}>
-                            {i % 2 === 0 ? 'Open' : 'Resolved'}
+                          <Badge
+                            className={
+                              i % 2 === 0
+                                ? "bg-yellow-100 text-yellow-800"
+                                : "bg-green-100 text-green-800"
+                            }
+                          >
+                            {i % 2 === 0 ? "Open" : "Resolved"}
                           </Badge>
                         </TableCell>
                         <TableCell>2024-01-{15 - i}</TableCell>
@@ -1436,7 +1921,11 @@ export default function AdminDashboard() {
                         <p className="text-sm text-gray-600">{metric.name}</p>
                         <p className="text-xl font-bold">
                           {metric.value}
-                          {metric.unit && <span className="text-sm text-gray-500 ml-1">{metric.unit}</span>}
+                          {metric.unit && (
+                            <span className="text-sm text-gray-500 ml-1">
+                              {metric.unit}
+                            </span>
+                          )}
                         </p>
                         {metric.change && (
                           <div className="flex items-center mt-1">
@@ -1445,19 +1934,23 @@ export default function AdminDashboard() {
                             ) : (
                               <TrendingDown className="w-3 h-3 text-red-600 mr-1" />
                             )}
-                            <span className={`text-xs ${metric.change > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                              {metric.change > 0 ? '+' : ''}{metric.change}{metric.unit || ''}
+                            <span
+                              className={`text-xs ${metric.change > 0 ? "text-green-600" : "text-red-600"}`}
+                            >
+                              {metric.change > 0 ? "+" : ""}
+                              {metric.change}
+                              {metric.unit || ""}
                             </span>
                           </div>
                         )}
                       </div>
                       <div
                         className={`w-3 h-3 rounded-full ${
-                          metric.status === 'good'
-                            ? 'bg-green-500'
-                            : metric.status === 'warning'
-                              ? 'bg-yellow-500'
-                              : 'bg-red-500'
+                          metric.status === "good"
+                            ? "bg-green-500"
+                            : metric.status === "warning"
+                              ? "bg-yellow-500"
+                              : "bg-red-500"
                         }`}
                       ></div>
                     </div>
@@ -1479,7 +1972,9 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="font-medium">Create Backup</p>
-                      <p className="text-sm text-gray-600">Last backup: 2 hours ago</p>
+                      <p className="text-sm text-gray-600">
+                        Last backup: 2 hours ago
+                      </p>
                     </div>
                     <Button variant="outline" size="sm">
                       <Download className="w-4 h-4 mr-2" />
@@ -1490,7 +1985,9 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="font-medium">Optimize Database</p>
-                      <p className="text-sm text-gray-600">Improve query performance</p>
+                      <p className="text-sm text-gray-600">
+                        Improve query performance
+                      </p>
                     </div>
                     <Button variant="outline" size="sm">
                       <Zap className="w-4 h-4 mr-2" />
@@ -1501,7 +1998,9 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="font-medium">Clear Cache</p>
-                      <p className="text-sm text-gray-600">Free up memory space</p>
+                      <p className="text-sm text-gray-600">
+                        Free up memory space
+                      </p>
                     </div>
                     <Button variant="outline" size="sm">
                       <RefreshCw className="w-4 h-4 mr-2" />
@@ -1522,15 +2021,21 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="font-medium">Firewall Status</p>
-                      <p className="text-sm text-gray-600">All ports protected</p>
+                      <p className="text-sm text-gray-600">
+                        All ports protected
+                      </p>
                     </div>
-                    <Badge className="bg-green-100 text-green-800">Active</Badge>
+                    <Badge className="bg-green-100 text-green-800">
+                      Active
+                    </Badge>
                   </div>
                   <Separator />
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="font-medium">SSL Certificate</p>
-                      <p className="text-sm text-gray-600">Expires: March 15, 2024</p>
+                      <p className="text-sm text-gray-600">
+                        Expires: March 15, 2024
+                      </p>
                     </div>
                     <Badge className="bg-green-100 text-green-800">Valid</Badge>
                   </div>
@@ -1538,7 +2043,9 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="font-medium">Security Scan</p>
-                      <p className="text-sm text-gray-600">Run vulnerability check</p>
+                      <p className="text-sm text-gray-600">
+                        Run vulnerability check
+                      </p>
                     </div>
                     <Button variant="outline" size="sm">
                       <Shield className="w-4 h-4 mr-2" />
@@ -1674,16 +2181,59 @@ export default function AdminDashboard() {
               <CardContent>
                 <div className="space-y-4">
                   {[
-                    { title: "Homepage Content", type: "Page", status: "Published", lastModified: "2 hours ago" },
-                    { title: "About Us", type: "Page", status: "Published", lastModified: "1 day ago" },
-                    { title: "Welcome Email", type: "Email Template", status: "Active", lastModified: "3 days ago" },
-                    { title: "Privacy Policy", type: "Legal", status: "Published", lastModified: "1 week ago" },
-                    { title: "Terms of Service", type: "Legal", status: "Draft", lastModified: "5 days ago" },
-                    { title: "Job Alert Email", type: "Email Template", status: "Active", lastModified: "2 days ago" },
-                    { title: "Footer Content", type: "Component", status: "Published", lastModified: "1 week ago" },
-                    { title: "FAQ Section", type: "Page", status: "Published", lastModified: "3 days ago" }
+                    {
+                      title: "Homepage Content",
+                      type: "Page",
+                      status: "Published",
+                      lastModified: "2 hours ago",
+                    },
+                    {
+                      title: "About Us",
+                      type: "Page",
+                      status: "Published",
+                      lastModified: "1 day ago",
+                    },
+                    {
+                      title: "Welcome Email",
+                      type: "Email Template",
+                      status: "Active",
+                      lastModified: "3 days ago",
+                    },
+                    {
+                      title: "Privacy Policy",
+                      type: "Legal",
+                      status: "Published",
+                      lastModified: "1 week ago",
+                    },
+                    {
+                      title: "Terms of Service",
+                      type: "Legal",
+                      status: "Draft",
+                      lastModified: "5 days ago",
+                    },
+                    {
+                      title: "Job Alert Email",
+                      type: "Email Template",
+                      status: "Active",
+                      lastModified: "2 days ago",
+                    },
+                    {
+                      title: "Footer Content",
+                      type: "Component",
+                      status: "Published",
+                      lastModified: "1 week ago",
+                    },
+                    {
+                      title: "FAQ Section",
+                      type: "Page",
+                      status: "Published",
+                      lastModified: "3 days ago",
+                    },
                   ].map((content, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
+                    <div
+                      key={index}
+                      className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50"
+                    >
                       <div className="flex items-center gap-4">
                         <div className="p-2 bg-blue-100 rounded">
                           <FileText className="w-4 h-4 text-blue-600" />
@@ -1691,14 +2241,23 @@ export default function AdminDashboard() {
                         <div>
                           <h3 className="font-medium">{content.title}</h3>
                           <div className="flex items-center gap-2 text-sm text-gray-600">
-                            <Badge variant="outline" className="text-xs">{content.type}</Badge>
+                            <Badge variant="outline" className="text-xs">
+                              {content.type}
+                            </Badge>
                             <span>•</span>
                             <span>Modified {content.lastModified}</span>
                           </div>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge className={content.status === "Published" || content.status === "Active" ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800"}>
+                        <Badge
+                          className={
+                            content.status === "Published" ||
+                            content.status === "Active"
+                              ? "bg-green-100 text-green-800"
+                              : "bg-yellow-100 text-yellow-800"
+                          }
+                        >
                           {content.status}
                         </Badge>
                         <Button variant="ghost" size="sm">
@@ -1735,7 +2294,9 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <Label className="text-base">Site Name</Label>
-                      <p className="text-sm text-gray-600">Platform display name</p>
+                      <p className="text-sm text-gray-600">
+                        Platform display name
+                      </p>
                     </div>
                     <Input value="ClickerPlus" className="w-40" />
                   </div>
@@ -1743,7 +2304,9 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <Label className="text-base">User Registration</Label>
-                      <p className="text-sm text-gray-600">Allow new user signups</p>
+                      <p className="text-sm text-gray-600">
+                        Allow new user signups
+                      </p>
                     </div>
                     <Switch defaultChecked />
                   </div>
@@ -1751,7 +2314,9 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <Label className="text-base">Job Posting</Label>
-                      <p className="text-sm text-gray-600">Allow job creation</p>
+                      <p className="text-sm text-gray-600">
+                        Allow job creation
+                      </p>
                     </div>
                     <Switch defaultChecked />
                   </div>
@@ -1759,7 +2324,9 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <Label className="text-base">Email Notifications</Label>
-                      <p className="text-sm text-gray-600">Send system emails</p>
+                      <p className="text-sm text-gray-600">
+                        Send system emails
+                      </p>
                     </div>
                     <Switch defaultChecked />
                   </div>
@@ -1785,7 +2352,9 @@ export default function AdminDashboard() {
                   <Separator />
                   <div className="flex justify-between items-center">
                     <div>
-                      <Label className="text-base">Minimum Withdrawal (৳)</Label>
+                      <Label className="text-base">
+                        Minimum Withdrawal (৳)
+                      </Label>
                       <p className="text-sm text-gray-600">Min payout amount</p>
                     </div>
                     <Input value="1000" className="w-24" />
@@ -1802,7 +2371,9 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <Label className="text-base">Payment Gateway</Label>
-                      <p className="text-sm text-gray-600">Active payment method</p>
+                      <p className="text-sm text-gray-600">
+                        Active payment method
+                      </p>
                     </div>
                     <Switch defaultChecked />
                   </div>
@@ -1820,8 +2391,12 @@ export default function AdminDashboard() {
                 <CardContent className="space-y-4">
                   <div className="flex justify-between items-center">
                     <div>
-                      <Label className="text-base">Two-Factor Authentication</Label>
-                      <p className="text-sm text-gray-600">Require 2FA for admins</p>
+                      <Label className="text-base">
+                        Two-Factor Authentication
+                      </Label>
+                      <p className="text-sm text-gray-600">
+                        Require 2FA for admins
+                      </p>
                     </div>
                     <Switch defaultChecked />
                   </div>
@@ -1847,7 +2422,9 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <Label className="text-base">Login Alerts</Label>
-                      <p className="text-sm text-gray-600">Notify suspicious logins</p>
+                      <p className="text-sm text-gray-600">
+                        Notify suspicious logins
+                      </p>
                     </div>
                     <Switch defaultChecked />
                   </div>
