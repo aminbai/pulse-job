@@ -169,45 +169,80 @@ export default function DashboardHeader({
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
                 className="flex items-center space-x-2 hover:text-green-100 transition-colors"
               >
-                <User className="w-6 h-6" />
-                <span className="hidden md:block">{userName}</span>
+                <div className="relative">
+                  <UserIcon className="w-6 h-6" />
+                  <div className={`absolute -bottom-1 -right-1 w-3 h-3 ${getUserBadgeColor()} rounded-full border-2 border-white`}></div>
+                </div>
+                <div className="hidden md:block text-left">
+                  <div className="text-sm font-medium">{displayName}</div>
+                  {user && (
+                    <div className="text-xs text-green-100 capitalize">
+                      {currentUser.userType === 'both' ? 'Freelancer & Buyer' : currentUser.userType}
+                    </div>
+                  )}
+                </div>
                 <ChevronDown className="w-4 h-4" />
               </button>
 
               {userMenuOpen && (
-                <div className="absolute top-full right-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                <div className="absolute top-full right-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                  {/* User Info Header */}
+                  {user && (
+                    <div className="px-4 py-3 border-b border-gray-200 bg-gray-50">
+                      <div className="flex items-center gap-3">
+                        <div className="relative">
+                          <UserIcon className="w-8 h-8 text-gray-600" />
+                          <div className={`absolute -bottom-1 -right-1 w-3 h-3 ${getUserBadgeColor()} rounded-full border-2 border-white`}></div>
+                        </div>
+                        <div>
+                          <p className="font-medium text-gray-900">{displayName}</p>
+                          <p className="text-sm text-gray-600">{user.email}</p>
+                          <Badge variant="outline" className="text-xs mt-1">
+                            {currentUser.userType === 'both' ? 'Dual Account' : currentUser.userType?.toUpperCase()}
+                          </Badge>
+                        </div>
+                      </div>
+                      {user.rating && (
+                        <div className="mt-2 text-xs text-gray-600">
+                          ⭐ {user.rating} �� {user.completedJobs} jobs completed
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   <div className="py-2">
                     <Link
                       to="/my-account"
-                      className="block px-4 py-2 text-sm text-text-dark hover:bg-brand-green-light hover:text-brand-green transition-colors"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                       onClick={() => setUserMenuOpen(false)}
                     >
+                      <User className="w-4 h-4 inline mr-2" />
                       My Account
                     </Link>
                     <Link
                       to="/settings"
-                      className="block px-4 py-2 text-sm text-text-dark hover:bg-brand-green-light hover:text-brand-green transition-colors"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                       onClick={() => setUserMenuOpen(false)}
                     >
+                      <Settings className="w-4 h-4 inline mr-2" />
                       Settings
                     </Link>
-                    {userType === "admin" && (
+                    {isAdmin && (
                       <Link
                         to="/admin-dashboard"
-                        className="block px-4 py-2 text-sm text-text-dark hover:bg-brand-green-light hover:text-brand-green transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                         onClick={() => setUserMenuOpen(false)}
                       >
+                        <Shield className="w-4 h-4 inline mr-2" />
                         Admin Dashboard
                       </Link>
                     )}
                     <div className="border-t border-gray-200 mt-2 pt-2">
                       <button
                         className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
-                        onClick={() => {
-                          setUserMenuOpen(false);
-                          // Handle logout logic here
-                        }}
+                        onClick={handleLogout}
                       >
+                        <LogOut className="w-4 h-4 inline mr-2" />
                         Logout
                       </button>
                     </div>
