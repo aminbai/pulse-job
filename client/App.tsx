@@ -20,8 +20,10 @@ import BrowseJobs from "./pages/BrowseJobs";
 import PostJob from "./pages/PostJob";
 import MyWork from "./pages/MyWork";
 import JobDetail from "./pages/JobDetail";
-import PlaceholderPage from "./pages/PlaceholderPage";
 import AboutUs from "./pages/AboutUs";
+import DealHistory from "./pages/DealHistory";
+import Settings from "./pages/Settings";
+import ShareEarn from "./pages/ShareEarn";
 import Articles from "./pages/Articles";
 import DealMarketplace from "./pages/DealMarketplace";
 import BrowseDeals from "./pages/BrowseDeals";
@@ -73,25 +75,9 @@ const App = () => (
             <Route path="/message-history" element={<MessageHistory />} />
             <Route path="/refer-earn" element={<ReferEarn />} />
             <Route path="/top-freelancer" element={<TopFreelancer />} />
-            <Route
-              path="/deal-history"
-              element={
-                <PlaceholderPage
-                  title="Deal History"
-                  description="View your deal transaction history and completed projects."
-                />
-              }
-            />
+            <Route path="/deal-history" element={<DealHistory />} />
             <Route path="/deal-marketplace" element={<DealMarketplace />} />
-            <Route
-              path="/settings"
-              element={
-                <PlaceholderPage
-                  title="Settings"
-                  description="Manage your account settings, preferences, and profile information."
-                />
-              }
-            />
+            <Route path="/settings" element={<Settings />} />
             <Route path="/find-jobs" element={<FindJobs />} />
             <Route path="/my-account" element={<MyAccount />} />
             <Route path="/browse-jobs" element={<BrowseJobs />} />
@@ -113,15 +99,7 @@ const App = () => (
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/verify-email" element={<EmailVerification />} />
             <Route path="/faq" element={<FAQ />} />
-            <Route
-              path="/share-earn"
-              element={
-                <PlaceholderPage
-                  title="Share & Earn"
-                  description="Learn about our referral program and start earning by inviting friends."
-                />
-              }
-            />
+            <Route path="/share-earn" element={<ShareEarn />} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
