@@ -132,48 +132,16 @@ const App = () => (
             <Route path="/articles" element={<Articles />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/press" element={<Press />} />
+            <Route path="/terms" element={<Terms />} />
             <Route
               path="/privacy"
               element={
                 <PlaceholderPage
                   title="Privacy Policy"
                   description="Our privacy policy and data protection information."
-                />
-              }
-            />
-            <Route
-              path="/terms"
-              element={
-                <PlaceholderPage
-                  title="Terms of Service"
-                  description="Terms and conditions for using the GigClickers platform."
-                />
-              }
-            />
-            <Route
-              path="/careers"
-              element={
-                <PlaceholderPage
-                  title="Careers"
-                  description="Join our team and help us build the future of freelancing."
-                />
-              }
-            />
-            <Route
-              path="/press"
-              element={
-                <PlaceholderPage
-                  title="Press"
-                  description="Press releases and media resources about GigClickers."
-                />
-              }
-            />
-            <Route
-              path="/blog"
-              element={
-                <PlaceholderPage
-                  title="Blog"
-                  description="Stay updated with the latest news and insights from GigClickers."
                 />
               }
             />
