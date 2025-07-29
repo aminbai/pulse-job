@@ -115,18 +115,75 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      // Mock user data based on email
+      // Demo accounts mapping
+      const demoAccounts = {
+        'admin@clickerplus.com': {
+          id: 'admin-1',
+          name: 'System Administrator',
+          userType: 'admin' as const,
+          role: 'admin' as const,
+          level: 'Super Admin',
+          rating: 5.0,
+          completedJobs: 0,
+          totalEarnings: 0
+        },
+        'freelancer@clickerplus.com': {
+          id: 'freelancer-1',
+          name: 'John Smith (Expert)',
+          userType: 'freelancer' as const,
+          role: 'freelancer' as const,
+          level: 'Expert',
+          rating: 4.8,
+          completedJobs: 45,
+          totalEarnings: 12500
+        },
+        'buyer@clickerplus.com': {
+          id: 'buyer-1',
+          name: 'TechCorp Solutions',
+          userType: 'buyer' as const,
+          role: 'buyer' as const,
+          level: 'Business',
+          rating: 4.6,
+          completedJobs: 0,
+          totalEarnings: 0
+        },
+        'user@clickerplus.com': {
+          id: 'both-1',
+          name: 'Sarah Johnson',
+          userType: 'both' as const,
+          role: 'both' as const,
+          level: 'Experienced',
+          rating: 4.7,
+          completedJobs: 23,
+          totalEarnings: 8900
+        }
+      };
+
+      // Get demo account data or create default
+      const accountData = demoAccounts[email as keyof typeof demoAccounts] || {
+        id: 'user-1',
+        name: 'Demo User',
+        userType: 'freelancer' as const,
+        role: 'freelancer' as const,
+        level: 'Beginner',
+        rating: 4.0,
+        completedJobs: 0,
+        totalEarnings: 0
+      };
+
       const mockUser: User = {
-        id: "1",
+        ...accountData,
         email: email,
-        name: email === "admin@example.com" ? "Admin User" : "John Doe",
-        userType: email === "admin@example.com" ? "admin" : "freelancer",
         isEmailVerified: true,
       };
 
       // Save to localStorage
       localStorage.setItem("user", JSON.stringify(mockUser));
       localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userType", mockUser.userType);
+      localStorage.setItem("userName", mockUser.name);
+      localStorage.setItem("userRole", mockUser.role);
       localStorage.setItem("rememberMe", rememberMe.toString());
 
       setUser(mockUser);
