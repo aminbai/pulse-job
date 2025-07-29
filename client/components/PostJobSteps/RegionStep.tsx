@@ -4,25 +4,72 @@ const targetingZones = [
   { id: "international", label: "International", icon: Globe },
   { id: "asia", label: "Asia", icon: MapPin },
   { id: "europe", label: "Europe", icon: MapPin },
-  { id: "oceana", label: "Oceana", icon: MapPin },
+  { id: "oceana", label: "Oceania", icon: MapPin },
+  { id: "africa", label: "Africa", icon: MapPin },
+  { id: "north-america", label: "North America", icon: MapPin },
+  { id: "south-america", label: "South America", icon: MapPin },
 ];
 
 const countries = [
   // Asia
+  { name: "Afghanistan", region: "asia" },
   { name: "Bangladesh", region: "asia" },
-  { name: "India", region: "asia" },
-  { name: "Pakistan", region: "asia" },
   { name: "China", region: "asia" },
+  { name: "India", region: "asia" },
+  { name: "Indonesia", region: "asia" },
   { name: "Japan", region: "asia" },
+  { name: "Pakistan", region: "asia" },
+  { name: "Philippines", region: "asia" },
+  { name: "South Korea", region: "asia" },
+  { name: "Thailand", region: "asia" },
+  { name: "Vietnam", region: "asia" },
+
   // Europe
   { name: "United Kingdom", region: "europe" },
   { name: "Germany", region: "europe" },
   { name: "France", region: "europe" },
   { name: "Italy", region: "europe" },
-  // International
+  { name: "Spain", region: "europe" },
+  { name: "Netherlands", region: "europe" },
+  { name: "Poland", region: "europe" },
+  { name: "Romania", region: "europe" },
+  { name: "Ukraine", region: "europe" },
+
+  // Oceania
+  { name: "Australia", region: "oceana" },
+  { name: "New Zealand", region: "oceana" },
+  { name: "Fiji", region: "oceana" },
+  { name: "Papua New Guinea", region: "oceana" },
+
+  // Africa
+  { name: "Nigeria", region: "africa" },
+  { name: "South Africa", region: "africa" },
+  { name: "Egypt", region: "africa" },
+  { name: "Kenya", region: "africa" },
+  { name: "Morocco", region: "africa" },
+  { name: "Ghana", region: "africa" },
+
+  // North America
+  { name: "United States", region: "north-america" },
+  { name: "Canada", region: "north-america" },
+  { name: "Mexico", region: "north-america" },
+
+  // South America
+  { name: "Brazil", region: "south-america" },
+  { name: "Argentina", region: "south-america" },
+  { name: "Colombia", region: "south-america" },
+  { name: "Peru", region: "south-america" },
+  { name: "Chile", region: "south-america" },
+
+  // International (popular countries from all regions)
   { name: "United States", region: "international" },
   { name: "Canada", region: "international" },
+  { name: "United Kingdom", region: "international" },
+  { name: "Germany", region: "international" },
   { name: "Australia", region: "international" },
+  { name: "India", region: "international" },
+  { name: "China", region: "international" },
+  { name: "Brazil", region: "international" },
 ];
 
 interface RegionStepProps {
@@ -44,7 +91,7 @@ export default function RegionStep({
     <div className="space-y-6">
       <h3 className="text-xl font-semibold text-gray-900">Choose the job targeting region</h3>
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
         {targetingZones.map((zone) => {
           const IconComponent = zone.icon;
           return (
@@ -75,14 +122,14 @@ export default function RegionStep({
           </button>
         </div>
         
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-2 max-h-60 overflow-y-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 max-h-80 overflow-y-auto border border-gray-200 rounded-lg p-4">
           {countries
             .filter((c) => c.region === selectedZone)
             .map((country) => (
               <button
                 key={country.name}
                 onClick={() => onCountryToggle(country.name)}
-                className={`p-2 text-sm rounded border ${
+                className={`p-3 text-sm rounded-lg border-2 text-center font-medium transition-all ${
                   selectedCountries.includes(country.name)
                     ? "bg-brand-green text-white border-brand-green"
                     : "bg-white text-gray-700 border-gray-300 hover:border-gray-400"
