@@ -219,7 +219,7 @@ export default function AdminDashboard() {
       <header className="bg-gray-900 text-white py-4 px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <h1 className="text-2xl font-bold">GigClickers Admin</h1>
+            <h1 className="text-2xl font-bold">ClickerPlus Admin</h1>
             <Badge className="bg-red-600">Super Admin</Badge>
           </div>
           <div className="flex items-center gap-4">
@@ -787,7 +787,7 @@ export default function AdminDashboard() {
               <Card>
                 <CardContent className="p-6 text-center">
                   <Target className="w-8 h-8 mx-auto mb-2 text-purple-600" />
-                  <p className="text-sm text-gray-600">প্ল্যাটফর্ম ফি</p>
+                  <p className="text-sm text-gray-600">প্ল��যাটফর্ম ফি</p>
                   <p className="text-2xl font-bold">৳28,450</p>
                 </CardContent>
               </Card>

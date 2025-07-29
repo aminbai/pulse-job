@@ -437,12 +437,12 @@ export default function Careers() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">GigClickers</h3>
+              <h3 className="text-2xl font-bold mb-4">ClickerPlus</h3>
               <p className="text-gray-300 mb-4">
                 Connecting talent with opportunity worldwide.
               </p>
               <p className="text-sm text-gray-400">
-                &copy; 2024 GigClickers. All rights reserved.
+                &copy; 2024 ClickerPlus. All rights reserved.
               </p>
             </div>
 
@@ -458,7 +458,7 @@ export default function Careers() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Apply</h4>
               <p className="text-gray-300 text-sm mb-3">
-                Send your resume to: careers@gigclickers.com
+                Send your resume to: careers@clickerplus.com
               </p>
               <p className="text-gray-300 text-sm">
                 HR Hotline: +880 1234-567890

@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
       <main className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-text-dark mb-4">
-            Why Choose GigClickers?
+            Why Choose ClickerPlus?
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             We provide the best platform for connecting clients with talented
@@ -77,7 +77,7 @@ export default function WhyChooseUs() {
             Ready to Get Started?
           </h2>
           <p className="text-gray-600 mb-6">
-            Join thousands of satisfied clients who trust GigClickers for their
+            Join thousands of satisfied clients who trust ClickerPlus for their
             projects.
           </p>
           <Link
