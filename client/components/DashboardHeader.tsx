@@ -77,7 +77,7 @@ export default function DashboardHeader({
             to="/"
             className="text-2xl font-bold hover:text-green-100 transition-colors"
           >
-            GigClickers
+            ClickerPlus
           </Link>
 
           {/* Desktop Navigation */}

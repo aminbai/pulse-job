@@ -29,7 +29,7 @@ export default function PublicHeader() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-text-dark">
-            GigClickers
+            ClickerPlus
           </Link>
 
           {/* Desktop Navigation */}
