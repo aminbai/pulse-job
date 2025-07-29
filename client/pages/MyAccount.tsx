@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
-import { PublicHeader } from "@/components/PublicHeader";
+import PublicHeader from "@/components/PublicHeader";
 
 export default function MyAccount() {
   const [isEditing, setIsEditing] = useState(false);
