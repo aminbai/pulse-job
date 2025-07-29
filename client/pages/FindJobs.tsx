@@ -10,7 +10,7 @@ import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { Label } from "@/components/ui/label";
-import { PublicHeader } from "@/components/PublicHeader";
+import PublicHeader from "@/components/PublicHeader";
 
 interface Job {
   id: string;
