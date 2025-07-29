@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { ChevronDown, Menu, X, Bell, Settings, User } from "lucide-react";
+import { ChevronDown, Menu, X, Bell, Settings, User, LogOut, Shield, Briefcase, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/contexts/AuthContext";
+import { Badge } from "@/components/ui/badge";
 
 const dashboardMenuItems = [
   {
