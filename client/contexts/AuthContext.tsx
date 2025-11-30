@@ -10,9 +10,14 @@ interface User {
   id: string;
   email: string;
   name: string;
-  userType: "freelancer" | "buyer" | "admin";
+  userType: "freelancer" | "buyer" | "admin" | "both";
+  role: "freelancer" | "buyer" | "admin" | "both";
   isEmailVerified: boolean;
   profilePicture?: string;
+  level?: string;
+  rating?: number;
+  completedJobs?: number;
+  totalEarnings?: number;
 }
 
 interface AuthContextType {
@@ -60,10 +65,31 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Check if user is logged in (from localStorage or API)
       const savedUser = localStorage.getItem("user");
       const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+      const userEmail = localStorage.getItem("userEmail");
+      const userType = localStorage.getItem("userType");
+      const userName = localStorage.getItem("userName");
 
-      if (isLoggedIn && savedUser) {
-        // In a real app, you would validate the token with your API
-        const userData = JSON.parse(savedUser);
+      if (isLoggedIn && (savedUser || userEmail)) {
+        let userData;
+
+        if (savedUser) {
+          userData = JSON.parse(savedUser);
+        } else {
+          // Create user object from localStorage data
+          userData = {
+            id: "demo-" + Date.now(),
+            email: userEmail,
+            name: userName || "Demo User",
+            userType: userType || "freelancer",
+            role: userType || "freelancer",
+            isEmailVerified: true,
+            level: "Expert",
+            rating: 4.8,
+            completedJobs: 45,
+            totalEarnings: 12500,
+          };
+        }
+
         setUser(userData);
         setIsAuthenticated(true);
       } else {
@@ -89,18 +115,75 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      // Mock user data based on email
+      // Demo accounts mapping
+      const demoAccounts = {
+        "admin@clickerplus.com": {
+          id: "admin-1",
+          name: "System Administrator",
+          userType: "admin" as const,
+          role: "admin" as const,
+          level: "Super Admin",
+          rating: 5.0,
+          completedJobs: 0,
+          totalEarnings: 0,
+        },
+        "freelancer@clickerplus.com": {
+          id: "freelancer-1",
+          name: "John Smith (Expert)",
+          userType: "freelancer" as const,
+          role: "freelancer" as const,
+          level: "Expert",
+          rating: 4.8,
+          completedJobs: 45,
+          totalEarnings: 12500,
+        },
+        "buyer@clickerplus.com": {
+          id: "buyer-1",
+          name: "TechCorp Solutions",
+          userType: "buyer" as const,
+          role: "buyer" as const,
+          level: "Business",
+          rating: 4.6,
+          completedJobs: 0,
+          totalEarnings: 0,
+        },
+        "user@clickerplus.com": {
+          id: "both-1",
+          name: "Sarah Johnson",
+          userType: "both" as const,
+          role: "both" as const,
+          level: "Experienced",
+          rating: 4.7,
+          completedJobs: 23,
+          totalEarnings: 8900,
+        },
+      };
+
+      // Get demo account data or create default
+      const accountData = demoAccounts[email as keyof typeof demoAccounts] || {
+        id: "user-1",
+        name: "Demo User",
+        userType: "freelancer" as const,
+        role: "freelancer" as const,
+        level: "Beginner",
+        rating: 4.0,
+        completedJobs: 0,
+        totalEarnings: 0,
+      };
+
       const mockUser: User = {
-        id: "1",
+        ...accountData,
         email: email,
-        name: email === "admin@example.com" ? "Admin User" : "John Doe",
-        userType: email === "admin@example.com" ? "admin" : "freelancer",
         isEmailVerified: true,
       };
 
       // Save to localStorage
       localStorage.setItem("user", JSON.stringify(mockUser));
       localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userType", mockUser.userType);
+      localStorage.setItem("userName", mockUser.name);
+      localStorage.setItem("userRole", mockUser.role);
       localStorage.setItem("rememberMe", rememberMe.toString());
 
       setUser(mockUser);
@@ -134,6 +217,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     // Clear localStorage
     localStorage.removeItem("user");
     localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("userType");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userRole");
     localStorage.removeItem("rememberMe");
 
     // Reset state
@@ -163,4 +250,5 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
+export { AuthContext };
 export default AuthContext;

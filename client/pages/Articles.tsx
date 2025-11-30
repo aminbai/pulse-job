@@ -6,7 +6,7 @@ export default function Articles() {
   const articles = [
     {
       id: 1,
-      title: "Navigating Deposits and Withdrawals on GigClickers.com",
+      title: "Navigating Deposits and Withdrawals on ClickerPlus.com",
       category: "Deposit and withdrawal",
       date: "Feb 18, 2024",
       image: "/placeholder.svg",
@@ -16,25 +16,25 @@ export default function Articles() {
     {
       id: 2,
       title:
-        "Seamless Sign-Up and Login: A Guide to Getting Started on GigClickers.com",
+        "Seamless Sign-Up and Login: A Guide to Getting Started on ClickerPlus.com",
       category: "Sign up and login",
       date: "Feb 18, 2024",
       image: "/placeholder.svg",
       description:
-        "Complete guide to creating your account and accessing all the features GigClickers has to offer.",
+        "Complete guide to creating your account and accessing all the features ClickerPlus has to offer.",
     },
     {
       id: 3,
-      title: "Maximize Your Earnings with GigClickers.com Referral Program",
+      title: "Maximize Your Earnings with ClickerPlus.com Referral Program",
       category: "Referral program",
       date: "Feb 18, 2024",
       image: "/placeholder.svg",
       description:
-        "Discover how to earn more by referring friends and building your network on GigClickers.",
+        "Discover how to earn more by referring friends and building your network on ClickerPlus.",
     },
     {
       id: 4,
-      title: "A Step-by-Step Guide to Posting a Job on GigClickers.com",
+      title: "A Step-by-Step Guide to Posting a Job on ClickerPlus.com",
       category: "Posting Job",
       date: "Feb 18, 2024",
       image: "/placeholder.svg",
@@ -43,7 +43,7 @@ export default function Articles() {
     },
     {
       id: 5,
-      title: "Finding the Perfect Job on GigClickers.com",
+      title: "Finding the Perfect Job on ClickerPlus.com",
       category: "Find Job",
       date: "Feb 18, 2024",
       image: "/placeholder.svg",
@@ -67,7 +67,7 @@ export default function Articles() {
       date: "Mar 15, 2025",
       image: "/placeholder.svg",
       description:
-        "Learn about TaskBurg's features and how it complements the GigClickers ecosystem.",
+        "Learn about TaskBurg's features and how it complements the ClickerPlus ecosystem.",
     },
     {
       id: 8,
@@ -252,13 +252,13 @@ export default function Articles() {
           <div className="flex justify-between items-start">
             <div className="flex items-center space-x-2">
               <div className="text-2xl font-bold text-brand-green">
-                GigClickers
+                ClickerPlus
               </div>
             </div>
             <div className="grid grid-cols-3 gap-8 text-sm">
               <div>
                 <h4 className="font-semibold text-gray-800 mb-3">
-                  About GigClickers
+                  About ClickerPlus
                 </h4>
                 <ul className="space-y-1 text-gray-600">
                   <li>
@@ -318,7 +318,7 @@ export default function Articles() {
             </div>
           </div>
           <div className="mt-6 pt-4 border-t border-green-200 text-center text-sm text-gray-600">
-            © 2025 gigclickers.com. All Rights Reserved.
+            © 2025 clickerplus.com. All Rights Reserved.
           </div>
         </div>
       </footer>

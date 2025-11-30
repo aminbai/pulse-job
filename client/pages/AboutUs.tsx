@@ -1,28 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import Header from "@/components/Header";
+import PublicHeader from "@/components/PublicHeader";
 
 export default function AboutUs() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-
-      {/* Balance Bar */}
-      <div className="bg-green-100 py-2 px-6">
-        <div className="max-w-6xl mx-auto flex justify-between text-sm">
-          <span>
-            Pending:{" "}
-            <span className="text-green-600 font-semibold">$0.000</span>
-          </span>
-          <span>
-            Earned: <span className="text-green-600 font-semibold">$0.000</span>
-          </span>
-          <span>
-            Deposit:{" "}
-            <span className="text-green-600 font-semibold">-$1.909</span>
-          </span>
-        </div>
-      </div>
+      <PublicHeader />
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-6 py-8">
@@ -38,7 +21,7 @@ export default function AboutUs() {
           <div className="prose max-w-none">
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
               <strong>GigClickers</strong> একটি বিশ্বস্ত অনলাইন মার্কেটপ্লেস যা
-              নিয়োগকর্তা এবং দক্ষ কর্মীদের মধ্যে সংযোগ স্থাপন করে।
+              নিয়োগকর্তা এবং দক্ষ কর্ম���দের মধ্যে সংযোগ স্থাপন করে।
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -51,7 +34,7 @@ export default function AboutUs() {
             <p className="text-gray-700 leading-relaxed mb-6">
               এই প্ল্যাটফর্ম সর্বদা মানুষকে নতুন কাজ খুঁজে পেতে সাহায্য করে। এটি
               আপনার ব্যবসার বিশ্বায়নেও একটি গুরুত্বপূর্ণ ভূমিকা পালন করে। কর্মী
-              এবং নিয়োগকর্তারা একসাথে এসে নতুন কাজ তৈরি করতে পারেন,
+              এবং নিয়োগকর্তারা একসাথে এসে নতুন কাজ তৈরি কর���ে পারেন,
               কর্মী-নিয়োগকর্তা লেনদেন একটি গুরুত্বপূর্ণ ভূমিকা পালন করে।
             </p>
 
